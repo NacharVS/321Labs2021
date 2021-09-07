@@ -14,22 +14,22 @@ namespace bank1
         {
             acc.Balance -= sum;
             acc1.Balance += sum;
-            Console.WriteLine("Транзакция выполнена");
+            Console.WriteLine("Транзакция выполнена!");
         }
         public static int Widthraw(Account account, double sum)
         {
             if (sum % 1 < 1)
             {
                 account.Balance -= sum;
-                Console.WriteLine("Сумма списания" + sum, "Руб!");
-                Console.WriteLine("Баланс после списания" + account.Balance, "Руб!");
+                Console.WriteLine("Сумма списания:" +  sum , "Руб!");
+                Console.WriteLine("Баланс после списания:" +  account.Balance , "Руб!");
             }
             return 0;
         }
         public static int Deposit(Account accountgetter, double sum)
         {
             accountgetter.Balance += sum;
-            Console.WriteLine("Депозит прошёл успшно");
+            Console.WriteLine("Депозит прошёл успшно!");
             return 0;
         }
         public static int Credit(Account aaccountgettercc, double Sum)
