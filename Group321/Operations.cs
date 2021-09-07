@@ -44,14 +44,23 @@ namespace Bank1
         public static void GetCredit(BankAccount bankAccount, int payment)
         {
             int creditSum = 3000;
-            int debts = 0;
+            int indebtedness = 0;
             int overpay = 0;
-            
+
             if (payment > creditSum)
             {
                 overpay = payment - creditSum;
                 Console.WriteLine($"Кредит погашен");
                 Console.WriteLine($"Переплата по ставке: {overpay}", overpay);
+            }
+            else if (payment == creditSum)
+            {
+                Console.WriteLine($"Кредит погашен");
+            }
+            else
+            {
+                indebtedness  = creditSum - payment;
+                Console.WriteLine($"Задолжность составляет: {indebtedness}", indebtedness);
             }
 
         }
