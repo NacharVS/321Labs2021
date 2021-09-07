@@ -41,9 +41,19 @@ namespace Bank1
             Console.WriteLine($"Начислены проценты в размере: {increment}", increment);
         }
 
-        public static void GetCredit(BankAccount bankAccount, double creditSum)
+        public static void GetCredit(BankAccount bankAccount, int payment)
         {
+            int creditSum = 3000;
+            int debts = 0;
+            int overpay = 0;
             
+            if (payment > creditSum)
+            {
+                overpay = payment - creditSum;
+                Console.WriteLine($"Кредит погашен");
+                Console.WriteLine($"Переплата по ставке: {overpay}", overpay);
+            }
+
         }
 
     }
