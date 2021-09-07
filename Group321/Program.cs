@@ -19,8 +19,8 @@ namespace Bank1
             Operations.Transaction(bank, bank, 100);
             Operations.Withdraw(bank, 100);
             Operations.Calculate(bank);
+            Operations.GetCredit(bank);
             Operations.ShowBallance(bank);
-            Operations.GetCredit(bank, 2000);
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");

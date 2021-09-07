@@ -10,7 +10,7 @@ namespace Bank1
     {
         public static void ShowBallance (BankAccount bankAccount)
         {
-            Console.WriteLine(bankAccount.Ballance);
+            Console.WriteLine($"Ваш баланс: {bankAccount.Ballance} ", bankAccount.Ballance);
         }
 
         public static void Transaction(BankAccount bankAccount, BankAccount bankAccount1, double sum)       
@@ -42,25 +42,26 @@ namespace Bank1
             Console.WriteLine($"Начислены проценты в размере: {increment}", increment);
         }
 
-        public static void GetCredit(BankAccount bankAccount, double payment)
+        public static void GetCredit(BankAccount bankAccount)
         {
-            double creditSum = bankAccount.Ballance;
+            double creditSum = 3000;
+            bankAccount.Ballance = bankAccount.Ballance - creditSum;
             double indebtedness = 0;
             double overpay = 0;
 
-            if (payment > creditSum)
+            if (bankAccount.Ballance > creditSum)
             {
-                overpay = payment - creditSum;
+                overpay = bankAccount.Ballance - creditSum;
                 Console.WriteLine($"Кредит погашен");
                 Console.WriteLine($"Переплата по ставке: {overpay}", overpay);
             }
-            else if (payment == creditSum)
+            else if (bankAccount.Ballance == creditSum)
             {
                 Console.WriteLine($"Кредит погашен");
             }
             else
             {
-                indebtedness  = creditSum - payment;
+                indebtedness  = creditSum - bankAccount.Ballance;
                 Console.WriteLine($"Задолжность составляет: {indebtedness}", indebtedness);
             }
 
