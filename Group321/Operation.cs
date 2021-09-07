@@ -10,9 +10,7 @@ namespace Group321
        public static double Stavka { get => stav; set => stav = value; }
        public static void ShowBalance(Account account)
        {
-            Console.WriteLine($"Balance account = {account.Balance} ");
-            Console.WriteLine($"Credit account = {account.Credit} ");
-            Console.WriteLine($"Invest account = {account.Vklad}");
+            Console.WriteLine(account.Balance);
        }
        public static void Transaction(Account accountSeller, Account accountGetter, double sum)
        {
@@ -62,12 +60,26 @@ namespace Group321
                 account.Balance -= sumvklad;
                 account.Vklad += sumvklad;
                 Console.WriteLine("Invest completed");
+                Console.WriteLine($"Invest account = {account.Vklad}");
             }
             else
             {
                 Console.WriteLine("Invest not completed");
             }
 
+        }
+        public static void PaymentCredit(Account account, double sum)
+        {
+            if (account.Balance >= sum)
+            {
+                account.Balance -= sum;
+                account.Credit -= sum;
+                Console.WriteLine($"Payment completed.Your debt is {account.Credit}");
+            }
+            else
+            {
+                Console.WriteLine("Payment failed");
+            }
         }
     }
 }

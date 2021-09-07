@@ -10,7 +10,6 @@ namespace Group321
             Account account1 = new Account();
             account.Balance = 50000;
             int choose;
-            bool cre = true;
             while (true)
             {
                 Console.WriteLine("\n1.Show balance");
@@ -19,10 +18,12 @@ namespace Group321
                 Console.WriteLine("4.WidTraw");
                 Console.WriteLine("5.GetCredit");
                 Console.WriteLine("6.Invest");
+                Console.WriteLine("7.Payment credit");
                 Console.WriteLine("\nChoose operation");
                 choose = Convert.ToInt32(Console.ReadLine());
                 if (choose == 1)
                 {
+                    Console.Write("Balance account = ");
                     Operation.ShowBalance(account);
                 }
                 else if (choose == 2)
@@ -47,14 +48,13 @@ namespace Group321
                 }
                 else if (choose == 5)
                 {
-                    if (cre == true)
+                    if (account.Credit == 0)
                     {
                         Console.WriteLine("Enter credit sum");
                         double creditsum = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Enter time of credit");
                         double time = Convert.ToDouble(Console.ReadLine());
                         Operation.GetCredit(account, time, creditsum);
-                        cre = false;
                         Console.WriteLine($"Credit is approved.Your debt is {account.Credit}");
                     }
                     else
@@ -68,6 +68,19 @@ namespace Group321
                     Console.WriteLine("Enter the invest sum");
                     double sum = Convert.ToDouble(Console.ReadLine());
                     Operation.Invest(account, sum);
+                }
+                else if (choose == 7)
+                {
+                    if (account.Credit != 0 )
+                    {
+                        Console.WriteLine("Enter the payment sum");
+                        double sum = Convert.ToDouble(Console.ReadLine());
+                        Operation.PaymentCredit(account, sum);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Enter the payment sum");
+                    }
                 }
             }
         }
