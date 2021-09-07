@@ -70,7 +70,7 @@ namespace Group321
         }
         public static void PaymentCredit(Account account, double sum)
         {
-            if (account.Balance >= sum)
+            if ((account.Balance >= sum) && (account.Credit >= sum))
             {
                 account.Balance -= sum;
                 account.Credit -= sum;

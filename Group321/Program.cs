@@ -71,7 +71,7 @@ namespace Group321
                 }
                 else if (choose == 7)
                 {
-                    if (account.Credit != 0 )
+                    if (account.Credit != 0)
                     {
                         Console.WriteLine("Enter the payment sum");
                         double sum = Convert.ToDouble(Console.ReadLine());
@@ -79,7 +79,7 @@ namespace Group321
                     }
                     else
                     {
-                        Console.WriteLine("Enter the payment sum");
+                        Console.WriteLine("You don't have credit");
                     }
                 }
             }
