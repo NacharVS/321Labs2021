@@ -45,9 +45,12 @@ namespace BAClasses
             Console.WriteLine($"Your income is {income}, your total amount is {income + amount}");
         }
 
-        public static void Credit(Account creditBalance, double creditRate)
+        public static void Credit(Account creditBalance, double creditRate, int cntMonth)
         {
-            
+            double prcntPerMonth = (creditRate / 12) + (creditRate % 12);
+            double creditDebt = creditBalance.Balance;
+            creditDebt = creditDebt * (prcntPerMonth + (prcntPerMonth / (Math.Pow((1 + prcntPerMonth), cntMonth)) - 1));
+            Console.WriteLine($"Your credit pay is {creditDebt} monthly");
         }
     }
 }

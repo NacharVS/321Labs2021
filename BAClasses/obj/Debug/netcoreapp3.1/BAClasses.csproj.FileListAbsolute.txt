@@ -1,0 +1,9 @@
+C:\Users\211925\source\repos\321Labs2021\BAClasses\bin\Debug\netcoreapp3.1\BAClasses.deps.json
+C:\Users\211925\source\repos\321Labs2021\BAClasses\bin\Debug\netcoreapp3.1\BAClasses.dll
+C:\Users\211925\source\repos\321Labs2021\BAClasses\bin\Debug\netcoreapp3.1\BAClasses.pdb
+C:\Users\211925\source\repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.csprojAssemblyReference.cache
+C:\Users\211925\source\repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.AssemblyInfoInputs.cache
+C:\Users\211925\source\repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.AssemblyInfo.cs
+C:\Users\211925\source\repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.csproj.CoreCompileInputs.cache
+C:\Users\211925\source\repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.dll
+C:\Users\211925\source\repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.pdb
