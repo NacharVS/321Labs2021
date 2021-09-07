@@ -44,5 +44,10 @@ namespace BAClasses
             double income = (amount * account.InterRate / 12) * monthCnt;
             Console.WriteLine($"Your income is {income}, your total amount is {income + amount}");
         }
+
+        public static void Credit(Account creditBalance, double creditRate)
+        {
+            
+        }
     }
 }
