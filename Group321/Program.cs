@@ -14,17 +14,15 @@ namespace Bank1
             {
                 Ballance = 1200,
                 id = "12314dc",
-                Percent = 0.057 
+                Percent = 0.057
             };
+            Console.WriteLine("Добро пожаловать, клиент");
+            Console.WriteLine($"Ваш id: {bank.id}", bank.id);
             Operations.Transaction(bank, bank, 100);
             Operations.Withdraw(bank, 100);
             Operations.Calculate(bank);
             Operations.GetCredit(bank);
             Operations.ShowBallance(bank);
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-
         }
     }
 }
