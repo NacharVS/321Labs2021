@@ -42,11 +42,11 @@ namespace Bank1
             Console.WriteLine($"Начислены проценты в размере: {increment}", increment);
         }
 
-        public static void GetCredit(BankAccount bankAccount, int payment)
+        public static void GetCredit(BankAccount bankAccount, double payment)
         {
-            int creditSum = 3000;
-            int indebtedness = 0;
-            int overpay = 0;
+            double creditSum = bankAccount.Ballance;
+            double indebtedness = 0;
+            double overpay = 0;
 
             if (payment > creditSum)
             {
