@@ -43,7 +43,11 @@ namespace Group321
                         Operations.Vklad(acc);
                         break;
                     case "7":
+                        Operations.PayCredit(acc);
+                        break;
+                    case "8":
                         // выход из приложения 
+                        Environment.Exit(0);
                         break;
 
                     default:
@@ -61,7 +65,8 @@ namespace Group321
             Console.WriteLine("4: Взять кредит");
             Console.WriteLine("5: Снять деньги");
             Console.WriteLine("6: Открыть вклад");
-            Console.WriteLine("7: Выйти из приложения");
+            Console.WriteLine("7: Оплатить кредит");
+            Console.WriteLine("8: Выйти из приложения");
         }
     }
 }

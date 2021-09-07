@@ -10,9 +10,7 @@ namespace Group321
     {
         string FIO;
         string addres;
-
         Account acc;
-
 
         public PersonalData(string FIO, string addres, Account acc)
         {

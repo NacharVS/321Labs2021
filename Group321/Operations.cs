@@ -56,7 +56,7 @@ namespace Group321
             double sum = Convert.ToDouble(Console.ReadLine());
             if (sum > 0)
             {
-                accGetter.Balance = sum;
+                accGetter.Balance += sum;
                 return (int)sum;
             }
             return 0;
@@ -67,7 +67,6 @@ namespace Group321
             if (acc.Credit == 0)
             {
                 acc.Balance += creditSum;
-                acc.Credit = creditSum;
                 double balance = acc.Balance;
                 double rascredit;
                 for (int i = 1; i < mounthCount + 1; i++)
@@ -76,12 +75,28 @@ namespace Group321
                     balance += rascredit;
                     Console.WriteLine($"{i} месяц {rascredit} рублей");
                 }
-
+                acc.Credit = balance;
                 Console.WriteLine($"Сумма возврата составляет {balance} рублей со всеми процентами");
             }
             else
             {
                 Console.WriteLine("Кредит не одобрен, так как кредит уже выдан");
+            }
+        }
+
+        public static void PayCredit(Account acc)
+        {
+            Console.WriteLine("Enter credit repayment sum");
+            double repaymentSum = Convert.ToDouble(Console.ReadLine());
+            if (acc.Credit != 0 && acc.Balance >= repaymentSum && acc.Credit >= repaymentSum)
+            {
+                acc.Balance -= repaymentSum;
+                acc.Credit -= repaymentSum;
+                Console.WriteLine($"Остаток кредита = {acc.Credit} Остаток баланса = {acc.Balance}");
+            }
+            else
+            {
+                Console.WriteLine("Не удалось погасить кредит, проверьте баланс");
             }
         }
 
