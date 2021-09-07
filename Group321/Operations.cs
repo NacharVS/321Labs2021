@@ -13,10 +13,11 @@ namespace Bank1
             Console.WriteLine(bankAccount.Ballance);
         }
 
-        public static void Transaction(BankAccount bankAccount, double sum)       
+        public static void Transaction(BankAccount bankAccount, BankAccount bankAccount1, double sum)       
         {
-            bankAccount.Ballance += sum;
-            Console.WriteLine("Транзакция выполнена");
+            bankAccount1.Ballance += sum;
+            bankAccount.Ballance -= sum;
+            Console.WriteLine($"Транзакция выполнена: {sum}", sum);
         }
 
         public static void Withdraw(BankAccount bankAccount, double sum)

@@ -16,7 +16,7 @@ namespace Bank1
                 id = "12314dc",
                 Percent = 0.057 
             };
-            Operations.Transaction(bank, 100);
+            Operations.Transaction(bank, bank, 100);
             Operations.Withdraw(bank, 100);
             Operations.Calculate(bank);
             Operations.ShowBallance(bank);
