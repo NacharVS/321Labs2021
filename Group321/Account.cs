@@ -10,5 +10,8 @@ namespace Group321
         private int accountSeller;
         private int accountGetter;
         public double Balance { get; set; }
+        public  static double CreditStavka = 0.06;
+        
+        public double CreditShet { get; set; }
     }
 }

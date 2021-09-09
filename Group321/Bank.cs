@@ -45,8 +45,12 @@ namespace Group321
             Console.WriteLine("Операция депозита проведена успешно!");
             return 0;
         }
-        public static int Credit(Account accountGetter, double sum)
+        public static int Credit(Account accountGetter, Account account, double CreditStavka , double sum)
+
         {
+          double  KolvoDney = Convert.ToDouble(Console.ReadLine());
+            account.Balance += sum;
+            account.CreditShet = (sum * CreditStavka / 12) * KolvoDney;
             return 0;
         }
     }
