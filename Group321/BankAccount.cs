@@ -18,7 +18,7 @@ namespace Bank1
                 _ballance = value;
             }
         }
- 
+
         public double Percent
         {
             get; set;
@@ -28,9 +28,25 @@ namespace Bank1
         {
             get; set;
         }
+    }
 
+    class Employee : BankAccount
+    {
+        public string Name
+        {
+            get; set;
+        }
 
-       
+        public double min
+        {
+            get; set;
+        }
+        // Минимальная зарплата 
+        public double k
+        {
+            get; set;
+        }
+        // Коэффициент 
 
     }
 }

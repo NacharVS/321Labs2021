@@ -13,6 +13,19 @@ namespace Bank1
             Console.WriteLine($"Ваш баланс: {bankAccount.Ballance} ", bankAccount.Ballance);
         }
 
+        public static void ShowEmployee(Employee employee)
+        {
+            Console.WriteLine($"Сотрудник, который работает с вами: {employee.Name} ", employee.Name);
+        }
+
+        public static double Salary(Employee employee, double min, double k)
+        {
+            double result = 0;
+            result =  min * k;
+            Console.WriteLine($"Зарплата сотрудника: {result}", result);
+            return min * k;
+        }
+
         public static void Transaction(BankAccount bankAccount, BankAccount bankAccount1, double sum)       
         {
             bankAccount1.Ballance += sum;
