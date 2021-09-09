@@ -8,6 +8,15 @@ namespace bank1
     {
         private double _balance;
         private double _zadoljnost;
+        private double _id;
+        public double Persent
+        {
+            get; set;
+        }
+        public string id
+        {
+            get; set;
+        }
 
         public double Balance { get; set; }
 
