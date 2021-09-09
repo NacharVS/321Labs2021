@@ -7,8 +7,8 @@ namespace Group321
     {
         static void Main(string[] args)
         {
-            while (true)
-            {
+             while (true)
+             {
                 /*Account yourRate = new Account();
                 yourRate.Balance = double.Parse(Console.ReadLine());
                 Operation.ShowBalance(yourRate);
@@ -20,15 +20,17 @@ namespace Group321
                 int months = int.Parse(Console.ReadLine());
                 Operation.InterestRate(urBalance, months, yourRate);
                 Console.WriteLine();*/
-
+               
                 Account yourCreditPay = new Account();
                 Console.WriteLine("Your amount of credit: ");
                 yourCreditPay.CreditBalance = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Your credit rate: ");
-                double percent = Convert.ToDouble(Console.ReadLine());
+                //Console.WriteLine("Your credit rate: ");
                 Console.WriteLine("Your count of months: ");
                 int monthsOfCred = Convert.ToInt32(Console.ReadLine());
-                Operation.Credit(yourCreditPay, percent, monthsOfCred);
+                Operation.Credit(yourCreditPay, monthsOfCred);
+                
+
+                
             }
         }
     }

@@ -4,7 +4,7 @@ namespace BAClasses
 {
     public class Account
     {
-        private double _balance;
+        protected double _balance;
         public double Balance
         {
             get => _balance;
@@ -14,7 +14,7 @@ namespace BAClasses
             }
         }
 
-        private double _credit;
+        protected double _credit;
         public double CreditBalance
         {
             get => _credit;
@@ -24,7 +24,14 @@ namespace BAClasses
             }
         }
 
-        private static double _intRate;
+        protected double _creditRate;
+        public virtual double CreditRate
+        {
+            get => 0;
+        }
+
+
+        protected static double _intRate;
         public double InterRate
         {
             get => _intRate;
@@ -32,6 +39,22 @@ namespace BAClasses
             {
                 _intRate = value;
             }
+        }
+    }
+
+    public class Client : Account
+    {
+        public override double CreditRate
+        {
+            get => 0.049;
+        }
+    }
+
+    public class Employee : Account
+    { 
+        public override double CreditRate
+        {
+            get => 0.04;
         }
     }
 }
