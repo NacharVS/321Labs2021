@@ -14,7 +14,11 @@ namespace Bank
             get => _balanse;
             set
             {
-                _balanse = value;
+                if (_balanse > 0)
+                {
+                    _balanse = value;
+                }
+                
             }
         }
 
