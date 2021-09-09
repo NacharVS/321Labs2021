@@ -15,8 +15,14 @@ namespace Bank1
 
         public static void ShowEmployee(Employee employee)
         {
-            Console.WriteLine($"Сотрудник, который работает с вами: {employee.Name} ", employee.Name);
+            Console.WriteLine($"Сотрудник, который работает с вами: {employee.EName} ", employee.EName);
         }
+
+        public static void ShowClient(Client client)
+        {
+            Console.WriteLine($"Вашe имя: {client.CName}, " + $"Ваш логин: {client.Login}", client.CName, client.Login);
+        }
+
 
         public static double Salary(Employee employee, double min, double k)
         {

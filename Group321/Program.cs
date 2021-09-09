@@ -18,14 +18,21 @@ namespace Bank1
             };
             Employee employee = new Employee
             {
-                Name = "Tom",
+                EName = "Tom",
                 k = 1.7,
                 min = 15000
             };
+            Client client = new Client
+            {
+                CName = "Bob",
+                Login = "Bob123",
+                Password = "12344556677"
+            };
             Console.WriteLine("Добро пожаловать, клиент");
             Console.WriteLine($"Ваш id: {bank.id}", bank.id);
-            Operations.Salary(employee, 15000, 1.7);
             Operations.ShowEmployee(employee);
+            Operations.Salary(employee, 15000, 1.7);
+            Operations.ShowClient(client);
             Operations.Transaction(bank, bank, 100);
             Operations.Withdraw(bank, 100);
             Operations.Calculate(bank);

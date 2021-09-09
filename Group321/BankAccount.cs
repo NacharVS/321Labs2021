@@ -32,7 +32,7 @@ namespace Bank1
 
     class Employee : BankAccount
     {
-        public string Name
+        public string EName
         {
             get; set;
         }
@@ -47,6 +47,26 @@ namespace Bank1
             get; set;
         }
         // Коэффициент 
+    }
+
+    class Client : BankAccount
+    {
+        public string CName
+        {
+            get; set;
+        }
+
+        public string Login
+        {
+            get; set;
+        }
+
+        public string Password
+        {
+            get; set;
+        }
+
 
     }
+
 }
