@@ -10,7 +10,7 @@ namespace BankApp
             Account acc2 = new Account();
             acc.Balance = 1000;
             acc2.Balance = 2000;
-            Operations.TakeCredit(acc, 500);
+            Console.WriteLine(Operations.TakeDeposit(acc));
         }
     }
 }

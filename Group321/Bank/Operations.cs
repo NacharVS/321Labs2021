@@ -16,7 +16,7 @@ namespace BankApp
 
         public static void Transaction(Account accountSeller, Account accountGetter, double summ)
         {
-            if(accountSeller.Balance < 0)
+            if (accountSeller.Balance < 0)
             {
                 Console.WriteLine("Недостаточно средств");
             }
@@ -42,32 +42,33 @@ namespace BankApp
             return (int)summ;
         }
 
-        public static int Deposit(Account account, double summ)     //Пополнение
+        public static double TakeDeposit(Account account)     //Вклад
         {
-            account.Balance += summ;
+            Console.WriteLine("Введите кол-во дней");
+            int manthDay = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Сумма вклада");
+            int summ = Convert.ToInt32(Console.ReadLine());
 
-            return (int)account.Balance;
+            account.Balance += summ;
+            InterestRate = 0.047;
+            account.Balance += (account.Balance * InterestRate * manthDay / 365) / 100;
+
+            return account.Balance;
         }
 
-        public static void TakeCredit(Account account, double summ)
+        public static void TakeCredit(Account account)
         {
-            Console.WriteLine("Введите кол-во месяцев");
-            account.Balance += summ;
+            Console.WriteLine("Введите кол-во дней");
             int manthCount = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Сумма вклада");
+            int summ = Convert.ToInt32(Console.ReadLine());
+            account.CreditBalance += summ;
             InterestRate = 0.057;
-            account.Balance -= (summ * InterestRate / 12) * manthCount;
+            account.CreditBalance -= (summ * InterestRate / 12) * manthCount;
 
-            Console.WriteLine(account.Balance);
-        }
-
-        public static void Profit(Account account)      //Вклад
-        {
-            Console.WriteLine("Введите кол-во месяцев");
-            int manthCount = Convert.ToInt32(Console.ReadLine());
-            InterestRate = 0.035;
-            account.Balance += (account.Balance * InterestRate / 12) * manthCount;
-
-            Console.WriteLine(account.Balance);
+            Console.WriteLine(account.CreditBalance);
         }
     }
 }
+
+
