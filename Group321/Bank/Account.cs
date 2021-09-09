@@ -16,5 +16,14 @@ namespace Bank
                 _balanse = value;
             }
         }
+        public double Rate
+        {
+            get => _rate;
+            set
+            {
+                _rate = value;
+            }
+        }
     }
+
 }
