@@ -8,12 +8,10 @@ namespace Group321
 {
     class Operations
     {
-        private static double procentStavka = 7;
-        public static double ProcentStavka { get => procentStavka; set => procentStavka = value; }
 
         public static void ShowBalance(Account acc)
         {
-            Console.WriteLine(acc.Balance);
+            Console.WriteLine($"Баланс в рублях {acc.Balance}, Баланс в долларах {acc.BalanceDollar}");
         }
 
         public static void Transaction(Account accSeller, Account accGetter)
@@ -71,7 +69,7 @@ namespace Group321
                 double rascredit;
                 for (int i = 1; i < mounthCount + 1; i++)
                 {
-                    rascredit = CalcCredit(balance);
+                    rascredit = CalcCredit(balance, acc.ProcentStavkaCredit);
                     balance += rascredit;
                     Console.WriteLine($"{i} месяц {rascredit} рублей");
                 }
@@ -100,7 +98,7 @@ namespace Group321
             }
         }
 
-        private static double CalcCredit(double creditSum)
+        private static double CalcCredit(double creditSum, double procentStavka)
         {
             double res = (creditSum * procentStavka) / 100;
             return res;
@@ -127,7 +125,7 @@ namespace Group321
 
                 for (int i = 1; i < mounthCount + 1; i++)
                 {
-                    rascredit = CalcCredit(balance);
+                    rascredit = CalcCredit(balance, acc.ProcentStavkaVklad);
                     balance += rascredit;
                     Console.WriteLine($"{i} месяц {rascredit} рублей");
                 }
@@ -136,7 +134,7 @@ namespace Group321
             }
         }
 
-        private static double CalcVklada(Account acc, int mounthCount) //yt ye;yj
+        private static double CalcVklada(Account acc, int mounthCount, double procentStavka) //yt ye;yj
         {
             double balance = acc.Balance;
             double res = (balance * procentStavka / 12) * mounthCount;

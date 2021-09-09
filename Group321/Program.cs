@@ -6,16 +6,35 @@ namespace Group321
     {
         static void Main(string[] args)
         {
-            Account acc = new Account();
-            Account acc1 = new Account();
-            var menuNumber = "0";
             double creditSum;
+            Account acc = null;
+            Account acc1 = null;
+
+            Console.WriteLine("Who is you?\n1) Client\n2) Employee");
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    acc = new Client();
+                    acc.ProcentStavkaCredit = 7;
+                    acc.ProcentStavkaVklad = 3;
+                    break;
+                case "2":
+                    acc1 = new Employee();
+                    acc.ProcentStavkaCredit = 4;
+                    acc.ProcentStavkaVklad = 7;
+                    break;
+
+                default:
+                    Console.WriteLine("Enter correct data");
+                    Console.ReadKey();
+                    Environment.Exit(0);
+                    break;
+            }
 
             while (true)
             {
                 Menu();
-                menuNumber = Console.ReadLine();
-                switch (menuNumber)
+                switch (Console.ReadLine())
                 {
                     case "1":
                         Console.Write("Balance acc:  ");
