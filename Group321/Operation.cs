@@ -6,9 +6,10 @@ namespace Group321
 {
     class Operation
     {
-       private static double stav = 5;
-       public static double Stavka { get => stav; set => stav = value; }
-       public static void ShowBalance(Account account)
+        public static double Stavka = 5;
+        public static double StavkaVklad { get => Stavka; set => Stavka = value; }
+        public static double StavkaCred { get; set; }
+        public static void ShowBalance(Account account)
        {
             Console.WriteLine(account.Balance);
        }
@@ -50,17 +51,17 @@ namespace Group321
         public static void GetCredit(Account account, double time, double creditSum)
         {
             account.Balance += creditSum;
-            account.Credit = creditSum + (creditSum / 100) * (Stavka * time);
+            account.Credit = creditSum + (creditSum / 100) * (StavkaCred * time);
         }
 
-        public static void Invest(Account account, double sumvklad)
+        public static void Invest(Account account, double sumvklad, double time)
         {
             if (account.Balance >= sumvklad)
             {
                 account.Balance -= sumvklad;
                 account.Vklad += sumvklad;
                 Console.WriteLine("Invest completed");
-                Console.WriteLine($"Invest account = {account.Vklad}");
+                Console.WriteLine($"Invest account = {account.Vklad}. After the expiration of the time, your account will have {sumvklad + ((sumvklad/100) * (time * Stavka))}");
             }
             else
             {

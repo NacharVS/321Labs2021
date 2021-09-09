@@ -6,7 +6,7 @@ namespace Group321
     {
         static void Main(string[] args)
         {
-            Account account = new Account();
+            Employee account = new Employee();
             Account account1 = new Account();
             account.Balance = 50000;
             int choose;
@@ -67,7 +67,10 @@ namespace Group321
                 {
                     Console.WriteLine("Enter the invest sum");
                     double sum = Convert.ToDouble(Console.ReadLine());
-                    Operation.Invest(account, sum);
+                    Console.WriteLine("Enter the invest time");
+                    double time = Convert.ToDouble(Console.ReadLine());
+                    Operation.Invest(account, sum, time);
+
                 }
                 else if (choose == 7)
                 {
