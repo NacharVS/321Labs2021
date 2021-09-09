@@ -9,6 +9,7 @@ namespace bank1
         private double _balance;
         private double _zadoljnost;
         private double _id;
+        public static double _CreditStavka;
         public double Persent
         {
             get; set;
@@ -17,7 +18,11 @@ namespace bank1
         {
             get; set;
         }
-
+        public double CreditSher
+        {
+            get; set;
+        }
+        public static double creditSher = 0.06;
         public double Balance { get; set; }
 
         public double Zadoljnost { get; set; }

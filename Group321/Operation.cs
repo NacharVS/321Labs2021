@@ -32,8 +32,11 @@ namespace bank1
             Console.WriteLine("Депозит прошёл успшно!");
             return 0;
         }
-        public static int Credit(Account aaccountgettercc, double Sum)
+        public static int Credit(Account account, double CreditStavka, double sum)
         {
+            double kolvodney = Convert.ToDouble(Console.ReadLine());
+            account.Balance += sum;
+            account.CreditSher = (sum * CreditStavka / 15) * kolvodney;
             return 0;
         }
     }
