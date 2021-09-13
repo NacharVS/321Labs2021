@@ -6,7 +6,19 @@ namespace Group321
     {
         static void Main(string[] args)
         {
-            Employee account = new Employee();
+            Account account=null;
+            Console.WriteLine("Choose type account:");
+            Console.WriteLine("\n1.Klient");
+            Console.WriteLine("2.Employee");
+            int typeacc = Convert.ToInt32(Console.ReadLine());
+            if (typeacc == 1)
+            {
+                account = new Klient();
+            }
+            else if (typeacc == 2)
+            {
+                account = new Employee();
+            }
             Account account1 = new Account();
             account.Balance = 50000;
             int choose;
@@ -55,7 +67,7 @@ namespace Group321
                         Console.WriteLine("Enter time of credit");
                         double time = Convert.ToDouble(Console.ReadLine());
                         Operation.GetCredit(account, time, creditsum);
-                        Console.WriteLine($"Credit is approved.Your debt is {account.Credit}");
+                        Console.WriteLine($"Credit is approved.Your debt is {account.Credit}.The monthly payment will be {account.Credit / (time * 12)}");
                     }
                     else
                     {
@@ -65,12 +77,20 @@ namespace Group321
                 }
                 else if (choose == 6)
                 {
-                    Console.WriteLine("Enter the invest sum");
-                    double sum = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Enter the invest time");
-                    double time = Convert.ToDouble(Console.ReadLine());
-                    Operation.Invest(account, sum, time);
-
+                    if (account.Vklad == 0)
+                    {
+                        Console.WriteLine("Enter the invest sum");
+                        double sum = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Enter the invest time");
+                        account.timeVklad = Convert.ToDouble(Console.ReadLine());
+                        Operation.Invest(account, sum);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Enter the invest sum");
+                        double sum = Convert.ToDouble(Console.ReadLine());
+                        Operation.Invest(account, sum);
+                    }
                 }
                 else if (choose == 7)
                 {
