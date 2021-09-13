@@ -24,10 +24,10 @@ namespace BAClasses
             }
         }
 
-        protected double _creditRate;
+        private double _creditRate = 0.057;
         public virtual double CreditRate
         {
-            get => 0;
+            get => _creditRate;
         }
 
 
@@ -44,17 +44,19 @@ namespace BAClasses
 
     public class Client : Account
     {
+        private double _creditRate = 0.046;
         public override double CreditRate
         {
-            get => 0.049;
+            get => _creditRate;
         }
     }
 
     public class Employee : Account
-    { 
+    {
+        private double _creditRate = 0.04;
         public override double CreditRate
         {
-            get => 0.04;
+            get => _creditRate;
         }
     }
 }

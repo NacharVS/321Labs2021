@@ -21,13 +21,13 @@ namespace Group321
                 Operation.InterestRate(urBalance, months, yourRate);
                 Console.WriteLine();*/
                
-                Account yourCreditPay = new Account();
+                Account yourCreditPay = new Client();
                 Console.WriteLine("Your amount of credit: ");
                 yourCreditPay.CreditBalance = Convert.ToDouble(Console.ReadLine());
                 //Console.WriteLine("Your credit rate: ");
                 Console.WriteLine("Your count of months: ");
                 int monthsOfCred = Convert.ToInt32(Console.ReadLine());
-                Operation.Credit(yourCreditPay, monthsOfCred);
+                Operation.CreditCalculator(yourCreditPay, monthsOfCred);
                 
 
                 
