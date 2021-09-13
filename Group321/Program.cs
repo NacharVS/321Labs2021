@@ -6,7 +6,7 @@ namespace bank1
     {
         static void Main(string[] args)
         {
-
+            double sum = Convert.ToInt32(Console.ReadLine());
             Account acc1 = new Account()
             {
                 id = "1337",
@@ -21,6 +21,11 @@ namespace bank1
             Operation.Transaction(acc1, acc2, 1500);
             Operation.Widthraw(acc1, 2000);
             Operation.Deposit(acc1, 6000);
+            Console.WriteLine("Кол-во дней");
+            double kolvodney = Convert.ToDouble(Console.ReadLine());
+            Operation.Credit(acc2, Account.creditSher, kolvodney, sum);
+            Operation.Credit(acc2,  Account.creditSher, sum, 6000);
+
         }
     }
 }

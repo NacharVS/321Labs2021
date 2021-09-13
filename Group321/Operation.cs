@@ -32,12 +32,14 @@ namespace bank1
             Console.WriteLine("Депозит прошёл успшно!");
             return 0;
         }
-        public static int Credit(Account account, double CreditStavka, double sum)
+        public static int Credit(Account acc2, double CreditStavka, double kolvodney, double sum)
         {
-            double kolvodney = Convert.ToDouble(Console.ReadLine());
-            account.Balance += sum;
-            account.CreditSher = (sum * CreditStavka / 15) * kolvodney;
-            return 0;
+            acc2.Balance += sum;
+            acc2.Zadoljnost += (int)(sum * (CreditStavka / 100 * kolvodney));
+            Console.WriteLine("Кредит прошёл успешно");
+            Console.WriteLine($"Баланс 2-ого аккаунта: - {acc2.Balance}");
+            Console.WriteLine($"Задолжность 2-ого аккаунта: - {acc2.Balance}");
+            return (int) sum;
         }
     }
 }

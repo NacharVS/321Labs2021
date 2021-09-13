@@ -22,7 +22,7 @@ namespace bank1
         {
             get; set;
         }
-        public static double creditSher = 0.06;
+        public static double creditSher = 5.7;
         public double Balance { get; set; }
 
         public double Zadoljnost { get; set; }
