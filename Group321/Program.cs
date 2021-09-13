@@ -12,7 +12,7 @@ namespace Bank1
         {
             BankAccount bank = new BankAccount
             {
-                Ballance = 1200,
+                Ballance = 4200,
                 id = "12314dc",
                 Percent = 0.057
             };
@@ -28,16 +28,94 @@ namespace Bank1
                 Login = "Bob123",
                 Password = "12344556677"
             };
-            Console.WriteLine("Добро пожаловать, клиент");
-            Console.WriteLine($"Ваш id: {bank.id}", bank.id);
-            Operations.ShowEmployee(employee);
-            Operations.Salary(employee, 15000, 1.7);
-            Operations.ShowClient(client);
-            Operations.Transaction(bank, bank, 100);
-            Operations.Withdraw(bank, 100);
-            Operations.Calculate(bank);
-            Operations.GetCredit(bank);
-            Operations.ShowBallance(bank);
+                Console.WriteLine("Выберите пункт меню");
+                Console.WriteLine("1) Зайти в аккаунт клиента");
+                Console.WriteLine("2) Зайти в аккаунт сотрудника");
+                String str = Console.ReadLine();
+                switch (str)
+                {
+                    case "1":
+                        Operations.ShowClient(client);
+                        Console.WriteLine("Добро пожаловать, клиент");
+                        Console.WriteLine($"Ваш id: {bank.id}", bank.id);
+                        Console.WriteLine("3) Показать баланс");
+                        Console.WriteLine("4) Провести транзакцию");
+                        Console.WriteLine("5) Снять деньги");
+                        Console.WriteLine("6) Взять кредит");
+                        Console.WriteLine("0) Выход");
+                        string str1 = Console.ReadLine();
+                        if (str1 == "3")
+                        {
+                            goto case "3";
+                        }
+                        else if (str1 == "4")
+                        {
+                            goto case "4";
+                        }
+                        else if (str1 == "5")
+                        {
+                            goto case "5";
+                        }
+                        else if (str1 == "6")
+                        {
+                            goto case "6";
+                        }
+                        else if (str1 == "0")
+                        {
+                        goto case "0";
+                        }
+                        else
+                        {
+                            Console.WriteLine("Ошибка");
+                        }
+                        goto case "1";
+                   case "2":
+                        Operations.ShowEmployee(employee);
+                        Console.WriteLine("Добро пожаловать, сотрудник");
+                        Console.WriteLine($"Ваш id: {bank.id}", bank.id);
+                        Console.WriteLine("a) Просмотр начисления зарплаты");
+                        Console.WriteLine("0) Выход");
+                        string str2 = Console.ReadLine();
+                        if (str2 == "a")
+                         {
+                        goto case "a";
+                        }
+                        else if (str2 == "0")
+                        {
+                        goto case "0";
+                        }
+                        else
+                        {
+                        Console.WriteLine("Ошибка");
+                        }
+                        break;
+                        
+
+                    case "3":
+                        Operations.ShowBallance(bank);
+                        goto case "1";
+
+                    case "4":
+                        Operations.Transaction(bank, bank, 100);
+                        goto case "1";
+
+                    case "5":
+                        Operations.Withdraw(bank, 100);
+                        goto case "1";
+
+                    case "6":
+                        Operations.GetCredit(bank);
+                        Operations.Calculate(bank);
+                        goto case "1";
+                    case "a":
+                        Operations.Salary(employee, 15000, 1.7);
+                        goto case "2";
+
+                    case "0":
+                        Console.WriteLine("Завершение обслуживания....");
+                        return;
+                        break;
+                }
         }
     }
 }

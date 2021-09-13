@@ -28,7 +28,7 @@ namespace Bank1
         {
             double result = 0;
             result =  min * k;
-            Console.WriteLine($"Зарплата сотрудника: {result}", result);
+            Console.WriteLine($"Зарплата начисленная сотруднику: {result}", result);
             return min * k;
         }
 
