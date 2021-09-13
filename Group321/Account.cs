@@ -8,12 +8,12 @@ namespace Group321
 {
     class Account
     {
-        private double balanceDollar;
-        private double balanceRubles;
-        private double credit = 0;
-        private double vklad = 0;
-        private double procentStavkaCredit = 7;
-        private double procentStavkaVklad = 3;
+        protected double balanceDollar;
+        protected double balanceRubles;
+        protected double credit = 0;
+        protected double vklad = 0;
+        protected static double procentStavkaCredit = 7;
+        protected static double procentStavkaVklad = 3;
 
         public double Balance { get => balanceRubles; set => balanceRubles = value; }
         public double BalanceDollar { get => balanceDollar; set => balanceDollar = value; }
@@ -32,13 +32,13 @@ namespace Group321
         public Account(double balance)
         {
             balanceRubles = balance;
-            balanceDollar = balance / 73.43;
+            balanceDollar = balance / 73.08;
         }
 
         public Account(double dollar, double rubles)
         {
-            balanceRubles = rubles;
             balanceDollar = dollar;
+            balanceRubles = rubles;
         }
     }
 }
