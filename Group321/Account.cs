@@ -6,12 +6,11 @@ namespace Group321
 {
     class Account
     {
-        private double balance;
-        private int accountSeller;
-        private int accountGetter;
+        protected double balance;
+        protected int accountSeller;
+        protected int accountGetter;
+
         public double Balance { get; set; }
-        public  static double CreditStavka = 0.06;
-        
         public double CreditShet { get; set; }
     }
 }
