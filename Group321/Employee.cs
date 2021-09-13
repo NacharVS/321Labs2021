@@ -4,8 +4,19 @@ using System.Text;
 
 namespace Group321
 {
-    class Employee : Account
+    public class Employee : Account
     {
-        public static double CreditStavka = 0.6;
+        public override double CreditStavka { get => base.CreditStavka; set => base.CreditStavka = value; }
+
+        public Employee()
+        {
+            creditStavka = 0.6;
+        }
+
+        public Employee(double balance)
+        {
+            creditStavka = 0.6;
+            this.balance = balance;
+        }
     }
 }
