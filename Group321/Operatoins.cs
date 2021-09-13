@@ -11,6 +11,13 @@ namespace Group321
             Console.Write("Balans: ");
             System.Console.WriteLine(account.Ballance);
         }
+
+        public static void ShowBallanceCredit(CreditAccount account)
+        {
+            Console.Write("BallanceCredit: ");
+            System.Console.WriteLine(account.BallanceCredit);
+        }
+
         public static void Transaction(Account accountSeller, Account accountGetter, double summ)
         {
             if (accountSeller.Ballance >= summ && summ > 0)
@@ -48,16 +55,29 @@ namespace Group321
                     mounth--;
                 }
                 Console.WriteLine($"Your account has been received {summ} Balans:{result} ");
-
             }
             else
             {
                 Console.Write("The operation is not possible!");
             }
         }
-        public static void Credit(Account accountCred, double summ)
+        public static void Credit(CreditAccount accountCred, double summCred, int mounth)
         {
-            accountCred.Ballance += summ;
+            if (summCred > 0 && mounth > 0)
+            {
+                accountCred.BallanceCredit = accountCred.BallanceCredit + summCred;
+                double result = Convert.ToDouble(accountCred.BallanceCredit);
+                while (mounth > 0)
+                {
+                    result = result * 0.07 + accountCred.BallanceCredit;
+                    mounth--;
+                }
+                Console.WriteLine($"You have taken out a loan for the amount of {summCred} Your debt through will be  BalansCredit:{result} ");
+            }
+            else
+            {
+                Console.Write("The operation is not possible!");
+            }
         }
 
     }

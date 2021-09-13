@@ -19,23 +19,20 @@ namespace Group321
         }
     }
 
-    class DebitAccount
+    class CreditAccount
     {
-        private double _ballance_debit = 0;
+        private double _ballance_credit = 0;
 
-        public double Ballance_debit
+        public double BallanceCredit
         {
-            get => _ballance_debit;
+            get => _ballance_credit;
             set
             {
-                _ballance_debit = value;
+                _ballance_credit = value;
             }
 
         }
-        static void stavka(DebitAccount accountDep, double summ, double mounth)
-        {
-            accountDep.Ballance_debit = accountDep.Ballance_debit + summ * 0.057 / 12 * mounth;
-        }
+        
 
     }
 }
