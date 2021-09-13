@@ -19,4 +19,20 @@ namespace ConsoleApp1
         }
 
     }
+
+    class CreditAccount
+    {
+        private double _ballance_credit = 0;
+
+        public double BallanceCredit
+        {
+            get => _ballance_credit;
+            /*set
+            {
+                _ballance = value;
+
+            }*/
+        }
+
+    }
 }

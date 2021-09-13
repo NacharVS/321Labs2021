@@ -8,7 +8,13 @@ namespace ConsoleApp1
     {
         public static void ShowBalance(Account account)
         {
+            Console.WriteLine("Balance:");
             System.Console.WriteLine($"YOUR BALANCE: {account.Ballance}");
+        }
+        public static void ShowBallanceCredit(CreditAccount account)
+        {
+
+            System.Console.WriteLine ($"BalanceCredeit:{account.BallanceCredit}");
         }
 
         public static void Transaction(Account accountSeller, Account accountGetter, double summ)
