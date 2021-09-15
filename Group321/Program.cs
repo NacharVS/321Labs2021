@@ -28,9 +28,25 @@ namespace Group321
                 Console.WriteLine("Your count of months: ");
                 int monthsOfCred = Convert.ToInt32(Console.ReadLine());
                 Operation.CreditCalculator(yourCreditPay, monthsOfCred);
-                
 
-                
+                Console.WriteLine();
+
+                Console.WriteLine("New Client");
+                Console.WriteLine("First name: ");
+                string fn = Console.ReadLine();
+                Console.WriteLine("Last name: ");
+                string ln = Console.ReadLine();
+                Console.WriteLine("Personal Account Number: ");
+                string pan = Console.ReadLine();
+                Console.WriteLine("Birth date: ");
+                string bd = Console.ReadLine();
+                Console.WriteLine("Telephone Number: ");
+                string num = Console.ReadLine();
+                Console.WriteLine();
+                PersonalData pd = new PersonalData(fn, ln, num, bd, pan);
+                pd.GetPersonalData();
+
+                Console.WriteLine();                
             }
         }
     }

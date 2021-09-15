@@ -7,3 +7,13 @@ C:\Users\211925\source\repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BACla
 C:\Users\211925\source\repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.csproj.CoreCompileInputs.cache
 C:\Users\211925\source\repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.dll
 C:\Users\211925\source\repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.pdb
+C:\Users\Администратор\Source\Repos\321Labs2021\BAClasses\bin\Debug\netcoreapp3.1\BAClasses.deps.json
+C:\Users\Администратор\Source\Repos\321Labs2021\BAClasses\bin\Debug\netcoreapp3.1\BAClasses.dll
+C:\Users\Администратор\Source\Repos\321Labs2021\BAClasses\bin\Debug\netcoreapp3.1\BAClasses.pdb
+C:\Users\Администратор\Source\Repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.csproj.AssemblyReference.cache
+C:\Users\Администратор\Source\Repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Администратор\Source\Repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.AssemblyInfoInputs.cache
+C:\Users\Администратор\Source\Repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.AssemblyInfo.cs
+C:\Users\Администратор\Source\Repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.csproj.CoreCompileInputs.cache
+C:\Users\Администратор\Source\Repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.dll
+C:\Users\Администратор\Source\Repos\321Labs2021\BAClasses\obj\Debug\netcoreapp3.1\BAClasses.pdb
