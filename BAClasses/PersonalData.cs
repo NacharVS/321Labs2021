@@ -6,23 +6,39 @@ namespace BAClasses
 {
     public struct PersonalData
     {
-        private string _FName, _LName, _TNumber, _BDate, _persAccNum; 
+        private string _FName, _LName, _TNumber, _BDay, _BMonth, _BYear;
 
-        public PersonalData(string _FName, string _LName, string _TNumber, string _BDate, string _persAccNum)
+        public PersonalData(string FName, string LName, string TNumber, string BDay, string BMonth, string BYear)
         {
-            this._FName = _FName;
-            this._LName = _LName;
-            this._TNumber = _TNumber;
-            this._BDate = _BDate;
-            this._persAccNum = _persAccNum;
-        }
+            _FName = FName;
+            _LName = LName;
+            _TNumber = TNumber;
+            _BDay = BDay;
+            _BMonth = BMonth;
+            _BYear = BYear;
+        }   
         
         public void GetPersonalData()
         {
             Console.WriteLine("New client is added!");
             Console.WriteLine($"Client: {_FName} {_LName}");
-            Console.WriteLine($"Personal account number: {_persAccNum}");
-            Console.WriteLine($"Birth date: {_BDate}");
+
+            Random rnd = new Random();
+            int frstThreeNum = rnd.Next(100, 999);
+            int scndThreeNum = rnd.Next(100, 999);
+            int thrdThreeNum = rnd.Next(100, 999);
+            int frthThreeNum = rnd.Next(100, 999);
+            int ffthThreeNum = rnd.Next(100, 999);
+
+            string fTN = Convert.ToString(frstThreeNum);
+            string sTN = Convert.ToString(scndThreeNum);
+            string tTN = Convert.ToString(thrdThreeNum);
+            string frTN = Convert.ToString(frthThreeNum);
+            string ffTN = Convert.ToString(ffthThreeNum);
+            
+            Console.WriteLine("Personal account number: 4" + fTN + sTN + tTN + frTN + ffTN);
+            
+            Console.WriteLine($"Birth date: {_BDay}.{_BMonth}.{_BYear}");
             Console.WriteLine($"Telephone Number: {_TNumber}");
         }
     }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Администратор\\Source\\Repos\\321Labs2021\\BAClasses\\BAClasses.csproj": {}
+    "C:\\Users\\Администратор\\source\\repos\\321Labs2021\\BAClasses\\BAClasses.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Администратор\\Source\\Repos\\321Labs2021\\BAClasses\\BAClasses.csproj": {
+    "C:\\Users\\Администратор\\source\\repos\\321Labs2021\\BAClasses\\BAClasses.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Администратор\\Source\\Repos\\321Labs2021\\BAClasses\\BAClasses.csproj",
+        "projectUniqueName": "C:\\Users\\Администратор\\source\\repos\\321Labs2021\\BAClasses\\BAClasses.csproj",
         "projectName": "BAClasses",
-        "projectPath": "C:\\Users\\Администратор\\Source\\Repos\\321Labs2021\\BAClasses\\BAClasses.csproj",
+        "projectPath": "C:\\Users\\Администратор\\source\\repos\\321Labs2021\\BAClasses\\BAClasses.csproj",
         "packagesPath": "C:\\Users\\Администратор\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Администратор\\Source\\Repos\\321Labs2021\\BAClasses\\obj\\",
+        "outputPath": "C:\\Users\\Администратор\\source\\repos\\321Labs2021\\BAClasses\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Администратор\\AppData\\Roaming\\NuGet\\NuGet.Config",
