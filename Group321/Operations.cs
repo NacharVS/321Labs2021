@@ -40,7 +40,6 @@ namespace Group321
             {
                 acc.Balance -= (int)widtrawSum;
                 return (int)widtrawSum;
-
             }
             else
                 Console.WriteLine("Не хватает денег на балансе");
@@ -69,7 +68,7 @@ namespace Group321
                 double rascredit;
                 for (int i = 1; i < mounthCount + 1; i++)
                 {
-                    rascredit = CalcCredit(balance, acc.ProcentStavkaCredit);
+                    rascredit = CalculateCredit(balance, acc.ProcentStavkaCredit);
                     balance += rascredit;
                     Console.WriteLine($"{i} месяц {rascredit} рублей");
                 }
@@ -98,7 +97,7 @@ namespace Group321
             }
         }
 
-        private static double CalcCredit(double creditSum, double procentStavka)
+        private static double CalculateCredit(double creditSum, double procentStavka)
         {
             double res = (creditSum * procentStavka) / 100;
             return res;
@@ -125,20 +124,13 @@ namespace Group321
 
                 for (int i = 1; i < mounthCount + 1; i++)
                 {
-                    rascredit = CalcCredit(balance, acc.ProcentStavkaVklad);
+                    rascredit = CalculateCredit(balance, acc.ProcentStavkaVklad);
                     balance += rascredit;
                     Console.WriteLine($"{i} месяц {rascredit} рублей");
                 }
 
                 Console.WriteLine($"Сумма вклада составляет {balance} рублей со всеми процентами");
             }
-        }
-
-        private static double CalcVklada(Account acc, int mounthCount, double procentStavka) //yt ye;yj
-        {
-            double balance = acc.Balance;
-            double res = (balance * procentStavka / 12) * mounthCount;
-            return res;
         }
     }
 }
