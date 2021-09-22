@@ -14,11 +14,8 @@ namespace Group321
             Console.WriteLine($"Баланс в рублях {acc.Balance}, Баланс в долларах {acc.BalanceDollar}");
         }
 
-        public static void Transaction(Account accSeller, Account accGetter)
+        public static void Transaction(Account accSeller, Account accGetter, double sum)
         {
-            Console.WriteLine("Enter transaction sum");
-            double sum = Convert.ToDouble(Console.ReadLine());
-
             if (accSeller.Balance >= sum)
             {
                 accSeller.Balance -= sum;
@@ -31,11 +28,8 @@ namespace Group321
             }
         }
 
-        public static int Widtraw(Account acc) //снять деньги
+        public static int Widtraw(Account acc, double widtrawSum) //снять деньги
         {
-            Console.WriteLine("Enter transaction sum");
-            double widtrawSum = Convert.ToDouble(Console.ReadLine());
-
             if (widtrawSum < acc.Balance)
             {
                 acc.Balance -= (int)widtrawSum;
@@ -47,10 +41,8 @@ namespace Group321
             return 0;
         }
 
-        public static int Deposit(Account accGetter)
+        public static int Deposit(Account accGetter, double sum)
         {
-            Console.WriteLine("Enter deposit sum");
-            double sum = Convert.ToDouble(Console.ReadLine());
             if (sum > 0)
             {
                 accGetter.Balance += sum;
@@ -81,10 +73,8 @@ namespace Group321
             }
         }
 
-        public static void PayCredit(Account acc)
+        public static void PayCredit(Account acc, double repaymentSum)
         {
-            Console.WriteLine("Enter credit repayment sum");
-            double repaymentSum = Convert.ToDouble(Console.ReadLine());
             if (acc.Credit != 0 && acc.Balance >= repaymentSum && acc.Credit >= repaymentSum)
             {
                 acc.Balance -= repaymentSum;
@@ -103,13 +93,8 @@ namespace Group321
             return res;
         }
 
-        public static void Vklad(Account acc)
+        public static void Vklad(Account acc, double vkladSum, int mounthCount)
         {
-            Console.WriteLine("Enter vklad sum");
-            double vkladSum = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter TimeSpan in mounth");
-            int mounthCount = Convert.ToInt32(Console.ReadLine());
-
             if (vkladSum > acc.Balance)
             {
                 Console.WriteLine("Сумма вкада не может быть больше чем баланс");

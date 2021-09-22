@@ -8,7 +8,7 @@ namespace Group321
         {
             double creditSum;
             Account acc = null;
-            Account acc1 = null;
+            Account acc1 = new Account();
 
             Console.WriteLine("Who is you?\n1) Client\n2) Employee");
             switch (Console.ReadLine())
@@ -19,7 +19,7 @@ namespace Group321
                     acc.ProcentStavkaVklad = 3;
                     break;
                 case "2":
-                    acc1 = new Employee();
+                    acc = new Employee();
                     acc.ProcentStavkaCredit = 4;
                     acc.ProcentStavkaVklad = 7;
                     break;
@@ -43,10 +43,14 @@ namespace Group321
                         Operations.ShowBalance(acc1);
                         break;
                     case "2":
-                        Console.WriteLine($"баланс пополнен на {Operations.Deposit(acc)} рублей");
+                        Console.WriteLine("Enter deposit sum");
+                        double sum = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine($"баланс пополнен на {Operations.Deposit(acc, sum)} рублей");
                         break;
                     case "3":
-                        Operations.Transaction(acc, acc1);
+                        Console.WriteLine("Enter transaction sum");
+                        double transactionSum = Convert.ToDouble(Console.ReadLine());
+                        Operations.Transaction(acc, acc1, transactionSum);
                         break;
                     case "4":
                         Console.WriteLine("Enter credit sum");
@@ -55,14 +59,22 @@ namespace Group321
                         Operations.GetCredit(acc, Convert.ToInt32(Console.ReadLine()), creditSum);
                         break;
                     case "5":
-                        Console.WriteLine($"С баланса снято {Operations.Widtraw(acc)} рублей\nОстаток ");
+                        Console.WriteLine("Enter transaction sum");
+                        double widtrawSum = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine($"С баланса снято {Operations.Widtraw(acc, widtrawSum)} рублей\nОстаток ");
                         Operations.ShowBalance(acc);
                         break;
                     case "6":
-                        Operations.Vklad(acc);
+                        Console.WriteLine("Enter vklad sum");
+                        double vkladSum = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Enter TimeSpan in mounth");
+                        int mounthCount = Convert.ToInt32(Console.ReadLine());
+                        Operations.Vklad(acc, vkladSum, mounthCount);
                         break;
                     case "7":
-                        Operations.PayCredit(acc);
+                        Console.WriteLine("Enter credit repayment sum");
+                        double repaymentSum = Convert.ToDouble(Console.ReadLine());
+                        Operations.PayCredit(acc, repaymentSum);
                         break;
                     case "8":
                         // выход из приложения 
