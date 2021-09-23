@@ -26,13 +26,12 @@ namespace Group321
 
         public Account()
         {
-
         }
 
         public Account(double balance)
         {
             balanceRubles = balance;
-            balanceDollar = balance / 73.08;
+            balanceDollar = Math.Round(balance / 73.08, 3);
         }
 
         public Account(double dollar, double rubles)

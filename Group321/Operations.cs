@@ -11,6 +11,7 @@ namespace Group321
 
         public static void ShowBalance(Account acc)
         {
+            acc.BalanceDollar = Math.Round(acc.Balance / 73.08, 3);
             Console.WriteLine($"Баланс в рублях {acc.Balance}, Баланс в долларах {acc.BalanceDollar}");
         }
 

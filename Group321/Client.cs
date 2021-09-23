@@ -13,19 +13,24 @@ namespace Group321
 
         public Client()
         {
-
+            ProcentStavkaCredit = 7;
+            ProcentStavkaVklad = 3;
         }
 
         public Client(double balance)
         {
             balanceRubles = balance;
             balanceDollar = balance / 73.08;
+            ProcentStavkaCredit = 7;
+            ProcentStavkaVklad = 3;
         }
 
         public Client(double dollar, double rubles)
         {
             balanceDollar = dollar;
             balanceRubles = rubles;
+            ProcentStavkaCredit = 7;
+            ProcentStavkaVklad = 3;
         }
     }
 }

@@ -8,9 +8,9 @@ namespace Group321
 {
     struct PersonalData
     {
-        string FIO;
-        string addres;
-        Account acc;
+        public string FIO;
+        public string addres;
+        public Account acc;
 
         public PersonalData(string FIO, string addres, Account acc)
         {

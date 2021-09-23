@@ -13,19 +13,24 @@ namespace Group321
 
         public Employee()
         {
-
+            ProcentStavkaCredit = 4;
+            ProcentStavkaVklad = 7;
         }
 
         public Employee(double balance)
         {
             balanceRubles = balance;
             balanceDollar = balance / 73.08;
+            ProcentStavkaCredit = 4;
+            ProcentStavkaVklad = 7;
         }
 
         public Employee(double dollar, double rubles)
         {
             balanceDollar = dollar;
             balanceRubles = rubles;
+            ProcentStavkaCredit = 4;
+            ProcentStavkaVklad = 7;
         }
     }
 }
