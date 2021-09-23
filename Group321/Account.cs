@@ -26,5 +26,21 @@ namespace bank1
         public double Balance { get; set; }
 
         public double Zadoljnost { get; set; }
+
+        
+    }
+    public class PersonalData
+    {
+        private string FIO;
+        private string Adress;
+        private string Balance;
+
+        public PersonalData(string Name, string adress, string balance)
+        {
+            FIO = Name;
+            Adress = adress;
+            Balance = balance;
+
+        }
     }
 }
