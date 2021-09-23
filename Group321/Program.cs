@@ -1,13 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Group321
 {
     class Program
     {
+        static List<PersonalData> list;
+        static void StartProgram()
+        {
+            list = new List<PersonalData>();
+            list.Add(new PersonalData("Хлыбов Владислав Владимирович", "Казань", new Employee(100000)));
+            list.Add(new PersonalData("Габдрахманов Айрат Ильдусович", "Можга", new Klient(40000)));
+            list.Add(new PersonalData("Баязитов Руслан Айратович", "Казань", new Klient(10000)));
+            list.Add(new PersonalData("Гарифуллин Ильсаф Ильнарович", "Казань", new Employee(50000)));
+            list.Add(new PersonalData("Краснов Александр Григорьевич", "Казань", new Klient(20000)));
+            foreach (var item in list)
+            {
+                Console.WriteLine($"{item.fio} , {item.adress}, {item.acc.Balance} ");
+            }
+        }
         static void Main(string[] args)
         {
-            Account account=null;
-            Console.WriteLine("Choose type account:");
+            StartProgram();
+            Account account = null;
+            Console.WriteLine("\nChoose type of account");
             Console.WriteLine("\n1.Klient");
             Console.WriteLine("2.Employee");
             int typeacc = Convert.ToInt32(Console.ReadLine());
@@ -18,6 +34,10 @@ namespace Group321
             else if (typeacc == 2)
             {
                 account = new Employee();
+            }
+            else
+            {
+                Console.WriteLine("Incorrect type of account");
             }
             Account account1 = new Account();
             account.Balance = 50000;

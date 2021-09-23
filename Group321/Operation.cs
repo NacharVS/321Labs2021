@@ -6,7 +6,7 @@ namespace Group321
 {
     class Operation
     {
-       public static void ShowBalance(Account account)
+        public static void ShowBalance(Account account)
        {
             Console.WriteLine(account.Balance);
        }
@@ -48,7 +48,7 @@ namespace Group321
         public static void GetCredit(Account account, double time, double creditSum)
         {
             account.Balance += creditSum;
-            account.Credit = creditSum + (creditSum / 100) * (StavkaCred * time);
+            account.Credit = creditSum + (creditSum / 100) * (account.StavkaCred * time);
         }
 
         public static void Invest(Account account, double sumvklad)
@@ -58,7 +58,7 @@ namespace Group321
                 account.Balance -= sumvklad;
                 account.Vklad += sumvklad;
                 Console.WriteLine("Invest completed");
-                Console.WriteLine($"Invest account = {account.Vklad}. After the expiration of the time, your account will have {account.Vklad + ((account.Vklad / 100) * (account.timeVklad * Stavka))}");
+                Console.WriteLine($"Invest account = {account.Vklad}. After the expiration of the time, your account will have {account.Vklad + ((account.Vklad / 100) * (account.timeVklad * account.StavkaVklad))}");
 
             }
             else
@@ -79,6 +79,11 @@ namespace Group321
             {
                 Console.WriteLine("Payment failed");
             }
+        }
+        public static void RemoveList(List<PersonalData> temp, int index)
+        {
+            temp.RemoveAt(index);
+            temp.ForEach(value => Console.WriteLine(value));
         }
     }
 }

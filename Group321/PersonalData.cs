@@ -6,22 +6,14 @@ namespace Group321
 {
     struct PersonalData
     {
-        string name;
-        string surname;
-        string patronymic;
-        string adress;
-        string idaccount;
-        string age;
-        Account acc;
+        public string fio;
+        public string adress;
+        public Account acc;
 
-        public PersonalData(string name, string surname, string patronymic, string adress, string idaccount, string age, Account acc)
+        public PersonalData(string fio,string adress, Account acc)
         {
-            this.name = name;
-            this.surname = surname;
-            this.patronymic = patronymic;
+            this.fio = fio;
             this.adress = adress;
-            this.idaccount = idaccount;
-            this.age = age;
             this.acc = acc;
         }
     }
