@@ -16,6 +16,7 @@ namespace ConsoleApp1
             Operations.Transaction(acc, acc2, 500.00);
             Operations.Widtraw(acc, 500.00);
             Operations.Deposit(acc, 2000.00, 4);
+            Operations.Credit(raf, 3000.00, 4);
         }
     }
 }

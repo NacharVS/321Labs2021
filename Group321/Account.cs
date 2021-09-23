@@ -27,11 +27,11 @@ namespace ConsoleApp1
         public double BallanceCredit
         {
             get => _ballance_credit;
-            /*set
+            set
             {
-                _ballance = value;
+                _ballance_credit = value;
 
-            }*/
+            }
         }
 
     }

@@ -61,6 +61,26 @@ namespace ConsoleApp1
 
         }
 
+        public static void Credit(CreditAccount accountCred, double summCred, int mounth)
+        {
+            if (summCred > 0 && mounth > 0)
+            {
+                accountCred.BallanceCredit = accountCred.BallanceCredit + summCred;
+                Double result = Convert.ToDouble(accountCred.BallanceCredit);
+                while (mounth > 0)
+                {
+                    result = result * 0.07 + accountCred.BallanceCredit;
+                    mounth--;
+                }
+                Console.WriteLine($"Your account has been received {summCred} Balance: {result}");
+            }
+            else
+            {
+                Console.WriteLine("The operation is not possible");
+            }
+
+        }
+
 
 
     }
