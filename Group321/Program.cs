@@ -5,10 +5,11 @@ namespace Group321
 {
     class Program
     {
-        List<PersonalData> lst = new List<PersonalData>();
+        static List<PersonalData> lst = new List<PersonalData>();
 
-        void Main(string[] args)
+        static void Main(string[] args)
         {
+            StartProgram();
             double creditSum;
             Account acc = null;
             Account acc1 = new Account();
@@ -75,9 +76,21 @@ namespace Group321
                         double repaymentSum = Convert.ToDouble(Console.ReadLine());
                         Operations.PayCredit(acc, repaymentSum);
                         break;
-                    case "8":
+                    case "12":
                         // выход из приложения 
                         Environment.Exit(0);
+                        break;
+                    case "8":
+                        AddList();
+                        break;
+                    case "9":
+                        RemoveList();
+                        break;
+                    case "10":
+                        Showlst();
+                        break;
+                    case "11":
+                        Reduct();
                         break;
 
                     default:
@@ -87,7 +100,7 @@ namespace Group321
             }
         }
 
-        void Menu()
+        static void Menu()
         {
             Console.WriteLine("\n\n\n1: Посмотреть баланс");
             Console.WriteLine("2: Пополнить баланс");
@@ -96,10 +109,14 @@ namespace Group321
             Console.WriteLine("5: Снять деньги");
             Console.WriteLine("6: Открыть вклад");
             Console.WriteLine("7: Оплатить кредит");
-            Console.WriteLine("8: Выйти из приложения");
+            Console.WriteLine("8: Добавить аккаунт");
+            Console.WriteLine("9: Удалить аккаунт");
+            Console.WriteLine("10: Просмотреть все аккаунты");
+            Console.WriteLine("11: Редактировать аккаунт");
+            Console.WriteLine("12: Выйти из приложения");
         }
 
-        void StartProgram()
+        static void StartProgram()
         {
             lst = new List<PersonalData>();
             lst.Add(new PersonalData("Иванов Иван Иванович", "Казань", new Client(20000)));
@@ -109,7 +126,7 @@ namespace Group321
             lst.Add(new PersonalData("Иванов Василий петрович", "Казань", new Client(40000)));
         }
 
-        void RemoveList()
+        static void RemoveList()
         {
             Console.WriteLine("Введите индекс удаляемого аккаунта");
             try
@@ -124,7 +141,7 @@ namespace Group321
             }
         }
 
-        void AddList()
+        static void AddList()
         {
             Console.WriteLine("Введите ФИО");
             string FIO = Console.ReadLine();
@@ -148,7 +165,15 @@ namespace Group321
             }
         }
 
-        void Reduct()
+        static void Showlst()
+        {
+            foreach (var item in lst)
+            {
+                Console.WriteLine($"{item.FIO}, {item.addres}, {item.acc.Balance}");
+            }
+        }
+
+        static void Reduct()
         {
             Console.WriteLine("Введите индекс редактируемого аккаунта");
             int a = Convert.ToInt32(Console.ReadLine());
