@@ -13,6 +13,39 @@ namespace Bank1
             Console.WriteLine($"Ваш баланс: {bankAccount.Ballance} ", bankAccount.Ballance);
         }
 
+        public static void ShowListEmployee(Administrator administrator)
+        {
+            List<Employee> employees = new List<Employee>(5);
+            employees.Add(new Employee() { EName = "Tom" });
+            employees.Add(new Employee() { EName = "Bulat" });
+            employees.Add(new Employee() { EName = "Shakira" });
+            employees.Add(new Employee() { EName = "Vlad" });
+            employees.Add(new Employee() { EName = "Rybak" });
+
+            foreach (Employee e in employees)
+            {
+                Console.WriteLine(e.EName);
+            }
+
+            employees.RemoveAt(4);
+
+        }
+        public static void ShowListClient(Administrator administrator)
+        { 
+            List<Client> clients = new List<Client>(5);
+            clients.Add(new Client() { CName = "Iskander" });
+            clients.Add(new Client() { CName = "Gizetdin" });
+            clients.Add(new Client() { CName = "Sasha" });
+            clients.Add(new Client() { CName = "Krasni" });
+            clients.Add(new Client() { CName = "Talgat" });
+            
+            foreach (Client c in clients)
+            {
+                Console.WriteLine(c.CName);
+            }
+            clients.RemoveAt(4);
+        }
+
         public static void ShowEmployee(Employee employee)
         {
             Console.WriteLine($"Ваше имя: {employee.EName} ", employee.EName);

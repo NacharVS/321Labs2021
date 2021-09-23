@@ -10,28 +10,6 @@ namespace Bank1
     {
         static void Main(string[] args)
         {
-            List<Employee> employees = new List<Employee>(5);
-            employees.Add(new Employee() { EName = "Tom"});
-            employees.Add(new Employee() { EName = "Bulat" });
-            employees.Add(new Employee() { EName = "Shakira" });
-            employees.Add(new Employee() { EName = "Vlad" });
-            employees.Add(new Employee() { EName = "Rybak" });
-
-            foreach(Employee e in employees)
-            {
-                Console.WriteLine(e.EName);
-            }
-
-            employees.RemoveAt(4);
-
-            List<Client> clients = new List<Client>(5);
-            clients.Add(new Client() { CName = "Iskander" });
-            clients.Add(new Client() { CName = "Gizetdin" });
-            clients.Add(new Client() { CName = "Sasha" });
-            clients.Add(new Client() { CName = "Krasni" });
-            clients.Add(new Client() { CName = "Talgat" });
-
-            clients.RemoveAt(4);
             BankAccount bank = new BankAccount
             {
                 Ballance = 4200,
@@ -50,10 +28,16 @@ namespace Bank1
                 Login = "Bob123",
                 Password = "12344556677"
             };
-                Console.WriteLine("Выберите пункт меню");
+            Administrator administrator = new Administrator
+            { 
+                Email = "adminpro@mail.ru"
+            };
+
+            Console.WriteLine("Выберите пункт меню");
                 Console.WriteLine("1) Зайти в аккаунт клиента");
                 Console.WriteLine("2) Зайти в аккаунт сотрудника");
-                String str = Console.ReadLine();
+                Console.WriteLine("b) Зайти в аккаунт администратора");
+            String str = Console.ReadLine();
                 switch (str)
                 {
                     case "1":
@@ -111,7 +95,27 @@ namespace Bank1
                         Console.WriteLine("Ошибка");
                         }
                         break;
-                        
+
+                case "b":
+                    Console.WriteLine("Добро пожаловать, администратор");
+                    Console.WriteLine($"Ваш id: {bank.id}", bank.id);
+                    Console.WriteLine("c) Посмотреть список сотрудников");
+                    Console.WriteLine("d) Посмотреть список клиентов");
+                    Console.WriteLine("0) Выход");
+                    string str3 = Console.ReadLine();
+                    if(str3 == "c")
+                    {
+                        goto case "c";
+                    }
+                    else if(str3 == "d")
+                    {
+                        goto case "d";
+                    }
+                    else if (str3 == "0")
+                    {
+                        goto case "0";
+                    }
+                    break;
 
                     case "3":
                         Operations.ShowBallance(bank);
@@ -133,7 +137,14 @@ namespace Bank1
                         Operations.Salary(employee, 15000, 1.7);
                         goto case "2";
 
-                    case "0":
+                    case "c":
+                        Operations.ShowListEmployee(administrator);
+                        goto case "b";
+                    case "d":
+                        Operations.ShowListClient(administrator);
+                        goto case "b";
+
+                case "0":
                         Console.WriteLine("Завершение обслуживания....");
                         return;
                 }

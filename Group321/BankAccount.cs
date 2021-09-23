@@ -69,4 +69,17 @@ namespace Bank1
 
     }
 
+    class Administrator : BankAccount
+    {
+        public string AName
+        {
+            get; set;
+        }
+
+        public string Email
+        {
+            get; set;
+        }
+    }
+
 }
