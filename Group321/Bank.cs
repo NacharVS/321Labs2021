@@ -6,6 +6,33 @@ namespace Group321
 {
     class Operations
     {
+        public static void ShowList(List<PersonalData> lst)
+        {
+            foreach (var item in lst)
+            {
+                Console.WriteLine(item.FIO+", "+item.addres+", "+item.account.ToString()); 
+            }
+        }
+        public static void Dobavleniye(List<PersonalData> lst)
+        {
+            Console.WriteLine("Введите ваше ФИО");
+            string FIO = Console.ReadLine();
+            Console.WriteLine("Введите ваш адрес");
+            string addres = Console.ReadLine();
+            Console.WriteLine("Вы сотрудник или клиент?Введите Employee or Client");
+            switch(Console.ReadLine())
+            {
+                case "Client" :
+                    lst.Add(new PersonalData( FIO,  addres, new Client()));
+                    break;
+                case "Employee":
+                    lst.Add(new PersonalData(FIO, addres, new Employee()));
+                    break;
+
+            }
+            //lst.Add(new PersonalData("Баринов Марсель Алексеевич", "Казань", new Employee(20000)));
+            //lst.Add(new PersonalData("", "Казань", new Employee(20000)));
+        }
         public static void ShowBalance(Account account)
         {
             Console.WriteLine(account.Balance);
@@ -55,12 +82,26 @@ namespace Group321
 
 
         }
+        
     }
 
     class ProgramBalance
     {
+         public  static List<PersonalData> lst;
+        public static void StartProgram()
+        {
+            lst = new List<PersonalData>();
+            lst.Add(new PersonalData("Краснов Александр Грирьевич", "Казань", new Client(20000)));
+            lst.Add(new PersonalData("Гарифуллин Ильсаф Ильнарович", "Казань", new Client(25000)));
+            lst.Add(new PersonalData("Хлыбов Владислав Владимирович", "Казань", new Client(35000)));
+            lst.Add(new PersonalData("Баннов Филипп Германович", "Казань", new Employee(20000)));
+            lst.Add(new PersonalData("Яруллин Талгат Рамильевич", "Казань", new Employee(55000)));
+        }
         static void Main(string[] args)
         {
+            StartProgram();
+            Operations.Dobavleniye(lst);
+            Operations.ShowList(lst);
             Account Account1 = new Client(12000);
             Account Account2 = new Employee(9000);
             Console.WriteLine(Account1.Balance + " р. Сумма первого аккаунта");//  Вывод первого баланса на консоль
@@ -73,6 +114,8 @@ namespace Group321
             Console.WriteLine("Введите сумму кредита");
             double sum = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"Сумма кредита = {Operations.Credit(Account1, Account1.CreditStavka, sum)}\nБаланс = {Account1.Balance}");
+
         }
+
     }
 }
