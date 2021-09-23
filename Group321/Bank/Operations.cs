@@ -41,7 +41,7 @@ namespace Bank
         void StartProgram()
         {
             List<PersonalData> employ = new List<PersonalData>();
-            //employ.Add(new PersonalData("Айлина","Бурнашева","Галеева 3",)); ///
+            //employ.Add(new PersonalData("Айлина","Бурнашева","Галеева 3",)); 
         }
        
         
