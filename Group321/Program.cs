@@ -10,6 +10,28 @@ namespace Bank1
     {
         static void Main(string[] args)
         {
+            List<Employee> employees = new List<Employee>(5);
+            employees.Add(new Employee() { EName = "Tom"});
+            employees.Add(new Employee() { EName = "Bulat" });
+            employees.Add(new Employee() { EName = "Shakira" });
+            employees.Add(new Employee() { EName = "Vlad" });
+            employees.Add(new Employee() { EName = "Rybak" });
+
+            foreach(Employee e in employees)
+            {
+                Console.WriteLine(e.EName);
+            }
+
+            employees.RemoveAt(4);
+
+            List<Client> clients = new List<Client>(5);
+            clients.Add(new Client() { CName = "Iskander" });
+            clients.Add(new Client() { CName = "Gizetdin" });
+            clients.Add(new Client() { CName = "Sasha" });
+            clients.Add(new Client() { CName = "Krasni" });
+            clients.Add(new Client() { CName = "Talgat" });
+
+            clients.RemoveAt(4);
             BankAccount bank = new BankAccount
             {
                 Ballance = 4200,
@@ -114,7 +136,6 @@ namespace Bank1
                     case "0":
                         Console.WriteLine("Завершение обслуживания....");
                         return;
-                        break;
                 }
         }
     }
