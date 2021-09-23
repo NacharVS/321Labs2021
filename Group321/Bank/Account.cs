@@ -8,6 +8,8 @@ namespace Bank
     {
         private double _balanse;
         private static double _rate = 0.057;
+        private string _surname;
+        private string _name;
 
         public double Balanse
         {
@@ -31,5 +33,15 @@ namespace Bank
             }
         }
 
+        public string Surname 
+        { 
+            get => _surname; 
+            set => _surname = value; 
+        }
+        public string Name 
+        { 
+            get => _name; 
+            set => _name = value; 
+        }
     }
 }
