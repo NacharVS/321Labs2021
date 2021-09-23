@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Group321.Bank
 {
-    class Class1
+    class Client
     {
     }
 }
