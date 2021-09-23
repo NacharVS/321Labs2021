@@ -5,8 +5,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="C:\Users\211909\Desktop\Account.cs" Link="Account.cs" />
-  </ItemGroup>
-
 </Project>

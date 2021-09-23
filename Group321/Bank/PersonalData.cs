@@ -6,13 +6,17 @@ namespace BankApp
 {
     struct PersonalData
     {
-        public string name;
-        public int age;
-        Account myAcc;
+        string name;
+        string surname;
+        string addres;
+        Account account;
 
-        public void Info()
+        public PersonalData(string name, string surname, string addres, Account account)
         {
-            Console.WriteLine($"Name: {name}  Age: {age} Acc: {myAcc}");
+            this.name = name;
+            this.surname = surname;
+            this.addres = addres;
+            this.account = account;
         }
     }
 }

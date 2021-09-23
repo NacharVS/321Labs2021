@@ -7,6 +7,7 @@ namespace BankApp
     class Account
     {
         private double _balance;
+        private double _creditBalance;
 
 
         public double Balance
@@ -17,5 +18,27 @@ namespace BankApp
                 _balance = value;
             }
         }
+
+        public double CreditBalance
+        {
+            get => _creditBalance;
+            set
+            {
+                _creditBalance = value;
+            }
+        }
+    }
+
+    class AccKlient : Account
+    {
+        string name;
+
+    }
+
+    class AccEmploer : Account
+    {
+        int id;
+        string name;
+        string login;
     }
 }
