@@ -33,10 +33,17 @@ namespace Bank
             //Console.WriteLine(accountMoney.Balanse);
         }
 
-/*        public static int SberRate(Account account)
+        /*public static int SberRate(Account account)
         {
             return summ;
         }*/
 
+        void StartProgram()
+        {
+            List<PersonalData> employ = new List<PersonalData>();
+            employ.Add(new PersonalData("Айлина","Бурнашева","Галеева 3",)); ///
+        }
+       
+        
     }
 }
