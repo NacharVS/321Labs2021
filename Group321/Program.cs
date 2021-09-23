@@ -22,6 +22,8 @@ namespace Group321
             Operations.Widtraw(acc3, 2000.00);
             Operations.Deposit(acc4, 2000.00, 4);
             Operations.Credit(acre, 2000.00, 4);
+            PersonalData.SotBanka();
+            PersonalData.ClientBanka();
         }
     }    
 }
