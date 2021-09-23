@@ -31,7 +31,7 @@ namespace Bank1
     }
 
     class Employee : BankAccount
-    {
+    { 
         public string EName
         {
             get; set;
