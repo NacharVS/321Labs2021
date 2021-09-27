@@ -5,7 +5,7 @@ namespace Group321
 {
     class Program
     {
-        static List<PersonalData> list;
+        public static List<PersonalData> list;
         static void StartProgram()
         {
             list = new List<PersonalData>();
@@ -14,10 +14,6 @@ namespace Group321
             list.Add(new PersonalData("Баязитов Руслан Айратович", "Казань", new Klient(10000)));
             list.Add(new PersonalData("Гарифуллин Ильсаф Ильнарович", "Казань", new Employee(50000)));
             list.Add(new PersonalData("Краснов Александр Григорьевич", "Казань", new Klient(20000)));
-            foreach (var item in list)
-            {
-                Console.WriteLine($"{item.fio} , {item.adress}, {item.acc.Balance} ");
-            }
         }
         static void Main(string[] args)
         {
@@ -51,6 +47,9 @@ namespace Group321
                 Console.WriteLine("5.GetCredit");
                 Console.WriteLine("6.Invest");
                 Console.WriteLine("7.Payment credit");
+                Console.WriteLine("8.Show klientlist");
+                Console.WriteLine("9.Remove a klient from the list");
+                Console.WriteLine("10.Add a klient to the list");
                 Console.WriteLine("\nChoose operation");
                 choose = Convert.ToInt32(Console.ReadLine());
                 if (choose == 1)
@@ -124,6 +123,55 @@ namespace Group321
                     {
                         Console.WriteLine("You don't have credit");
                     }
+                }
+                else if (choose ==8 )
+                {
+                    if (list.Count == 0)
+                    {
+                        Console.WriteLine("Clientlist is empty");
+                    }
+                    else
+                    {
+                        foreach (var item in list)
+                        {
+                            Console.WriteLine($"{item.fio} , {item.adress}, {item.acc.Balance} ");
+                        }
+                    }
+                }
+                else if (choose == 9)
+                {
+                    if (list.Count == 0)
+                    {
+                        Console.WriteLine("Clientlist is empty");
+                    }
+                    else
+                    {
+                            Console.WriteLine("Enter the full name of klient");
+                            string rem = Console.ReadLine();
+                            int cnt = 0;
+                            foreach (var item in list)
+                            {
+                                if (item.fio == rem)
+                                {
+                                    list.Remove(item);
+                                    Console.WriteLine("Remove complete");
+                                    cnt++;
+                                    break;
+                                }
+                            }
+                            if (cnt==0) { Console.WriteLine("There is no such client"); }
+                    }
+                }
+                else if(choose==10)
+                {
+                    Console.WriteLine("Enter the full name of klient");
+                    string fulln = Console.ReadLine();
+                    Console.WriteLine("Enter the adress of klient");
+                    string adres = Console.ReadLine();
+                    Console.WriteLine("Enter the balance of klient");
+                    double bal = Convert.ToDouble(Console.ReadLine());
+                    list.Add(new PersonalData(fulln, adres, new Employee(bal)));
+                    Console.WriteLine("Completed");
                 }
             }
         }

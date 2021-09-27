@@ -12,6 +12,8 @@ namespace Group321
         private double timevklad;
         private static double Stavka = 5;
         private static double stavkaCred = 5;
+        
+        
         public double Balance { get => balance; set => balance = value; }
         public double Credit { get => credit; set => credit = value; }
         public double Vklad { get => vklad; set => vklad = value; }

@@ -7,9 +7,9 @@ namespace Group321
     class Operation
     {
         public static void ShowBalance(Account account)
-       {
+        {
             Console.WriteLine(account.Balance);
-       }
+        }
        public static void Transaction(Account accountSeller, Account accountGetter, double sum)
        {
             if (sum > accountSeller.Balance) 
@@ -80,10 +80,6 @@ namespace Group321
                 Console.WriteLine("Payment failed");
             }
         }
-        public static void RemoveList(List<PersonalData> temp, int index)
-        {
-            temp.RemoveAt(index);
-            temp.ForEach(value => Console.WriteLine(value));
-        }
+        
     }
 }
