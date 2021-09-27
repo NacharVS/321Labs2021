@@ -3,7 +3,9 @@
 namespace Group321.Examples
 {
     class Unit
-    {      
+    {
+        public delegate void ValueChangedDelegate(string message);
+
         private int _health = 100;
         private int _speed = 20;
 
@@ -12,7 +14,26 @@ namespace Group321.Examples
             get => _health;
             set
             {
-                _health = value;
+                var diff = _health - value;
+                if (_health > 0)
+                {
+                    if (_health < diff)
+                    {
+                        _health = 0;
+                        ValueChangedEvent?.Invoke($"Health chahded by {diff} current Health - {_health}");
+                        DeathEvent?.Invoke();
+                    }
+                    else
+                    {
+                        _health = value;
+                        ValueChangedEvent?.Invoke($"Health chahded by {diff} current Health - {_health}");
+                    }
+                }
+                else
+                {
+                    _health = 0;
+                    DeathEvent?.Invoke();
+                }
             }
         }
 
@@ -25,6 +46,12 @@ namespace Group321.Examples
             }
         }
 
+        public void InflictDamage(int damage)
+        {
+            Health -= damage;
+            Console.WriteLine($"Inflicted {damage} damage");
+        }
+
         public void Move()
         {
             Console.WriteLine("is moving");
@@ -34,6 +61,9 @@ namespace Group321.Examples
         {
             Console.WriteLine("making activity");
         }
+
+        public event ValueChangedDelegate ValueChangedEvent;
+        public event Action DeathEvent;
 
     }
 }
