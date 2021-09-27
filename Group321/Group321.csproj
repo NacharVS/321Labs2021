@@ -8,6 +8,7 @@
   <ItemGroup>
     <PackageReference Include="Baseline" Version="3.2.1" />
     <PackageReference Include="LamarCodeGeneration" Version="3.2.1" />
+    <PackageReference Include="VisioForge.DotNet.Core.TRIAL" Version="14.3.16" />
   </ItemGroup>
 
 </Project>

@@ -7,17 +7,17 @@ using System.Text;
 
 namespace Group321
 {
-         struct PersonalData 
+        struct PersonalData 
     {
         public string FIO;
         public string Adress;
-        public string balance;
+        public Account account;
 
-        public PersonalData(string Name, string adress, string balance)
+        public PersonalData(string Name, string adress, Account account)
         {
             this.FIO = Name;
             this.Adress = adress;
-            this.balance = balance; 
+            this.account = account;
 
         }
     }

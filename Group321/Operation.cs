@@ -1,11 +1,37 @@
-﻿using System;
+﻿using Group321;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace bank1
 {
-     class Operation 
+     class Operation
     {
+        public static void ShowList(List<PersonalData> lbd)
+        {
+                foreach (var item in lbd)
+            {
+                Console.WriteLine(item.FIO + ", " + item.Adress + ", " + item.account.ToString());
+            }
+        }
+        public static void Dob(List<PersonalData> lbd)
+        {
+            Console.WriteLine("Введите ваше Имя");
+            string FIO = Console.ReadLine();
+            Console.WriteLine("Введите ваш адрес");
+            string Adress = Console.ReadLine();
+            Console.WriteLine("Введите Client or Employee");
+            switch (Console.ReadLine())
+            {
+                case "Client":
+                    lbd.Add(new PersonalData(FIO, Adress, new Client()));
+                    break;
+                case "Employee":
+                    lbd.Add(new PersonalData(FIO, Adress, new Employee()));
+                    break;
+            }
+        }
             public static void ShowBalance(Account acc)
         {
             Console.WriteLine(acc.Balance);
@@ -40,6 +66,24 @@ namespace bank1
             Console.WriteLine($"Баланс 2-ого аккаунта: - {acc2.Balance}");
             Console.WriteLine($"Задолжность 2-ого аккаунта: - {acc2.Balance}");
             return (int) sum;
+        }
+    }
+    class Iformation
+    {
+        public static List<PersonalData> ldb;   
+        public static void StartProgramm()
+        {
+            ldb = new List<PersonalData>();
+            ldb.Add(new PersonalData("Иванов Иван Иванович", "Москва", new Employee(30000)));
+            ldb.Add(new PersonalData("Богословский Артем Михайлович", "Москва", new Employee(30000)));
+            ldb.Add(new PersonalData("Ардаков Игорь Герасимович", "Москва", new Employee(30000)));
+            ldb.Add(new PersonalData("Донченко Иван Андреевич", "Москва", new Employee(30000)));
+            ldb.Add(new PersonalData("Кулагина Юлия Анатольевна", "Москва", new Employee(30000)));
+            ldb.Add(new PersonalData("Девин Игорь Владимирович", "Москва", new Employee(30000)));
+            ldb.Add(new PersonalData("Иванов Иван Иванович", "Москва", new Employee(30000)));
+            ldb.Add(new PersonalData("Иванов Иван Иванович", "Москва", new Employee(30000)));
+            ldb.Add(new PersonalData("Иванов Иван Иванович", "Москва", new Employee(30000)));
+            ldb.Add(new PersonalData("Иванов Иван Иванович", "Москва", new Employee(30000)));
         }
     }
 }
