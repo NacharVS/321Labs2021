@@ -24,6 +24,7 @@ namespace Group321
             Operations.Credit(acre, 2000.00, 4);
             PersonalData.SotBanka();
             PersonalData.ClientBanka();
+            PersonalData.ClientBanka.
         }
     }    
 }

@@ -4,32 +4,6 @@ using System.Text;
 
 namespace Group321
 {
-    /*public struct Sotrydnik
-    {
-
-        public string Sur { get; set; }
-        public string Name { get; set; }
-        public int YearDirth { get; set; }
-        public int WorkExperience { get; set; }
-        public string Post { get; set; }
-
-        public void Create(string line)
-        {
-            string[] arr = line.Split(';');
-            Sur = arr[0];
-            Name = arr[1];
-            YearDirth = int.Parse(arr[2]);
-            WorkExperience = int.Parse(arr[3]);
-            Post = arr[4];
-
-        }
-
-        public override string ToString()
-        {
-            return $"{Sur};{Name};{YearDirth.ToString()};{WorkExperience.ToString()};{Post}";
-        }
-    }*/
-
     class Personal
     {
         public string Sur { get; set; }
@@ -37,7 +11,12 @@ namespace Group321
         public string YearDirth { get; set; }
         public int WorkExperience { get; set; }
         public string Post { get; set; }
-
+    }
+    class Client
+    {
+        public string Sur { get; set; }
+        public string Name { get; set; }
+        public string YearDirth { get; set; }
         public double BalansClient { get; set; }
     }
     class PersonalData
@@ -60,17 +39,27 @@ namespace Group321
 
         public static void ClientBanka()
         {
-            List<Personal> sotrydnik = new List<Personal>();
-            sotrydnik.Add(new Personal() { Sur = "Павлов", Name = "Сергей", YearDirth = "01.07.1956", BalansClient = 30000.97 });
-            sotrydnik.Add(new Personal() { Sur = "Игорев", Name = "Алесандр", YearDirth = "13.06.1967", BalansClient = 19876.09 });
-            sotrydnik.Add(new Personal() { Sur = "Выхина", Name = "Евгения", YearDirth = "09.04.2000", BalansClient = 101000.87 });
-            sotrydnik.Add(new Personal() { Sur = "Королева", Name = "Мария", YearDirth = "14.08.2003", BalansClient = 93907.08 });
-            sotrydnik.Add(new Personal() { Sur = "Колхозов", Name = "Иван", YearDirth = "01.09.1951", BalansClient = 3500.64 });
+            List<Client> client = new List<Client>();
+            client.Add(new Client() { Sur = "Павлов", Name = "Сергей", YearDirth = "01.07.1956", BalansClient = 30000.97 });
+            client.Add(new Client() { Sur = "Игорев", Name = "Алесандр", YearDirth = "13.06.1967", BalansClient = 19876.09 });
+            client.Add(new Client() { Sur = "Выхина", Name = "Евгения", YearDirth = "09.04.2000", BalansClient = 101000.87 });
+            client.Add(new Client() { Sur = "Королева", Name = "Мария", YearDirth = "14.08.2003", BalansClient = 93907.08 });
+            client.Add(new Client() { Sur = "Колхозов", Name = "Иван", YearDirth = "01.09.1951", BalansClient = 3500.64 });
+            //sotrydnik.Insert(2, new Personal() { Sur = "Ермаков", Name = "Роман", YearDirth = "01.03.1971", BalansClient = 75090.64 });
+
             Console.WriteLine();
-            foreach (var item in sotrydnik)
+            foreach (var item in client)
             {
                 Console.WriteLine($"Клиент:{item.Sur} {item.Name} Дата рождения:{item.YearDirth} Баланс:{item.BalansClient}");
             }
+
+            static void Insert(Client Sur, Client Name, Client YearDirth, Client BalansClient)
+            {
+               
+            }
+
         }
+
+        
     }
 }
