@@ -15,6 +15,7 @@ namespace Bank1
 
         public static void ShowListEmployee(Administrator administrator)
         {
+            Console.WriteLine("Сoздание списка:\nList<Employee>");
             List<Employee> employees = new List<Employee>(5);
             employees.Add(new Employee() { EName = "Tom" });
             employees.Add(new Employee() { EName = "Bulat" });
@@ -22,24 +23,56 @@ namespace Bank1
             employees.Add(new Employee() { EName = "Vlad" });
             employees.Add(new Employee() { EName = "Rybak" });
 
+            Console.WriteLine();
             foreach (Employee e in employees)
             {
                 Console.WriteLine(e.EName);
             }
-        }
 
-        public static void RemoveEmployee(Administrator administrator)
-        {
-            List<Employee> employees = new List<Employee>(5);
+            Console.WriteLine();
+            Console.WriteLine("Проверка:\nContains(\"John\"): {0}",
+            employees.Contains(new Employee { EName = "John" }));
+
+            Console.WriteLine();
+            foreach (Employee e in employees)
+            {
+                Console.WriteLine(e.EName);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Добавление:\nInsert(2, \"Bob\")");
+            employees.Insert(2, new Employee() { EName = "Bob" });
+
+            Console.WriteLine();
+            foreach (Employee e in employees)
+            {
+                Console.WriteLine(e.EName);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Какой удалить:\nRemove(\"Tom\")");
             employees.Remove(new Employee() { EName = "Tom" });
 
+            Console.WriteLine();
             foreach (Employee e in employees)
             {
                 Console.WriteLine(e.EName);
             }
+
+            Console.WriteLine();
+            Console.WriteLine("Удаление:\nRemoveAt(0)");
+            employees.RemoveAt(0);
+
+            Console.WriteLine();
+            foreach (Employee e in employees)
+            {
+                Console.WriteLine(e.EName);
+            }
+
         }
         public static void ShowListClient(Administrator administrator)
-        { 
+        {
+            Console.WriteLine("Сoздание списка:\nList<Client>");
             List<Client> clients = new List<Client>(5);
             clients.Add(new Client() { CName = "Iskander" });
             clients.Add(new Client() { CName = "Gizetdin" });
@@ -51,7 +84,50 @@ namespace Bank1
             {
                 Console.WriteLine(c.CName);
             }
+
+            Console.WriteLine();
+            Console.WriteLine("Проверка:\nContains(\"Tom\"): {0}",
+            clients.Contains(new Client { CName = "Tom" }));
+
+            Console.WriteLine();
+            foreach (Client c in clients)
+            {
+                Console.WriteLine(c.CName);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Добавление:\nInsert(4, \"John\")");
+            clients.Insert(4, new Client() { CName = "John" });
+
+            Console.WriteLine();
+            foreach (Client c in clients)
+            {
+                Console.WriteLine(c.CName);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Какой удалить:\nRemove(\"Talgat\")");
+            clients.Remove(new Client() { CName = "Talgat" });
+
+            Console.WriteLine();
+            foreach (Client c in clients)
+            {
+                Console.WriteLine(c.CName);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Удаление:\nRemoveAt(5)");
+            clients.RemoveAt(5);
+
+            Console.WriteLine();
+            foreach (Client c in clients)
+            {
+                Console.WriteLine(c.CName);
+            }
+
         }
+    
+
 
         public static void ShowEmployee(Employee employee)
         {
