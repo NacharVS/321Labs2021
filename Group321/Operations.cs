@@ -26,9 +26,17 @@ namespace Bank1
             {
                 Console.WriteLine(e.EName);
             }
+        }
 
-            employees.RemoveAt(4);
+        public static void RemoveEmployee(Administrator administrator)
+        {
+            List<Employee> employees = new List<Employee>(5);
+            employees.Remove(new Employee() { EName = "Tom" });
 
+            foreach (Employee e in employees)
+            {
+                Console.WriteLine(e.EName);
+            }
         }
         public static void ShowListClient(Administrator administrator)
         { 
@@ -38,12 +46,11 @@ namespace Bank1
             clients.Add(new Client() { CName = "Sasha" });
             clients.Add(new Client() { CName = "Krasni" });
             clients.Add(new Client() { CName = "Talgat" });
-            
+
             foreach (Client c in clients)
             {
                 Console.WriteLine(c.CName);
             }
-            clients.RemoveAt(4);
         }
 
         public static void ShowEmployee(Employee employee)
