@@ -4,9 +4,9 @@ using System.Text;
 
 namespace bank1
 {
-    class Operation
+     class Operation 
     {
-        public static void ShowBalance(Account acc)
+            public static void ShowBalance(Account acc)
         {
             Console.WriteLine(acc.Balance);
         }

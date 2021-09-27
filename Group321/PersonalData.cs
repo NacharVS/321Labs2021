@@ -1,4 +1,5 @@
-﻿using Baseline.ImTools;
+﻿using bank1;
+using Baseline.ImTools;
 using LamarCodeGeneration.Util;
 using System;
 using System.Collections.Generic;
@@ -6,12 +7,17 @@ using System.Text;
 
 namespace Group321
 {
-    class PersonalData
+         struct PersonalData 
     {
-        public void Add(List<PersonalData> st)
+        public string FIO;
+        public string Adress;
+        public string balance;
+
+        public PersonalData(string Name, string adress, string balance)
         {
-            Console.WriteLine("Введите ваше имя");
-            string FIO = Console.ReadLine();
+            this.FIO = Name;
+            this.Adress = adress;
+            this.balance = balance; 
 
         }
     }
