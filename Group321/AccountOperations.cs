@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Group321
 {
@@ -19,18 +18,21 @@ namespace Group321
             lst.Add(new Client(40000, new PersonalData("Иванов Василий петрович", "Казань")));
         }
 
-        public static void RemoveList()
+        public static void RemoveList(Account acc)
         {
             Console.WriteLine("Введите индекс удаляемого аккаунта");
             try
             {
                 int a = Convert.ToInt32(Console.ReadLine());
-                lst.RemoveAt(a);
+                if (acc != lst[a])
+                    lst.RemoveAt(a);
+                else
+                    throw new Exception("Текущий аккаунт нельзя удалить");
                 Console.WriteLine("Удаление аккаунта прошло удачно");
             }
-            catch
+            catch (Exception ex)
             {
-                Console.WriteLine("Удаление аккаунта завершилось неудачно, введите корректные данные");
+                Console.WriteLine($"Удаление аккаунта завершилось неудачно, введите корректные данные\n{ex.Message}");
             }
         }
 

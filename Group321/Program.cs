@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Group321
 {
     class Program
     {
-        private static int number;
+
 
         static void Main(string[] args)
         {
             AccountOperations.StartProgram();
             double creditSum;
-            number = AccountOperations.ChooseAcc();
+            int number = AccountOperations.ChooseAcc();
 
             while (true)
             {
@@ -60,7 +59,7 @@ namespace Group321
                         AccountOperations.AddList();
                         break;
                     case "9":
-                        AccountOperations.RemoveList();
+                        AccountOperations.RemoveList(AccountOperations.Lst[number]);
                         break;
                     case "10":
                         AccountOperations.Showlst();

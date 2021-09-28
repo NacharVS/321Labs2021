@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Group321
+﻿namespace Group321
 {
     class Client : Account
     {
@@ -14,6 +8,7 @@ namespace Group321
 
         public Client()
         {
+
             ProcentStavkaCredit = 7;
             ProcentStavkaVklad = 3;
         }

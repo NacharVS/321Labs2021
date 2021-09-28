@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Group321
 {
@@ -12,8 +8,8 @@ namespace Group321
         protected double balanceRubles;
         protected double credit = 0;
         protected double vklad = 0;
-        protected static double procentStavkaCredit = 7;
-        protected static double procentStavkaVklad = 3;
+        private double procentStavkaCredit;
+        private double procentStavkaVklad;
         protected PersonalData persondata;
 
         public double Balance { get => balanceRubles; set => balanceRubles = value; }
