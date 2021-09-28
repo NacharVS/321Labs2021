@@ -25,7 +25,7 @@ namespace Group321
             {
                 accSeller.Balance -= sum;
                 accGetter.Balance += sum;
-                Notify?.Invoke($"Было переведено {0} рублей. Ваш баланс: {accSeller.Balance}");
+                Notify?.Invoke($"Было переведено {sum} рублей. Ваш баланс: {accSeller.Balance}");
                 Console.WriteLine("Transaction completed");
             }
             else
@@ -39,7 +39,7 @@ namespace Group321
             if (widtrawSum < acc.Balance)
             {
                 acc.Balance -= (int)widtrawSum;
-                Notify?.Invoke($"Было снято {widtrawSum}. Ваш баланс: {acc.Balance}");
+                Notify?.Invoke($"Было снято {widtrawSum} рублей. Ваш баланс: {acc.Balance} рублей");
                 return (int)widtrawSum;
             }
             else
