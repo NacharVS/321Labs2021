@@ -24,7 +24,9 @@ namespace Group321
             Operations.Credit(acre, 2000.00, 4);
             PersonalData.SotBanka();
             PersonalData.ClientBanka();
-            PersonalData.ClientBanka.
+
+            Client num1 = new Client();
+            PersonalData.Insert(num1,"Ермаков", "Роман", "01.03.1971", 75090.64);
         }
     }    
 }
