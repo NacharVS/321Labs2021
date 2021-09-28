@@ -9,16 +9,10 @@ namespace Group321
 
         static void Main(string[] args)
         {
-            Unit unit = new Unit();
-            unit.ValueChangedEvent += ShowInfo;
-            unit.DeathEvent += Death;
-            unit.InflictDamage(10);
-            unit.InflictDamage(10);
-            unit.InflictDamage(40);
-            unit.InflictDamage(50);
-            unit.InflictDamage(50);
-        }
+            IAction psnt = new Peasant(30);
+            psnt.Action();
 
+        }
         static void Death()
         {
             Console.WriteLine("Is dead");

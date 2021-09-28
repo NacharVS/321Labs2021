@@ -1,12 +1,14 @@
 ﻿namespace Group321.Examples
 {
-    class Warrior : Unit
+    class Warrior : IAction, ISleep
     {
         public int Damage { get; set; }
 
-        public override int Health
+        public int Health { get; set; }
+
+        public void Action()
         {
-            get => 200;
+            System.Console.WriteLine("Making training");
         }
 
         public void Attack()
@@ -14,9 +16,14 @@
             System.Console.WriteLine("is attacking...");
         }
 
-        public override void Action()
+        public void Move()
         {
-            Attack();
+            System.Console.WriteLine("Going to Jerusalem");
+        }
+
+        public void Sleep()
+        {
+            System.Console.WriteLine("Warrion is not sleeping, warrior training");
         }
     }
 }

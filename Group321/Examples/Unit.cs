@@ -52,15 +52,6 @@ namespace Group321.Examples
             Console.WriteLine($"Inflicted {damage} damage");
         }
 
-        public void Move()
-        {
-            Console.WriteLine("is moving");
-        }
-
-        public virtual void Action()
-        {
-            Console.WriteLine("making activity");
-        }
 
         public event ValueChangedDelegate ValueChangedEvent;
         public event Action DeathEvent;
