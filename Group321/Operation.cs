@@ -58,32 +58,47 @@ namespace bank1
             Console.WriteLine("Депозит прошёл успшно!");
             return 0;
         }
-        public static int Credit(Account acc2, double CreditStavka, double kolvodney, double sum)
+        public static int Credit(Account acc, double CreditStavka  , double sum)
         {
-            acc2.Balance += sum;
-            acc2.Zadoljnost += (int)(sum * (CreditStavka / 100 * kolvodney));
-            Console.WriteLine("Кредит прошёл успешно");
-            Console.WriteLine($"Баланс 2-ого аккаунта: - {acc2.Balance}");
-            Console.WriteLine($"Задолжность 2-ого аккаунта: - {acc2.Balance}");
-            return (int) sum;
+            int mounth = Convert.ToInt32(Console.ReadLine());
+            acc.Balance += sum;
+            acc.CreditSher = (sum + CreditStavka / 12) * mounth;
+            return (int)acc.CreditSher;
         }
     }
     class Iformation
     {
-        public static List<PersonalData> ldb;   
+        public static List<PersonalData> lbd;   
         public static void StartProgramm()
         {
-            ldb = new List<PersonalData>();
-            ldb.Add(new PersonalData("Иванов Иван Иванович", "Москва", new Employee(30000)));
-            ldb.Add(new PersonalData("Богословский Артем Михайлович", "Москва", new Employee(30000)));
-            ldb.Add(new PersonalData("Ардаков Игорь Герасимович", "Москва", new Employee(30000)));
-            ldb.Add(new PersonalData("Донченко Иван Андреевич", "Москва", new Employee(30000)));
-            ldb.Add(new PersonalData("Кулагина Юлия Анатольевна", "Москва", new Employee(30000)));
-            ldb.Add(new PersonalData("Девин Игорь Владимирович", "Москва", new Employee(30000)));
-            ldb.Add(new PersonalData("Иванов Иван Иванович", "Москва", new Employee(30000)));
-            ldb.Add(new PersonalData("Иванов Иван Иванович", "Москва", new Employee(30000)));
-            ldb.Add(new PersonalData("Иванов Иван Иванович", "Москва", new Employee(30000)));
-            ldb.Add(new PersonalData("Иванов Иван Иванович", "Москва", new Employee(30000)));
+            lbd = new List<PersonalData>();
+            lbd.Add(new PersonalData("Иванов Иван Иванович", "Москва", new Employee(30000)));
+            lbd.Add(new PersonalData("Богословский Артем Михайлович", "Москва", new Client(25000)));
+            lbd.Add(new PersonalData("Ардаков Игорь Герасимович", "Москва", new Client(35000)));
+            lbd.Add(new PersonalData("Донченко Иван Андреевич", "Москва", new Employee(20000)));
+            lbd.Add(new PersonalData("Кулагина Юлия Анатольевна", "Москва", new Client(27000)));
+            lbd.Add(new PersonalData("Девин Игорь Владимирович", "Москва", new Employee(34000)));
+            lbd.Add(new PersonalData("Логинова Галина Васильевна", "Москва", new Client(19000)));
+            lbd.Add(new PersonalData("Логинов Сергей Николаевич", "Москва", new Employee(22000)));
+            lbd.Add(new PersonalData("Беляев Михаил Викторович", "Москва", new Client(43000)));
+            lbd.Add(new PersonalData("Шалдыбин Дмитрий Игоревич", "Москва", new Employee(63000)));
+        }
+        static void Main(string[] args)
+        {
+            StartProgramm();
+            Operation.Dob(lbd);
+            Operation.ShowList(lbd);
+            Account acc1 = new Client(15000);
+            Account acc2 = new Employee(9000);
+            Console.WriteLine(acc1.Balance + "Р. Счёт первого аккаунта");
+            Console.WriteLine(acc2.Balance + "Р. Счёт второго аккаунта");
+            Operation.Widthraw(acc1, 1000);
+            Operation.Deposit(acc1, 2000);
+            Operation.Transaction(acc1, acc2, 10000);
+            Console.WriteLine("Сумма кредита");
+            double sum = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine($"Сумма кредита = {Operation.Credit(acc1, acc1.CreditStavka, sum)} Баланс аккаунта ={acc1.Balance}");
+
         }
     }
 }

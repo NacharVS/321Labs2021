@@ -14,10 +14,10 @@ namespace bank1
         {
 
         }
+        protected static double creditStavka;
         protected double balance;
         protected double zadoljnost;
         protected double _id;
-        public static double _CreditStavka;
         public double Persent
         {
             get; set;
@@ -31,8 +31,8 @@ namespace bank1
             get; set;
         }
         public static double creditSher = 5.7;
-        public double Balance { get; set; }
-        public virtual double CreditStavka { get => CreditStavka; set => CreditStavka = value; }
+        public double Balance { get => balance; set => balance = value; }
+        public virtual double CreditStavka { get => creditStavka; set => creditStavka = value; }
 
         public double Zadoljnost { get; set; }
 
