@@ -1,0 +1,8 @@
+C:\Users\211915\source\repos\321Labs2021\BankCore\bin\Debug\netcoreapp3.1\BankCore.deps.json
+C:\Users\211915\source\repos\321Labs2021\BankCore\bin\Debug\netcoreapp3.1\BankCore.dll
+C:\Users\211915\source\repos\321Labs2021\BankCore\bin\Debug\netcoreapp3.1\BankCore.pdb
+C:\Users\211915\source\repos\321Labs2021\BankCore\obj\Debug\netcoreapp3.1\BankCore.AssemblyInfoInputs.cache
+C:\Users\211915\source\repos\321Labs2021\BankCore\obj\Debug\netcoreapp3.1\BankCore.AssemblyInfo.cs
+C:\Users\211915\source\repos\321Labs2021\BankCore\obj\Debug\netcoreapp3.1\BankCore.dll
+C:\Users\211915\source\repos\321Labs2021\BankCore\obj\Debug\netcoreapp3.1\BankCore.pdb
+C:\Users\211915\source\repos\321Labs2021\BankCore\obj\Debug\netcoreapp3.1\BankCore.csprojAssemblyReference.cache
