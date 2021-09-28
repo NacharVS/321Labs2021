@@ -17,5 +17,10 @@ namespace BankCore
         {
             Console.WriteLine($"{name} {surname} {age} {phone} {post}");
         }
+
+        public override string ToString()
+        {
+            return $"{post}: {surname}";
+        }
     }
 }

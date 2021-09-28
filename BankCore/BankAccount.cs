@@ -5,6 +5,8 @@ namespace BankCore
 {
     public class BankAccount
     {
+        private PersonalData client;
+        private int idAccount;
 
         private double _ballance;
 
@@ -26,6 +28,13 @@ namespace BankCore
             {
                 _ballance = value;
             }
+        }
+
+        public BankAccount(PersonalData client)
+        {
+            this.client = client;
+            Random rnd = new Random();
+            idAccount = rnd.Next(1, 9999);
         }
     }
 }
