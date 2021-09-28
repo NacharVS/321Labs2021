@@ -5,31 +5,16 @@ namespace Group321
 {
     class Program
     {
-        static List<PersonalData> lst = new List<PersonalData>();
+        private static List<PersonalData> lst = new List<PersonalData>();
+        private static Account account;
+        private static int number;
 
         static void Main(string[] args)
         {
             StartProgram();
             double creditSum;
-            Account acc = null;
             Account acc1 = new Account();
-
-            Console.WriteLine("Who is you?\n1) Client\n2) Employee");
-            switch (Console.ReadLine())
-            {
-                case "1":
-                    acc = new Client();
-                    break;
-                case "2":
-                    acc = new Employee();
-                    break;
-
-                default:
-                    Console.WriteLine("Enter correct data");
-                    Console.ReadKey();
-                    Environment.Exit(0);
-                    break;
-            }
+            ChooseAcc();
 
             while (true)
             {
@@ -37,48 +22,44 @@ namespace Group321
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        Console.Write("Balance acc:  ");
-                        Operations.ShowBalance(acc);
+                        Console.Write($"Balance {lst[number].FIO}, {lst[number].Acc.ToString().Substring(9)}:  ");
+                        Operations.ShowBalance(lst[number].Acc);
                         Console.Write("Balance acc1:  ");
                         Operations.ShowBalance(acc1);
                         break;
                     case "2":
                         Console.WriteLine("Enter deposit sum");
                         double sum = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine($"баланс пополнен на {Operations.Deposit(acc, sum)} рублей");
+                        Console.WriteLine($"баланс пополнен на {Operations.Deposit(lst[number].Acc, sum)} рублей");
                         break;
                     case "3":
                         Console.WriteLine("Enter transaction sum");
                         double transactionSum = Convert.ToDouble(Console.ReadLine());
-                        Operations.Transaction(acc, acc1, transactionSum);
+                        Operations.Transaction(lst[number].Acc, acc1, transactionSum);
                         break;
                     case "4":
                         Console.WriteLine("Enter credit sum");
                         creditSum = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Enter TimeSpan in mounth");
-                        Operations.GetCredit(acc, Convert.ToInt32(Console.ReadLine()), creditSum);
+                        Operations.GetCredit(lst[number].Acc, Convert.ToInt32(Console.ReadLine()), creditSum);
                         break;
                     case "5":
                         Console.WriteLine("Enter transaction sum");
                         double widtrawSum = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine($"С баланса снято {Operations.Widtraw(acc, widtrawSum)} рублей\nОстаток ");
-                        Operations.ShowBalance(acc);
+                        Console.WriteLine($"С баланса снято {Operations.Widtraw(lst[number].Acc, widtrawSum)} рублей\nОстаток {lst[number].Acc.Balance} рублей, {lst[number].Acc.BalanceDollar}$");
+                        Operations.ShowBalance(lst[number].Acc);
                         break;
                     case "6":
                         Console.WriteLine("Enter vklad sum");
                         double vkladSum = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Enter TimeSpan in mounth");
                         int mounthCount = Convert.ToInt32(Console.ReadLine());
-                        Operations.Vklad(acc, vkladSum, mounthCount);
+                        Operations.Vklad(lst[number].Acc, vkladSum, mounthCount);
                         break;
                     case "7":
                         Console.WriteLine("Enter credit repayment sum");
                         double repaymentSum = Convert.ToDouble(Console.ReadLine());
-                        Operations.PayCredit(acc, repaymentSum);
-                        break;
-                    case "12":
-                        // выход из приложения 
-                        Environment.Exit(0);
+                        Operations.PayCredit(lst[number].Acc, repaymentSum);
                         break;
                     case "8":
                         AddList();
@@ -92,6 +73,14 @@ namespace Group321
                     case "11":
                         Reduct();
                         break;
+                    case "12":
+                        ChooseAcc();
+                        break;
+                    case "13":
+                        // выход из приложения 
+                        Environment.Exit(0);
+                        break;
+
 
                     default:
                         Console.WriteLine("Enter correct data");
@@ -113,7 +102,8 @@ namespace Group321
             Console.WriteLine("9: Удалить аккаунт");
             Console.WriteLine("10: Просмотреть все аккаунты");
             Console.WriteLine("11: Редактировать аккаунт");
-            Console.WriteLine("12: Выйти из приложения");
+            Console.WriteLine("12: Изменить аккаунт");
+            Console.WriteLine("13: Выйти из приложения");
         }
 
         static void StartProgram()
@@ -167,9 +157,11 @@ namespace Group321
 
         static void Showlst()
         {
+            int i = 1;
             foreach (var item in lst)
             {
-                Console.WriteLine($"{item.FIO}, {item.addres}, {item.acc.Balance}");
+                Console.WriteLine($"{i}) {item.FIO}, {item.Addres}, {item.Acc.Balance}, {item.Acc.ToString().Substring(9)}");
+                i++;
             }
         }
 
@@ -184,8 +176,56 @@ namespace Group321
             lst[a] = str;
 
             Console.WriteLine("Введите адрес редактируемого объекта");
-            str.addres = Console.ReadLine();
+            str.Addres = Console.ReadLine();
             lst[a] = str;
+
+            if (str.Acc.ToString().Substring(9) == "Client")
+            {
+                Console.WriteLine("Сделать клиента сотрудником банка?\n1)Да\n2)Нет");
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        double balance = str.Acc.Balance;
+                        str.Acc = new Employee(balance);
+                        lst[a] = str;
+                        break;
+                    case "2":
+                        Console.WriteLine("Редактирование завершено успешно");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Уволить сотрудником банка?\n1)Да\n2)Нет");
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        double balance = str.Acc.Balance;
+                        str.Acc = new Client(balance);
+                        lst[a] = str;
+                        break;
+                    case "2":
+                        Console.WriteLine("Редактирование завершено успешно");
+                        break;
+                }
+            }
+        }
+
+        static void ChooseAcc()
+        {
+            Console.WriteLine("Кто вы? Введите номер из списка");
+            Showlst();
+            try
+            {
+                number = Convert.ToInt32(Console.ReadLine());
+                number--;
+                account = lst[number].Acc;
+            }
+            catch
+            {
+                Console.WriteLine("Введите номер из списка");
+                Environment.Exit(0);
+            }
         }
     }
 }
