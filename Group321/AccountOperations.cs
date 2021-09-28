@@ -6,17 +6,17 @@ namespace Group321
 {
     static class AccountOperations
     {
-        private static List<PersonalData> lst = new List<PersonalData>();
-        public static List<PersonalData> Lst { get => lst; private set => lst = value; }
+        private static List<Account> lst = new List<Account>();
+        public static List<Account> Lst { get => lst; private set => lst = value; }
 
         public static void StartProgram()
         {
-            lst = new List<PersonalData>();
-            lst.Add(new PersonalData("Иванов Иван Иванович", "Казань", new Client(20000)));
-            lst.Add(new PersonalData("Петров Петр Петрович", "Казань", new Employee(50000)));
-            lst.Add(new PersonalData("Иванов Петр Петрович", "Казань", new Client(30000)));
-            lst.Add(new PersonalData("Петров Иван Иванович", "Казань", new Employee(70000)));
-            lst.Add(new PersonalData("Иванов Василий петрович", "Казань", new Client(40000)));
+            lst = new List<Account>();
+            lst.Add(new Client(20000, new PersonalData("Иванов Иван Иванович", "Казань")));
+            lst.Add(new Employee(50000, new PersonalData("Петров Петр Петрович", "Казань")));
+            lst.Add(new Client(30000, new PersonalData("Иванов Петр Петрович", "Казань")));
+            lst.Add(new Employee(70000, new PersonalData("Петров Иван Иванович", "Казань")));
+            lst.Add(new Client(40000, new PersonalData("Иванов Василий петрович", "Казань")));
         }
 
         public static void RemoveList()
@@ -44,10 +44,10 @@ namespace Group321
             switch (Console.ReadLine())
             {
                 case "1":
-                    lst.Add(new PersonalData(FIO, addres, new Client(20000)));
+                    lst.Add(new Client(20000, new PersonalData(FIO, addres)));
                     break;
                 case "2":
-                    lst.Add(new PersonalData(FIO, addres, new Employee(20000)));
+                    lst.Add(new Employee(20000, new PersonalData(FIO, addres)));
                     break;
 
                 default:
@@ -63,7 +63,7 @@ namespace Group321
             int i = 1;
             foreach (var item in lst)
             {
-                Console.WriteLine($"{i}) {item.FIO}, {item.Addres}, {item.Acc.Balance}, {item.Acc.ToString().Substring(9)}");
+                Console.WriteLine($"{i}) {item.PD.FIO}, {item.PD.Addres}, {item.Balance}, {item.ToString().Substring(9)}");
                 i++;
             }
         }
@@ -73,24 +73,25 @@ namespace Group321
             Console.WriteLine("Введите индекс редактируемого аккаунта");
             int a = Convert.ToInt32(Console.ReadLine());
 
-            var str = lst[a];
+            var acc = lst[a];
+            var str = lst[a].PD;
             Console.WriteLine("Введите ФИО редактируемого аккаунта");
             str.FIO = Console.ReadLine();
-            lst[a] = str;
+            lst[a].PD = str;
 
             Console.WriteLine("Введите адрес редактируемого аккаунта");
             str.Addres = Console.ReadLine();
-            lst[a] = str;
+            lst[a].PD = str;
 
-            if (str.Acc.ToString().Substring(9) == "Client")
+            if (acc.ToString().Substring(9) == "Client")
             {
                 Console.WriteLine("Сделать клиента сотрудником банка?\n1)Да\n2)Нет");
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        double balance = str.Acc.Balance;
-                        str.Acc = new Employee(balance);
-                        lst[a] = str;
+                        double balance = acc.Balance;
+                        acc = new Employee(balance, str);
+                        lst[a] = acc;
                         break;
                     case "2":
                         Console.WriteLine("Редактирование завершено успешно");
@@ -103,9 +104,9 @@ namespace Group321
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        double balance = str.Acc.Balance;
-                        str.Acc = new Client(balance);
-                        lst[a] = str;
+                        double balance = acc.Balance;
+                        acc = new Client(balance, str);
+                        lst[a] = acc;
                         break;
                     case "2":
                         Console.WriteLine("Редактирование завершено успешно");
@@ -122,7 +123,7 @@ namespace Group321
             {
                 int number = Convert.ToInt32(Console.ReadLine());
                 number--;
-                Account account = lst[number].Acc;
+                Account account = lst[number];
                 return number;
             }
             catch

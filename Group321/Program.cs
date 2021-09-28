@@ -11,7 +11,6 @@ namespace Group321
         {
             AccountOperations.StartProgram();
             double creditSum;
-            Account acc1 = new Account();
             number = AccountOperations.ChooseAcc();
 
             while (true)
@@ -20,44 +19,42 @@ namespace Group321
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        Console.Write($"Balance {AccountOperations.Lst[number].FIO}, {AccountOperations.Lst[number].Acc.ToString().Substring(9)}:  ");
-                        Operations.ShowBalance(AccountOperations.Lst[number].Acc);
-                        Console.Write("Balance acc1:  ");
-                        Operations.ShowBalance(acc1);
+                        Console.Write($"Balance {AccountOperations.Lst[number].PD.FIO}, {AccountOperations.Lst[number].ToString().Substring(9)}:  ");
+                        Operations.ShowBalance(AccountOperations.Lst[number]);
                         break;
                     case "2":
                         Console.WriteLine("Enter deposit sum");
                         double sum = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine($"баланс пополнен на {Operations.Deposit(AccountOperations.Lst[number].Acc, sum)} рублей");
+                        Console.WriteLine($"баланс пополнен на {Operations.Deposit(AccountOperations.Lst[number], sum)} рублей");
                         break;
                     case "3":
                         Console.WriteLine("Enter transaction sum");
                         double transactionSum = Convert.ToDouble(Console.ReadLine());
-                        Operations.Transaction(AccountOperations.Lst[number].Acc, AccountOperations.Lst[AccountOperations.ChooseAcc()].Acc, transactionSum);
+                        Operations.Transaction(AccountOperations.Lst[number], AccountOperations.Lst[AccountOperations.ChooseAcc()], transactionSum);
                         break;
                     case "4":
                         Console.WriteLine("Enter credit sum");
                         creditSum = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Enter TimeSpan in mounth");
-                        Operations.GetCredit(AccountOperations.Lst[number].Acc, Convert.ToInt32(Console.ReadLine()), creditSum);
+                        Operations.GetCredit(AccountOperations.Lst[number], Convert.ToInt32(Console.ReadLine()), creditSum);
                         break;
                     case "5":
                         Console.WriteLine("Enter transaction sum");
                         double widtrawSum = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine($"С баланса снято {Operations.Widtraw(AccountOperations.Lst[number].Acc, widtrawSum)} рублей\nОстаток {AccountOperations.Lst[number].Acc.Balance} рублей, {AccountOperations.Lst[number].Acc.BalanceDollar}$");
-                        Operations.ShowBalance(AccountOperations.Lst[number].Acc);
+                        Console.WriteLine($"С баланса снято {Operations.Widtraw(AccountOperations.Lst[number], widtrawSum)} рублей\nОстаток {AccountOperations.Lst[number].Balance} рублей, {AccountOperations.Lst[number].BalanceDollar}$");
+                        Operations.ShowBalance(AccountOperations.Lst[number]);
                         break;
                     case "6":
                         Console.WriteLine("Enter vklad sum");
                         double vkladSum = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Enter TimeSpan in mounth");
                         int mounthCount = Convert.ToInt32(Console.ReadLine());
-                        Operations.Vklad(AccountOperations.Lst[number].Acc, vkladSum, mounthCount);
+                        Operations.Vklad(AccountOperations.Lst[number], vkladSum, mounthCount);
                         break;
                     case "7":
                         Console.WriteLine("Enter credit repayment sum");
                         double repaymentSum = Convert.ToDouble(Console.ReadLine());
-                        Operations.PayCredit(AccountOperations.Lst[number].Acc, repaymentSum);
+                        Operations.PayCredit(AccountOperations.Lst[number], repaymentSum);
                         break;
                     case "8":
                         AccountOperations.AddList();
@@ -89,7 +86,7 @@ namespace Group321
 
         static void Menu()
         {
-            Console.WriteLine("\n\n\n1: Посмотреть баланс");
+            Console.WriteLine("\n1: Посмотреть баланс");
             Console.WriteLine("2: Пополнить баланс");
             Console.WriteLine("3: Перевести другому клиенту");
             Console.WriteLine("4: Взять кредит");
@@ -100,7 +97,7 @@ namespace Group321
             Console.WriteLine("9: Удалить аккаунт");
             Console.WriteLine("10: Просмотреть все аккаунты");
             Console.WriteLine("11: Редактировать аккаунт");
-            Console.WriteLine("12: Изменить аккаунт");
+            Console.WriteLine("12: Сменить аккаунт");
             Console.WriteLine("13: Выйти из приложения");
         }
     }

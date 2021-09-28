@@ -13,6 +13,7 @@ namespace Group321
         {
             Console.WriteLine($"{message}");
         };
+
         public static void ShowBalance(Account acc)
         {
             acc.BalanceDollar = Math.Round(acc.Balance / 73.08, 3);

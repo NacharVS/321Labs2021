@@ -11,17 +11,14 @@ namespace Group321
         //добавить свойства
         public string _FIO;
         public string _addres;
-        public Account _acc;
 
         public string FIO { get => _FIO; set => _FIO = value; }
         public string Addres { get => _addres; set => _addres = value; }
-        public Account Acc { get => _acc; set => _acc = value; }
 
-        public PersonalData(string FIO, string addres, Account acc)
+        public PersonalData(string FIO, string addres)
         {
             _FIO = FIO;
             _addres = addres;
-            _acc = acc;
         }
     }
 }
