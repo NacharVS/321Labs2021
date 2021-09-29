@@ -1,5 +1,6 @@
 ﻿using System;
 using BAClasses;
+using System.Collections.Generic;
 
 namespace Group321
 {
@@ -31,25 +32,35 @@ namespace Group321
 
                 Console.WriteLine();*/
 
-                Console.WriteLine("New Client");
-                Console.WriteLine("First name: ");
-                string fn = Console.ReadLine();
-                Console.WriteLine("Last name: ");
-                string ln = Console.ReadLine();
-                Console.WriteLine("Birth date: ");
-                Console.Write("Day - ");
-                string dd = Console.ReadLine();
-                Console.Write("Month - ");
-                string mm = Console.ReadLine();
-                Console.Write("Year - ");
-                string yy = Console.ReadLine();
-                Console.WriteLine("Telephone Number: ");
-                string num = Console.ReadLine();
-                Console.WriteLine();
-                PersonalData pd = new PersonalData(fn, ln, num, dd, mm, yy);
-                pd.GetPersonalData();
+                //Console.WriteLine("New Client");
+                //Console.WriteLine("First name: ");
+                //string fn = Console.ReadLine();
+                //Console.WriteLine("Last name: ");
+                //string ln = Console.ReadLine();
+                //Console.WriteLine("Birth date: ");
+                //Console.Write("Day - ");
+                //string dd = Console.ReadLine();
+                //Console.Write("Month - ");
+                //string mm = Console.ReadLine();
+                //Console.Write("Year - ");
+                //string yy = Console.ReadLine();
+                //Console.WriteLine("Telephone Number: ");
+                //string num = Console.ReadLine();
+                //Console.WriteLine();
+                //PersonalData pd = new PersonalData(fn, ln, num, dd, mm, yy);
+                //pd.GetPersonalData();
 
-                Console.WriteLine();                
+                //Console.WriteLine();
+                List<Employee> employee = new List<Employee>();
+                employee.Add(new Employee() { Name = "Борис Алексеев" });
+                employee.Add(new Employee() { Name = "Лариса Павлова" });
+                employee.RemoveAt(0);
+
+                foreach(Employee e in employee)
+                {
+                    Console.WriteLine(e.Name);
+                }
+                break;
             }
         }
     }
