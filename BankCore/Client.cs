@@ -13,5 +13,10 @@ namespace BankCore
             Random rnd = new Random();
             idClient = rnd.Next(1, 9999);
         }
+
+        public override string ToString()
+        {
+            return $"{surname} {name}";
+        }
     }
 }

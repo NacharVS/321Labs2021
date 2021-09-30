@@ -20,7 +20,7 @@ namespace BankCore
 
         public override string ToString()
         {
-            return $"{post}: {surname}";
+            return $"{post}: {surname} {name}";
         }
     }
 }
