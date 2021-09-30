@@ -36,7 +36,8 @@ namespace Group321
 
             Console.WriteLine("Выберите пункт");
             Console.WriteLine("1 Зайти на счет cотрудника");
-            Console.WriteLine("2 Зайти на счет cотрудника");
+            Console.WriteLine("2 Зайти на счет клиента");
+            Console.WriteLine("   ");
 
             string qwe = Console.ReadLine();
 
@@ -44,10 +45,46 @@ namespace Group321
             {
                 case "1":
                     Console.WriteLine("Сотрудник, добро пожаловать!");
+                    Operations.ShowEmployee(employee);
                     break;
                 case "2":
                     Console.WriteLine("Клиент, добро пожаловать!");
+                    Operations.ShowClient(client);
                     break;
+
+
+
+
+
+                    //switch ()
+                    //   case "1":
+                    //          Console.WriteLine("Ваш ID:"+ );
+                    //          Console.WriteLine();
+                    //          Console.WriteLine();
+                    //   case "2":
+                    //          Console.WriteLine();
+                    //          Console.WriteLine();
+                    //          Console.WriteLine();
+                    //   case "3":
+                    //          Console.WriteLine();
+                    //          Console.WriteLine();
+                    //          Console.WriteLine();
+                    //   case "4":
+                    //          Console.WriteLine();
+                    //          Console.WriteLine();
+                    //          Console.WriteLine();
+                    //   case "5":
+                    //          Console.WriteLine();
+                    //          Console.WriteLine();
+                    //          Console.WriteLine();
+                    //   case "6":
+                    //          Console.WriteLine();
+                    //          Console.WriteLine();
+                    //          Console.WriteLine();
+                    //   case "7":
+                    //          Console.WriteLine();
+                    //          Console.WriteLine();
+                    //          Console.WriteLine();
             }
         }
     }
