@@ -7,6 +7,7 @@ namespace Group321
         private static double creditSum;
         private static int number;
         private static AccountOperations accountOperations = new AccountOperations();
+        IAccountOperations ac = new AccountOperations();
         static void Main(string[] args)
         {
             accountOperations.StartProgram();
