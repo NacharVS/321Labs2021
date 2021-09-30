@@ -6,10 +6,6 @@ namespace Group321
 {
     class Operation
     {
-        public static void ShowBalance(Account account)
-        {
-            Console.WriteLine(account.Balance);
-        }
        public static void Transaction(Account accountSeller, Account accountGetter, double sum)
        {
             if (sum > accountSeller.Balance) 
@@ -20,7 +16,7 @@ namespace Group321
             {
                 accountSeller.Balance -= sum;
                 accountGetter.Balance += sum;
-                System.Console.WriteLine("Translation completed");
+                Console.WriteLine("Translation completed");
             }
        }
 
@@ -30,7 +26,7 @@ namespace Group321
             if (account.Balance >= sum)
             {
                 account.Balance -= summ;
-                System.Console.WriteLine("WidTraw completed");
+                Console.WriteLine("WidTraw completed");
                 return summ;
             }
             else
@@ -42,7 +38,7 @@ namespace Group321
         public static void Deposit(Account account, double sum)
         {
             account.Balance += sum;
-            System.Console.WriteLine("Deposit completed");
+            Console.WriteLine("Deposit completed");
         }
 
         public static void GetCredit(Account account, double time, double creditSum)

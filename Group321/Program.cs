@@ -8,128 +8,127 @@ namespace Group321
         static void Main(string[] args)
         {
             AccountsOperations.StartProgram();
-            Account account = null;
-            Console.WriteLine("\nChoose type of account");
-            Console.WriteLine("\n1.Klient");
-            Console.WriteLine("2.Employee");
-            int typeacc = Convert.ToInt32(Console.ReadLine());
-            if (typeacc == 1)
+            static int MenuStart()
             {
-                account = new Klient();
+                Console.WriteLine("\n1.Sign in account");
+                Console.WriteLine("2.Show klientlist");
+                Console.WriteLine("3.Remove a klient from the list");
+                Console.WriteLine("4.Add a klient to the list");
+                int stp = Convert.ToInt32(Console.ReadLine());
+                return stp;
             }
-            else if (typeacc == 2)
-            {
-                account = new Employee();
-            }
-            else
-            {
-                Console.WriteLine("Incorrect type of account");
-            }
-            Account account1 = new Account();
-            account.Balance = 50000;
-            int choose;
             while (true)
             {
-                Console.WriteLine("\n1.Show balance");
-                Console.WriteLine("2.Transaction");
-                Console.WriteLine("3.Deposit");
-                Console.WriteLine("4.WidTraw");
-                Console.WriteLine("5.GetCredit");
-                Console.WriteLine("6.Invest");
-                Console.WriteLine("7.Payment credit");
-                Console.WriteLine("8.Show klientlist");
-                Console.WriteLine("9.Remove a klient from the list");
-                Console.WriteLine("10.Add a klient to the list");
-                Console.WriteLine("11.Edit klient data");
-                Console.WriteLine("\nChoose operation");
-                choose = Convert.ToInt32(Console.ReadLine());
-                if (choose == 1)
+                int st = MenuStart();
+                if (st == 1)
                 {
-                    Console.Write("Balance account = ");
-                    Operation.ShowBalance(account);
-                }
-                else if (choose == 2)
-                {
-                    Console.WriteLine("Enter the transaction sum");
-                    double sum = Convert.ToDouble(Console.ReadLine());
-                    Operation.Transaction(account, account1, sum);
-                    Console.Write("Balance accountGetter = ");
-                    Operation.ShowBalance(account1);
-                }
-                else if (choose == 3)
-                {
-                    Console.WriteLine("Enter the deposit sum");
-                    double sum = Convert.ToDouble(Console.ReadLine());
-                    Operation.Deposit(account, sum);
-                }
-                else if (choose == 4)
-                {
-                    Console.WriteLine("Enter the widtraw sum");
-                    double sum = Convert.ToDouble(Console.ReadLine());
-                    Operation.Widtraw(account, sum);
-                }
-                else if (choose == 5)
-                {
-                    if (account.Credit == 0)
+                    int num = AccountsOperations.ChooseAcc();
+                    int choose;
+                    while (true)
                     {
-                        Console.WriteLine("Enter credit sum");
-                        double creditsum = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine("Enter time of credit");
-                        double time = Convert.ToDouble(Console.ReadLine());
-                        Operation.GetCredit(account, time, creditsum);
-                        Console.WriteLine($"Credit is approved.Your debt is {account.Credit}.The monthly payment will be {account.Credit / (time * 12)}");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Credit is not approved.Your debt is {account.Credit}");
-                    }
+                        Console.WriteLine("\n1.Show account data");
+                        Console.WriteLine("2.Transaction");
+                        Console.WriteLine("3.Deposit");
+                        Console.WriteLine("4.WidTraw");
+                        Console.WriteLine("5.GetCredit");
+                        Console.WriteLine("6.Invest");
+                        Console.WriteLine("7.Payment credit");
+                        Console.WriteLine("8.Edit klient data");
+                        Console.WriteLine("9.Exit from account");
+                        Console.WriteLine("\nChoose operation");
+                        choose = Convert.ToInt32(Console.ReadLine());
+                        if (choose == 1)
+                        {
+                            AccountsOperations.ShowData(num);
+                        }
+                        else if (choose == 2)
+                        {
+                            int trnum = AccountsOperations.ChooseAcc();
+                            Console.WriteLine("Enter the transaction sum");
+                            double sum = Convert.ToDouble(Console.ReadLine());
+                            Operation.Transaction(AccountsOperations.list[num], AccountsOperations.list[trnum], sum);
+                        }
+                        else if (choose == 3)
+                        {
+                            Console.WriteLine("Enter the deposit sum");
+                            double sum = Convert.ToDouble(Console.ReadLine());
+                            Operation.Deposit(AccountsOperations.list[num], sum);
+                        }
+                        else if (choose == 4)
+                        {
+                            Console.WriteLine("Enter the widtraw sum");
+                            double sum = Convert.ToDouble(Console.ReadLine());
+                            Operation.Widtraw(AccountsOperations.list[num], sum);
+                        }
+                        else if (choose == 5)
+                        {
+                            if (AccountsOperations.list[num].Credit == 0)
+                            {
+                                Console.WriteLine("Enter credit sum");
+                                double creditsum = Convert.ToDouble(Console.ReadLine());
+                                Console.WriteLine("Enter time of credit");
+                                double time = Convert.ToDouble(Console.ReadLine());
+                                Operation.GetCredit(AccountsOperations.list[num], time, creditsum);
+                                Console.WriteLine($"Credit is approved.Your debt is {AccountsOperations.list[num].Credit}.The monthly payment will be {AccountsOperations.list[num].Credit / (time * 12)}");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Credit is not approved.Your debt is {AccountsOperations.list[num].Credit}");
+                            }
 
+                        }
+                        else if (choose == 6)
+                        {
+                            if (AccountsOperations.list[num].Vklad == 0)
+                            {
+                                Console.WriteLine("Enter the invest sum");
+                                double sum = Convert.ToDouble(Console.ReadLine());
+                                Console.WriteLine("Enter the invest time");
+                                AccountsOperations.list[num].timeVklad = Convert.ToDouble(Console.ReadLine());
+                                Operation.Invest(AccountsOperations.list[num], sum);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Enter the invest sum");
+                                double sum = Convert.ToDouble(Console.ReadLine());
+                                Operation.Invest(AccountsOperations.list[num], sum);
+                            }
+                        }
+                        else if (choose == 7)
+                        {
+                            if (AccountsOperations.list[num].Credit != 0)
+                            {
+                                Console.WriteLine("Enter the payment sum");
+                                double sum = Convert.ToDouble(Console.ReadLine());
+                                Operation.PaymentCredit(AccountsOperations.list[num], sum);
+                            }
+                            else
+                            {
+                                Console.WriteLine("You don't have credit");
+                            }
+                        }
+                        else if (choose == 8)
+                        {
+                            AccountsOperations.EditKlient(num);
+                        }
+                        else if (choose == 9)
+                        {
+                            Console.Clear();
+                            num = AccountsOperations.ChooseAcc();
+                        }
+                    }
                 }
-                else if (choose == 6)
-                {
-                    if (account.Vklad == 0)
-                    {
-                        Console.WriteLine("Enter the invest sum");
-                        double sum = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine("Enter the invest time");
-                        account.timeVklad = Convert.ToDouble(Console.ReadLine());
-                        Operation.Invest(account, sum);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Enter the invest sum");
-                        double sum = Convert.ToDouble(Console.ReadLine());
-                        Operation.Invest(account, sum);
-                    }
-                }
-                else if (choose == 7)
-                {
-                    if (account.Credit != 0)
-                    {
-                        Console.WriteLine("Enter the payment sum");
-                        double sum = Convert.ToDouble(Console.ReadLine());
-                        Operation.PaymentCredit(account, sum);
-                    }
-                    else
-                    {
-                        Console.WriteLine("You don't have credit");
-                    }
-                }
-                else if (choose ==8 )
+                else if (st == 2)
                 {
                     AccountsOperations.ShowKlientlist();
                 }
-                else if (choose == 9)
+                else if (st == 3)
                 {
                     AccountsOperations.RemoveKlient();
                 }
-                else if(choose==10)
+                else if (st == 4)
                 {
                     AccountsOperations.AddKlient();
-                }
-                else if(choose==11)
-                {
-                    AccountsOperations.EditKlient();
                 }
             }
         }

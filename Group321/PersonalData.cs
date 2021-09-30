@@ -6,15 +6,15 @@ namespace Group321
 {
     struct PersonalData
     {
-        public string fio;
-        public string adress;
-        public Account acc;
+        private string fio;
+        private string adress;
+        public string FIO { get => fio; set => fio = value; }
+        public string Adress { get => adress; set => adress = value; }
 
-        public PersonalData(string fio,string adress, Account acc)
+        public PersonalData(string fio,string adress)
         {
             this.fio = fio;
             this.adress = adress;
-            this.acc = acc;
         }
     }
 }

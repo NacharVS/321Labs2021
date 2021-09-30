@@ -10,9 +10,9 @@ namespace Group321
         private double credit;
         private double vklad;
         private double timevklad;
-        private static double Stavka = 5;
-        private static double stavkaCred = 5;
-        
+        private double Stavka = 5;
+        private double stavkaCred = 5;
+        protected PersonalData persd;
         
         public double Balance { get => balance; set => balance = value; }
         public double Credit { get => credit; set => credit = value; }
@@ -20,14 +20,24 @@ namespace Group321
         public double timeVklad { get => timevklad; set => timevklad = value; }
         public virtual double StavkaVklad { get => Stavka; set => Stavka = value; }
         public virtual double StavkaCred { get => stavkaCred; set => stavkaCred = value; }
+        public virtual PersonalData pd  { get => persd; set => persd = value; }
 
         public Account()
         {
 
         }
-        public Account(double balance)
+        public Account(double balance, PersonalData pd)
         {
             this.balance = balance;
+            persd = pd;
+        }
+        public Account(double balance, PersonalData pd, double Credit, double Vklad, double timeVklad)
+        {
+            this.balance = balance;
+            persd = pd;
+            this.Credit = Credit;
+            this.Vklad = Vklad;
+            this.timeVklad = timeVklad;
         }
     }
 }
