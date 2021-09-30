@@ -4,12 +4,11 @@ namespace Group321
 {
     class Program
     {
-
-
         static void Main(string[] args)
         {
             AccountOperations.StartProgram();
             double creditSum;
+            Console.WriteLine("Кто вы? Введите номер из списка");
             int number = AccountOperations.ChooseAcc();
 
             while (true)
@@ -29,7 +28,9 @@ namespace Group321
                     case "3":
                         Console.WriteLine("Enter transaction sum");
                         double transactionSum = Convert.ToDouble(Console.ReadLine());
-                        Operations.Transaction(AccountOperations.Lst[number], AccountOperations.Lst[AccountOperations.ChooseAcc()], transactionSum);
+                        Console.WriteLine("Кому перевести? Введите номер из списка");
+                        int number1 = AccountOperations.ChooseAcc();
+                        Operations.Transaction(AccountOperations.Lst[number], AccountOperations.Lst[number1], transactionSum);
                         break;
                     case "4":
                         Console.WriteLine("Enter credit sum");
@@ -68,6 +69,7 @@ namespace Group321
                         AccountOperations.Reduct();
                         break;
                     case "12":
+                        Console.WriteLine("Какой аккаунт выбрать? Введите номер из списка");
                         number = AccountOperations.ChooseAcc();
                         break;
                     case "13":

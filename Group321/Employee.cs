@@ -1,4 +1,6 @@
-﻿namespace Group321
+﻿using System;
+
+namespace Group321
 {
     class Employee : Account
     {
@@ -15,7 +17,7 @@
         public Employee(double balance, PersonalData pd)
         {
             balanceRubles = balance;
-            balanceDollar = balance / 73.08;
+            balanceDollar = Math.Round(balance / 73.08, 2);
             ProcentStavkaCredit = 4;
             ProcentStavkaVklad = 7;
             PD = pd;
@@ -28,6 +30,15 @@
             ProcentStavkaCredit = 4;
             ProcentStavkaVklad = 7;
             PD = pd;
+        }
+
+        public Employee(double balance, PersonalData pd, double credit, double vklad)
+        {
+            balanceRubles = balance;
+            balanceDollar = Math.Round(balance / 73.08, 2);
+            persondata = pd;
+            Credit = credit;
+            Vklad = vklad;
         }
     }
 }

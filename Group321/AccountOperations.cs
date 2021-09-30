@@ -92,7 +92,7 @@ namespace Group321
                 {
                     case "1":
                         double balance = acc.Balance;
-                        acc = new Employee(balance, str);
+                        acc = new Employee(balance, str, acc.Credit, acc.Vklad);
                         lst[a] = acc;
                         break;
                     case "2":
@@ -107,7 +107,7 @@ namespace Group321
                 {
                     case "1":
                         double balance = acc.Balance;
-                        acc = new Client(balance, str);
+                        acc = new Client(balance, str, acc.Credit, acc.Vklad);
                         lst[a] = acc;
                         break;
                     case "2":
@@ -119,7 +119,6 @@ namespace Group321
 
         public static int ChooseAcc()
         {
-            Console.WriteLine("Кто вы? Введите номер из списка");
             Showlst();
             try
             {

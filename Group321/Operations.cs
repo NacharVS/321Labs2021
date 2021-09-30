@@ -12,8 +12,8 @@ namespace Group321
 
         public static void ShowBalance(Account acc)
         {
-            acc.BalanceDollar = Math.Round(acc.Balance / 73.08, 3);
-            Console.WriteLine($"Баланс в рублях {acc.Balance}, Баланс в долларах {acc.BalanceDollar}");
+            acc.BalanceDollar = Math.Round(acc.Balance / 73.08, 2);
+            Console.WriteLine($"Баланс в рублях {acc.Balance}, Баланс в долларах {acc.BalanceDollar},сумма кредита {acc.Credit}, сумма вклада {acc.Vklad}");
         }
 
         public static void Transaction(Account accSeller, Account accGetter, double sum)
@@ -69,7 +69,7 @@ namespace Group321
                     balance += rascredit;
                     Console.WriteLine($"{i} месяц {rascredit} рублей");
                 }
-                acc.Credit = balance;
+                acc.Credit = Math.Round(balance, 2);
                 Console.WriteLine($"Сумма возврата составляет {balance} рублей со всеми процентами");
             }
             else

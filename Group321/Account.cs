@@ -30,7 +30,7 @@ namespace Group321
         public Account(double balance, PersonalData pd)
         {
             balanceRubles = balance;
-            balanceDollar = Math.Round(balance / 73.08, 3);
+            balanceDollar = Math.Round(balance / 73.08, 2);
             persondata = pd;
         }
 
@@ -39,6 +39,15 @@ namespace Group321
             balanceDollar = dollar;
             balanceRubles = rubles;
             persondata = pd;
+        }
+
+        public Account(double balance, PersonalData pd, double credit, double vklad)
+        {
+            balanceRubles = balance;
+            balanceDollar = Math.Round(balance / 73.08, 2);
+            persondata = pd;
+            Credit = credit;
+            Vklad = vklad;
         }
     }
 }
