@@ -8,8 +8,16 @@ namespace Bank1
 {
     class Program
     {
+        static void Act(BankAction bankAction)
+        {
+            bankAction.Action();
+        }
         static void Main(string[] args)
         {
+            Transaction transaction = new Transaction();
+
+            Withdraw withdraw = new Withdraw();
+
             BankAccount bank = new BankAccount
             {
                 Ballance = 4200,
@@ -122,10 +130,12 @@ namespace Bank1
                         goto case "1";
 
                     case "4":
+                        Act(transaction);
                         Operations.Transaction(bank, bank, 100);
                         goto case "1";
 
                     case "5":
+                        Act(withdraw);
                         Operations.Withdraw(bank, 100);
                         goto case "1";
 
