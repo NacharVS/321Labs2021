@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BankCore
 {
-    public class PersonalData
+    public abstract class PersonalData : IPersonalData
     {
         protected string name, surname;
         protected int age;
@@ -54,11 +54,6 @@ namespace BankCore
             this.phone = phone;
         }
 
-        public void PersonalInfoTest()
-        {
-            Console.WriteLine($"Name: {name} {surname},  Age: {age},  Phone: {phone}");
-        }
-
         public virtual void PersonalInfo()
         {
             Console.WriteLine($"Name: {name} {surname},  Age: {age},  Phone: {phone}");
@@ -67,6 +62,11 @@ namespace BankCore
         public override string ToString()
         {
             return $"{surname}";
+        }
+
+        public void PersonalInfoTest()
+        {
+            throw new NotImplementedException();
         }
     }
 }
