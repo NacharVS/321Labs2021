@@ -51,16 +51,29 @@ namespace Group321
                 //pd.GetPersonalData();
 
                 //Console.WriteLine();
-                List<Employee> employee = new List<Employee>();
-                employee.Add(new Employee() { Name = "Борис Алексеев" });
-                employee.Add(new Employee() { Name = "Лариса Павлова" });
-                employee.RemoveAt(0);
-
-                foreach(Employee e in employee)
+                List<Employee> employees = new List<Employee>()
                 {
-                    Console.WriteLine(e.Name);
+                    new Employee { Name = "Борис Алексеев", Age = 55 },
+                    new Employee { Name = "Лариса Павлова", Age = 37 }
+                };
+
+                int button = int.Parse(Console.ReadLine());
+                int index;
+
+                switch(button)
+                {
+                    case 1: employees.Add(new Employee { Name = Console.ReadLine(), Age = Convert.ToInt32(Console.ReadLine()) });
+                        break;
+                    case 2: employees.RemoveAt(int.Parse(Console.ReadLine()));
+                        break;
+                    default: Console.WriteLine("error");
+                        break;
                 }
-                break;
+
+                foreach(Employee e in employees)
+                {
+                    Console.WriteLine($"Employee's Name - {e.Name}, Age - {e.Age}");
+                }
             }
         }
     }
