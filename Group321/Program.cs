@@ -31,9 +31,9 @@ namespace Group321
                         Console.WriteLine($"\tExample: Ivan;Ivanov;18;500500");
 
                         try
-                        {
+                        { 
                             clientList.Add(Adder());
-                            Console.WriteLine($"\tWelcome {clientList[0]}!");
+                            Console.WriteLine($"\tWelcome {clientList[clientList.Count-1]}!");
                         }
                         catch
                         {

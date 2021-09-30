@@ -4,8 +4,10 @@ using System.Text;
 
 namespace BankCore
 {
-    interface IPersonalData
+    interface IBankAccount
     {
-        void PersonalInfoTest();
+        double Ballance();
+
+        PersonalData ClientStuff();
     }
 }

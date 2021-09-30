@@ -6,9 +6,16 @@ namespace BankCore
 {
     public class Operations
     {
+        public delegate void MessageAsistent(string msg);
+        public static event MessageAsistent Notify = (msg) =>
+        {
+            Console.WriteLine(msg);
+        };
+
         public static void ShowBallance(BankAccount account)
         {
-            Console.WriteLine($"Your balance: {account.Ballance}$");
+            //Console.WriteLine($"Your balance: {account.Ballance}$");
+            Notify?.Invoke($"Your balance: {account.Ballance}$");
         }
 
         public static void Transaction(BankAccount accountSeller, BankAccount accountGetter, double sum)
