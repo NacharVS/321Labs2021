@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace Group321
 {
-    static class AccountOperations
+    public class AccountOperations : IAccountOperations
     {
-        private static List<Account> lst = new List<Account>();
-        public static List<Account> Lst { get => lst; private set => lst = value; }
+        private List<Account> lst;
+        public List<Account> Lst { get => lst; set => lst = value; }
 
-        public static void StartProgram()
+        public void StartProgram()
         {
             lst = new List<Account>();
             lst.Add(new Client(20000, new PersonalData("Иванов Иван Иванович", "Казань")));
@@ -18,12 +18,10 @@ namespace Group321
             lst.Add(new Client(40000, new PersonalData("Иванов Василий петрович", "Казань")));
         }
 
-        public static void RemoveList(Account acc)
+        public void RemoveList(Account acc, int a) // 
         {
-            Console.WriteLine("Введите индекс удаляемого аккаунта");
             try
             {
-                int a = Convert.ToInt32(Console.ReadLine());
                 if (acc != lst[a])
                     lst.RemoveAt(a);
                 else
@@ -36,7 +34,7 @@ namespace Group321
             }
         }
 
-        public static void AddList()
+        public void AddList()
         {
             Console.WriteLine("Введите ФИО");
             string FIO = Console.ReadLine();
@@ -60,7 +58,7 @@ namespace Group321
             }
         }
 
-        public static void Showlst()
+        public void Showlst()
         {
             int i = 1;
             foreach (var item in lst)
@@ -70,7 +68,7 @@ namespace Group321
             }
         }
 
-        public static void Reduct()
+        public void Reduct()
         {
             Console.WriteLine("Введите индекс редактируемого аккаунта");
             int a = Convert.ToInt32(Console.ReadLine());
@@ -117,7 +115,7 @@ namespace Group321
             }
         }
 
-        public static int ChooseAcc()
+        public int ChooseAcc()
         {
             Showlst();
             try

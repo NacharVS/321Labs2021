@@ -2,7 +2,7 @@
 
 namespace Group321
 {
-    class Account
+    public class Account
     {
         protected double balanceDollar;
         protected double balanceRubles;
@@ -48,6 +48,23 @@ namespace Group321
             persondata = pd;
             Credit = credit;
             Vklad = vklad;
+        }
+
+        public virtual void Menu()
+        {
+            Console.WriteLine("\n1: Посмотреть баланс");
+            Console.WriteLine("2: Пополнить баланс");
+            Console.WriteLine("3: Перевести другому клиенту");
+            Console.WriteLine("4: Взять кредит");
+            Console.WriteLine("5: Снять деньги");
+            Console.WriteLine("6: Открыть вклад");
+            Console.WriteLine("7: Оплатить кредит");
+            Console.WriteLine("8: Добавить аккаунт");
+            Console.WriteLine("9: Удалить аккаунт");
+            Console.WriteLine("10: Просмотреть все аккаунты");
+            Console.WriteLine("11: Редактировать аккаунт");
+            Console.WriteLine("12: Сменить аккаунт");
+            Console.WriteLine("13: Выйти из приложения");
         }
     }
 }

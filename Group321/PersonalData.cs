@@ -1,6 +1,6 @@
 ﻿namespace Group321
 {
-    struct PersonalData
+    public struct PersonalData
     {
         //добавить свойства
         public string _FIO;
