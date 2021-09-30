@@ -10,29 +10,30 @@ namespace Group321
 
         public double Ballance
         {
-            get => bballance;
-            set
+            get => bballance; set
             {
                 bballance = value;
             }
         }
 
-        public string idAccount
-        {
-            get;
-            set;
-        }
+        public string idAccount { get; set; }
 
-        public double Percent
-        {
-            get;
-            set;
-        }
+        public double Percent { get; set; }
 
-        public double Telephone
-        {
-            get;
-            set;
-        }
+        public double Telephone { get; set; }
+    }
+
+    class Employee : Account
+    {
+        public string FullName { get; set; }
+
+        public double Salary { get; set; }
+    }
+
+    class Client : Account
+    {
+        public string Password { get; set; }
+
+        public string FullName { get; set; }
     }
 }
