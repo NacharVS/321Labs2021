@@ -47,7 +47,7 @@ namespace Bank1
             get; set;
         }
         // Коэффициент 
-    }
+    } 
 
     class Client : BankAccount
     {
@@ -82,4 +82,24 @@ namespace Bank1
         }
     }
 
+    interface BankAction
+    {
+        void Action();
+    }
+
+    class Transaction : BankAction
+    {
+        public void Action()
+        {
+            Console.WriteLine("Транзакция проводится");
+        }
+    }
+
+    class Withdraw : BankAction
+    {
+        public void Action()
+        {
+            Console.WriteLine("Деньги снимаются");
+        }
+    }
 }
