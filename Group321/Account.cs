@@ -9,29 +9,42 @@ namespace Group321
         private double balance;
         private int accountSeller;
         private int accountGetter;
-        private int creditBalance;
-        public double Balance { get; set; }
+        protected double _balance;
+        public double Balance
+        {
+            get => _balance;
+            set
+            {
+                _balance = value;
+            }
+        }
         private double rate;
         public double Rate
         {
             get { return rate; }
             set { rate = value; }
         }
+
+        private double _creditRate = 0.004;
+        public virtual double CreditRate
+        {
+            get => _creditRate;
+        }
     }
     public class Client : Account
     {
-        private double _creditRate;
-        public double creditRate
+        private double _creditRate = 0.0031;
+        public override double CreditRate
         {
-            get => 0.01;
+            get => _creditRate;
         }
     }
     public class Employee : Account
     {
-        private double _creditRate;
-        public double creditRate
+        private double _creditRate = 0.0025;
+        public override double CreditRate
         {
-            get => 0.008;
+            get => _creditRate;
         }
     }
 }

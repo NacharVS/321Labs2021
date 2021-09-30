@@ -46,9 +46,11 @@ namespace Group321
             account.Balance = (sum * account.Rate / 12) * monthCount + sum;
             System.Console.WriteLine("New Balance: " + account.Balance);
         }
-        public static void Credit(Account account, double sum)
+        public static void Credit(Account account, double sum, int countMonth, double balance)
         {
-
+            double prcntMonth = account.CreditRate / 12;
+            balance = sum * (prcntMonth + (prcntMonth / (Math.Pow(1 + prcntMonth, countMonth) - 1)));
+            Console.WriteLine($"Ваш ежемесячный платеж {balance}");
         }
     }
 }
