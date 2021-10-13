@@ -1,26 +1,38 @@
-﻿using Group321.Examples;
-using System;
+﻿using System;
+using System.Threading;
 
 namespace Group321
 {
     class Program
     {
-        delegate void MessageDelegate(string message);
-
         static void Main(string[] args)
         {
-            IAction psnt = new Peasant(30);
-            psnt.Action();
+            Console.WriteLine("Здравствуйте");
+            Console.WriteLine("Ваше имя");
+            string fname = Console.ReadLine();
+            Console.WriteLine("Ваше фамилия?");
+            string lname = Console.ReadLine();
+            Console.WriteLine("Ваш номер телефона");
+            string tnumber = Console.ReadLine();
+            Console.WriteLine("Дата рождения");
+            string birday = Console.ReadLine();
+            PersonalDate client = new PersonalDate(fname, lname, tnumber, birday);
+            client.GetPersonalData();
 
-        }
-        static void Death()
-        {
-            Console.WriteLine("Is dead");
-        }
+            Account acc = new Account();
+            Account acc1 = new Account();
+            acc.Balance = 10000;
+            acc1.Balance = 2000;
+            Operations.ShowBalance(acc);
+            Operations.ShowBalance(acc1);
 
-        static void ShowInfo(string info)
-        {
-            Console.WriteLine(info);
+            Operations.Transaction(acc, acc1, 1000);
+
+            Operations.Withdraw(acc, 1000);
+            Operations.Deposit(acc, 2000, 3);
+            Employee Ivanov = new Employee();
+
+            Operations.Credit(Ivanov, 30000, 6, 500);
         }
     }
 }
