@@ -17,10 +17,13 @@ namespace ConsoleGameTester
             peasant.GoWork();
             peasant.GoEat();
 
-            Knight knight = new Knight("Дияр", 20, 15, 12);
-            knight.GetBiography();
-            knight.GoWork();
-            knight.GoEat();
+            //Knight knight = new Knight("Дияр", 20, 15, 12);
+            //knight.GetBiography();
+            //knight.GoWork();
+            //knight.GoEat();
+
+            Knight knight = new Knight("Дияр", "Бюджетный");
+            Console.WriteLine($"{knight.Nickname}");
             Console.ReadLine();
         }
     }

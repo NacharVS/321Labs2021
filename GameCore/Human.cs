@@ -9,6 +9,7 @@ namespace GameCore
     abstract public class Human
     {
         protected string Name;
+        public virtual string Nickname { get; set; }
 
         protected double HP;
         protected double Mana;

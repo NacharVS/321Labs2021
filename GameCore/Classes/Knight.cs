@@ -8,15 +8,30 @@ namespace GameCore.Classes
 {
     public class Knight : Human
     {
-        public Knight(string Name) : base(Name)
+        private string _nickname;
+        public override string Nickname
         {
-            CountStats();
+            get
+            {
+                return _nickname;
+            }
+            set
+            {
+                if (_nickname != null)
+                    _nickname = value;
+            }
         }
 
-        public Knight(string Name, int Strength, int Dexterity, int Intellect) : base(Name, Strength, Dexterity, Intellect)
+        public Knight(string Name, string Nickname) : base(Name)
         {
             CountStats();
+             = Nickname;
         }
+
+        //public Knight(string Name, string Nickname) : base(Name, Strength, Dexterity, Intellect)
+        //{          
+        //    CountStats();
+        //}
 
         protected override void CountStats()
         {
