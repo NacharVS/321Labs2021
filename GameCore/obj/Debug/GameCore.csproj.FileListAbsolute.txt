@@ -1,0 +1,6 @@
+C:\Users\Одмен\source\repos\321Labs2021\GameCore\bin\Debug\GameCore.dll
+C:\Users\Одмен\source\repos\321Labs2021\GameCore\bin\Debug\GameCore.pdb
+C:\Users\Одмен\source\repos\321Labs2021\GameCore\obj\Debug\GameCore.csproj.AssemblyReference.cache
+C:\Users\Одмен\source\repos\321Labs2021\GameCore\obj\Debug\GameCore.csproj.CoreCompileInputs.cache
+C:\Users\Одмен\source\repos\321Labs2021\GameCore\obj\Debug\GameCore.dll
+C:\Users\Одмен\source\repos\321Labs2021\GameCore\obj\Debug\GameCore.pdb

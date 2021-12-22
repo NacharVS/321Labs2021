@@ -1,0 +1,10 @@
+C:\Users\Одмен\source\repos\321Labs2021\ConsoleGameTester\obj\Debug\ConsoleGameTester.csproj.AssemblyReference.cache
+C:\Users\Одмен\source\repos\321Labs2021\ConsoleGameTester\obj\Debug\ConsoleGameTester.csproj.CoreCompileInputs.cache
+C:\Users\Одмен\source\repos\321Labs2021\ConsoleGameTester\bin\Debug\ConsoleGameTester.exe.config
+C:\Users\Одмен\source\repos\321Labs2021\ConsoleGameTester\bin\Debug\ConsoleGameTester.exe
+C:\Users\Одмен\source\repos\321Labs2021\ConsoleGameTester\bin\Debug\ConsoleGameTester.pdb
+C:\Users\Одмен\source\repos\321Labs2021\ConsoleGameTester\bin\Debug\GameCore.dll
+C:\Users\Одмен\source\repos\321Labs2021\ConsoleGameTester\bin\Debug\GameCore.pdb
+C:\Users\Одмен\source\repos\321Labs2021\ConsoleGameTester\obj\Debug\ConsoleGameTester.csproj.CopyComplete
+C:\Users\Одмен\source\repos\321Labs2021\ConsoleGameTester\obj\Debug\ConsoleGameTester.exe
+C:\Users\Одмен\source\repos\321Labs2021\ConsoleGameTester\obj\Debug\ConsoleGameTester.pdb
