@@ -20,6 +20,7 @@ namespace Group321
         public string NameClient { get; set; }
         public string YearDirthClient { get; set; }
         public double BalansClient { get; set; }
+        public double Balansyyyt { get; set; }
     }
 
     class PersonalData
