@@ -9,9 +9,8 @@ namespace Group321
 
         static void Main(string[] args)
         {
-            //Mongo.UpdateName(new Mongo("Olegek", 16, 311));
-            Mongo.UpdateName(18);
-            //Mongo.FindFromDatabase();
+            IAction psnt = new Peasant(30);
+            psnt.Action();
 
         }
         static void Death()
