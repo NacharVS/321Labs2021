@@ -6,7 +6,9 @@ namespace Group321
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            double str = Convert.ToDouble(Console.ReadLine());
+            double dox = Convert.ToDouble(Console.ReadLine());
+            Warrior war = new Warrior(str, dox);
         }
     }
 }
