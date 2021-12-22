@@ -2,162 +2,83 @@
 
 namespace Group321
 {
+    public delegate void MessageBalance(string message);
     class Program
     {
-        private static double creditSum;
-        private static int number;
-        private static AccountOperations accountOperations = new AccountOperations();
-        IAccountOperations ac = new AccountOperations();
         static void Main(string[] args)
         {
-            accountOperations.StartProgram();
-            Console.WriteLine("Кто вы? Введите номер из списка");
-            number = accountOperations.ChooseAcc();
+            Account acc = new Account(500);
+            Account acc1 = new Account(600);
+            Operations.ShowMessage += ShowMess;
+            Operations.Deposit(acc, 40);
+            Operations.Transaction(acc, acc1, 40);
+            Operations.Widtraw(acc, 40);
+        }
 
-            while (true)
+        static void ShowMess(string mes)
+        {
+            Console.WriteLine(mes);
+        }
+    }
+
+    class Account
+    {
+        private double balance;
+        public double Balance { get => balance; set => balance = value; }
+
+        public Account(double sum)
+        {
+            balance = sum;
+        }
+    }
+
+    class Operations
+    {
+        public static event MessageBalance ShowMessage;
+        public static void ShowBalance(Account acc)
+        {
+            Console.WriteLine($"Баланс в рублях {acc.Balance}");
+        }
+
+
+        public static void Transaction(Account accSeller, Account accGetter, double sum)
+        {
+            if (accSeller.Balance >= sum)
             {
-                accountOperations.Lst[number].Menu();
-                if (accountOperations.Lst[number].ToString().Substring(9) == "Employee")
-                    menuEmployee();
-                else
-                    menuClient();
+                accSeller.Balance -= sum;
+                accGetter.Balance += sum;
+                ShowMessage?.Invoke($"Было переведено {sum} рублей. Ваш баланс: {accSeller.Balance}");
+                Console.WriteLine("Transaction completed");
+            }
+            else
+            {
+                Console.WriteLine("Transaction failed");
             }
         }
 
-        static void menuClient()
+        public static int Deposit(Account accGetter, double sum)
         {
-            switch (Console.ReadLine())
+            if (sum > 0)
             {
-                case "1":
-                    Console.Write($"Balance {accountOperations.Lst[number].PD.FIO}, {accountOperations.Lst[number].ToString().Substring(9)}:  ");
-                    Operations.ShowBalance(accountOperations.Lst[number]);
-                    break;
-                case "2":
-                    Console.WriteLine("Enter deposit sum");
-                    double sum = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine($"баланс пополнен на {Operations.Deposit(accountOperations.Lst[number], sum)} рублей");
-                    break;
-                case "3":
-                    Console.WriteLine("Enter transaction sum");
-                    double transactionSum = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Кому перевести? Введите номер из списка");
-                    int number1 = accountOperations.ChooseAcc();
-                    Operations.Transaction(accountOperations.Lst[number], accountOperations.Lst[number1], transactionSum);
-                    break;
-                case "4":
-                    Console.WriteLine("Enter credit sum");
-                    creditSum = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Enter TimeSpan in mounth");
-                    Operations.GetCredit(accountOperations.Lst[number], Convert.ToInt32(Console.ReadLine()), creditSum);
-                    break;
-                case "5":
-                    Console.WriteLine("Enter widtraw sum");
-                    double widtrawSum = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine($"С баланса снято {Operations.Widtraw(accountOperations.Lst[number], widtrawSum)} рублей\nОстаток {accountOperations.Lst[number].Balance} рублей, {accountOperations.Lst[number].BalanceDollar}$");
-                    Operations.ShowBalance(accountOperations.Lst[number]);
-                    break;
-                case "6":
-                    Console.WriteLine("Enter vklad sum");
-                    double vkladSum = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Enter TimeSpan in mounth");
-                    int mounthCount = Convert.ToInt32(Console.ReadLine());
-                    Operations.Vklad(accountOperations.Lst[number], vkladSum, mounthCount);
-                    break;
-                case "7":
-                    Console.WriteLine("Enter credit repayment sum");
-                    double repaymentSum = Convert.ToDouble(Console.ReadLine());
-                    Operations.PayCredit(accountOperations.Lst[number], repaymentSum);
-                    break;
-                case "8":
-                    Console.WriteLine("Какой аккаунт выбрать? Введите номер из списка");
-                    number = accountOperations.ChooseAcc();
-                    break;
-                case "9":
-                    // выход из приложения 
-                    Environment.Exit(0);
-                    break;
-
-
-                default:
-                    Console.WriteLine("Enter correct data");
-                    break;
+                accGetter.Balance += sum;
+                ShowMessage?.Invoke($"Был взят {sum} рублей. Ваш баланс: {accGetter.Balance}");
+                return (int)sum;
             }
+            return 0;
         }
 
-        static void menuEmployee()
+        public static int Widtraw(Account acc, double widtrawSum) //снять деньги
         {
-            switch (Console.ReadLine())
+            if (widtrawSum < acc.Balance)
             {
-                case "1":
-
-                    Console.Write($"Balance {accountOperations.Lst[number].PD.FIO}, {accountOperations.Lst[number].ToString().Substring(9)}:  ");
-                    Operations.ShowBalance(accountOperations.Lst[number]);
-                    break;
-                case "2":
-                    Console.WriteLine("Enter deposit sum");
-                    double sum = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine($"баланс пополнен на {Operations.Deposit(accountOperations.Lst[number], sum)} рублей");
-                    break;
-                case "3":
-                    Console.WriteLine("Enter transaction sum");
-                    double transactionSum = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Кому перевести? Введите номер из списка");
-                    int number1 = accountOperations.ChooseAcc();
-                    Operations.Transaction(accountOperations.Lst[number], accountOperations.Lst[number1], transactionSum);
-                    break;
-                case "4":
-                    Console.WriteLine("Enter credit sum");
-                    creditSum = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Enter TimeSpan in mounth");
-                    Operations.GetCredit(accountOperations.Lst[number], Convert.ToInt32(Console.ReadLine()), creditSum);
-                    break;
-                case "5":
-                    Console.WriteLine("Enter transaction sum");
-                    double widtrawSum = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine($"С баланса снято {Operations.Widtraw(accountOperations.Lst[number], widtrawSum)} рублей\nОстаток {accountOperations.Lst[number].Balance} рублей, {accountOperations.Lst[number].BalanceDollar}$");
-                    Operations.ShowBalance(accountOperations.Lst[number]);
-                    break;
-                case "6":
-                    Console.WriteLine("Enter vklad sum");
-                    double vkladSum = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Enter TimeSpan in mounth");
-                    int mounthCount = Convert.ToInt32(Console.ReadLine());
-                    Operations.Vklad(accountOperations.Lst[number], vkladSum, mounthCount);
-                    break;
-                case "7":
-                    Console.WriteLine("Enter credit repayment sum");
-                    double repaymentSum = Convert.ToDouble(Console.ReadLine());
-                    Operations.PayCredit(accountOperations.Lst[number], repaymentSum);
-                    break;
-                case "8":
-                    accountOperations.AddList();
-                    break;
-                case "9":
-                    Console.WriteLine("Введите индекс удаляемого аккаунта");
-                    int a = Convert.ToInt32(Console.ReadLine());
-                    accountOperations.RemoveList(accountOperations.Lst[number], a);
-                    if (number > a)
-                        number--;
-                    break;
-                case "10":
-                    accountOperations.Showlst();
-                    break;
-                case "11":
-                    accountOperations.Reduct();
-                    break;
-                case "12":
-                    Console.WriteLine("Какой аккаунт выбрать? Введите номер из списка");
-                    number = accountOperations.ChooseAcc();
-                    break;
-                case "13":
-                    // выход из приложения 
-                    Environment.Exit(0);
-                    break;
-
-                default:
-                    Console.WriteLine("Enter correct data");
-                    break;
+                acc.Balance -= (int)widtrawSum;
+                ShowMessage?.Invoke($"Было снято {widtrawSum} рублей. Ваш баланс: {acc.Balance} рублей");
+                return (int)widtrawSum;
             }
+            else
+                Console.WriteLine("Не хватает денег на балансе");
+
+            return 0;
         }
     }
 }
