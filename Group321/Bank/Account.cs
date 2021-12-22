@@ -16,14 +16,48 @@ namespace Bank
                 _balanse = value;
             }
         }
-        public double Rate
+        //public double Rate
+        //{
+        //    get => _rate;
+        //    set
+        //    {
+        //        _rate = value;
+        //    }
+        //}
+
+        public delegate void AccountHandler(string massage);
+        public event AccountHandler Notify;
+        public Account(int sum, string userID, string name, string phonenumber)
         {
-            get => _rate;
-            set
+            Sum = sum; 
+            UserID = userID;
+            Name = name;
+            PhoneNumber = phonenumber;
+        }
+        public int Sum { get; private set; }
+        public string UserID { get; private set; }
+        public string Name { get; private set; }
+        public string PhoneNumber { get; private set; }
+
+        public static void Transaction(Account accountSeller, Account accountGetter, double sum)
+        {
+            if (accountSeller.Balanse < sum)
             {
-                _rate = value;
+                Console.WriteLine("Transaction failed! Insufficient funds");
+            }
+            else
+            {
+                accountSeller.Balanse -= sum;
+                accountGetter.Balanse += sum;
+                Console.WriteLine($"Transaction {sum}$ completed");
+                Console.WriteLine($"Balanse seller: {accountSeller.Balanse}$ Balanse getter: {accountGetter.Balanse}$");
+                
             }
         }
+
+        //Account += AccountHandler;
+        //Account = " ";
+
     }
 
 }
