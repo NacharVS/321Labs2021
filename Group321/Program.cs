@@ -21,6 +21,7 @@ namespace Group321
         static void ShowInfo(string info)
         {
             Console.WriteLine(info);
+            //start
         }
     }
 }
