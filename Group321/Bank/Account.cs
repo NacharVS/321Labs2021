@@ -25,6 +25,10 @@ namespace Bank
         //    }
         //}
 
+        var acc1 = new Account(sum, ID, name, number);
+        var acc2 = new Account(sum, ID, name, number);
+
+
         public delegate void AccountHandler(string massage);
         //public  event AccountHandler Notify;
 
