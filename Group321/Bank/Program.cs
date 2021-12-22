@@ -13,7 +13,7 @@ namespace Bank
             acc.Balanse = 1000;
             Operations.ShowBalanse(acc);
             Operations.Transaction(acc, acc2, 5000);
-            Operations.Widrtaw(acc, 300); //
+            Operations.Widrtaw(acc, 300); ////
         }
     }
 }
