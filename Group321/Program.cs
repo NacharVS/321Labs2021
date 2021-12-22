@@ -8,7 +8,8 @@ namespace Group321
         {
             Account acc = new Account(500);
             Account acc1 = new Account(600);
-            Operations.ShowMessage += ShowMess;
+            acc.ShowMessage += ShowMess;
+            acc1.ShowMessage += ShowMess;
             Operations.Deposit(acc, 40);
             Operations.Transaction(acc, acc1, 40);
             Operations.Widtraw(acc, 40);

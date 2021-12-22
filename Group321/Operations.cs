@@ -4,10 +4,8 @@ using System.Text;
 
 namespace Group321
 {
-    public delegate void MessageBalance(string message);
     class Operations
     {
-        public static event MessageBalance ShowMessage;
         public static void ShowBalance(Account acc)
         {
             Console.WriteLine($"Баланс в рублях {acc.Balance}");
@@ -20,7 +18,7 @@ namespace Group321
             {
                 accSeller.Balance -= sum;
                 accGetter.Balance += sum;
-                ShowMessage?.Invoke($"Было переведено {sum} рублей. Ваш баланс: {accSeller.Balance}");
+                // Console.WriteLine($"Было переведено {sum} рублей. Ваш баланс: {accSeller.Balance}");
                 Console.WriteLine("Transaction completed");
             }
             else
@@ -34,7 +32,7 @@ namespace Group321
             if (sum > 0)
             {
                 accGetter.Balance += sum;
-                ShowMessage?.Invoke($"Был взят {sum} рублей. Ваш баланс: {accGetter.Balance}");
+                //ShowMessage?.Invoke($"Был взят {sum} рублей. Ваш баланс: {accGetter.Balance}");
                 return (int)sum;
             }
             return 0;
@@ -45,7 +43,7 @@ namespace Group321
             if (widtrawSum < acc.Balance)
             {
                 acc.Balance -= (int)widtrawSum;
-                ShowMessage?.Invoke($"Было снято {widtrawSum} рублей. Ваш баланс: {acc.Balance} рублей");
+                //ShowMessage?.Invoke($"Было снято {widtrawSum} рублей. Ваш баланс: {acc.Balance} рублей");
                 return (int)widtrawSum;
             }
             else
