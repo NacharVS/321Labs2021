@@ -26,10 +26,21 @@ namespace Bank
         //}
 
         public delegate void AccountHandler(string massage);
-        public event AccountHandler Notify = (massage) =>
+        //public  event AccountHandler Notify;
+
+        public static string Notify 
         {
-            Console.WriteLine(massage);
-        };
+            get => Notify;
+            set
+            {
+                Notify = Invoke(massage);
+            }
+        }
+
+        //public static void ShowBallance(Account account)
+        //{
+        //    Notify?.Invoke($"Your balance: {account.Balanse}$");
+        //}
 
         public Account(int sum, string userID, string name, string phonenumber)
         {
@@ -56,10 +67,15 @@ namespace Bank
                 accountGetter.Balanse += sum;
                 Console.WriteLine($"Transaction {sum}$ completed");
                 Console.WriteLine($"Balanse seller: {accountSeller.Balanse}$ Balanse getter: {accountGetter.Balanse}$");
-                Notify?.Invoke($"Your balance: {accountSeller.Balanse}$");
+                Notify?.Invoke($"{accountSeller.Balanse}$");
 
             }
         }
+
+        //public static void ShowBallance(Account account)
+        //{
+        //    Notify?.Invoke($"Your balance: {account.Balanse}$");
+        //}
     }
 
 }
