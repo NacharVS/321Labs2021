@@ -1,5 +1,7 @@
 ﻿using Group321.Examples;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Group321
 {
@@ -9,18 +11,35 @@ namespace Group321
 
         static void Main(string[] args)
         {
-            IAction psnt = new Peasant(30);
-            psnt.Action();
+            int[] array = new int[10];
+            Task taskGen = new Task(() => Generation(array));
+            Task taskSumm = new Task(() => Summ(array));
+            taskGen.Start();
+            taskGen.Wait();
+            taskSumm.Start();
+            
+        }
 
-        }
-        static void Death()
+        static void Generation(int[] array)
         {
-            Console.WriteLine("Is dead");
+            Random rnd = new Random();
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = rnd.Next(20);
+                Console.Write(array[i] + " ");
+            }
         }
 
-        static void ShowInfo(string info)
+        static void Summ(int[] array)
         {
-            Console.WriteLine(info);
+            int summ = 0;
+            foreach (var item in array)
+            {
+                summ += item;
+            }
+            Console.WriteLine();
+            Console.WriteLine("summ" + summ);
         }
+
     }
 }
