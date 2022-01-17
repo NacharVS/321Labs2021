@@ -12,22 +12,31 @@ namespace Group321
         static void Main(string[] args)
         {
             int[] array = new int[10];
-            Task taskGen = new Task(() => Generation(array));
-            Task taskSumm = new Task(() => Summ(array));
+            Task<int[]> taskGen = new Task<int[]>(() => Generation(array));
+
+            Task<int[]> taskSumm = taskGen.ContinueWith(doublearr => doubleArray(doublearr.Result));
             taskGen.Start();
-            taskGen.Wait();
-            taskSumm.Start();
+            
+            taskSumm.Wait();
+            int buff = 0;
+            foreach (var item in taskSumm.Result)
+            {
+                buff += item;
+            }
+            Console.WriteLine(buff);
+           
             
         }
 
-        static void Generation(int[] array)
+        static int[] Generation(int[] array)
         {
             Random rnd = new Random();
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = rnd.Next(20);
+                array[i] = rnd.Next(0,2);
                 Console.Write(array[i] + " ");
             }
+            return array;
         }
 
         static void Summ(int[] array)
@@ -39,6 +48,15 @@ namespace Group321
             }
             Console.WriteLine();
             Console.WriteLine("summ" + summ);
+        }
+
+        static int[]doubleArray(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] *= 2;
+            }
+            return array;
         }
 
     }
