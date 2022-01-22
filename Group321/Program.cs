@@ -11,20 +11,33 @@ namespace Group321
 
         static void Main(string[] args)
         {
+            CancellationTokenSource tokenSource = new CancellationTokenSource();
+            CancellationToken token = tokenSource.Token;
+
             int[] array = new int[10];
-            Task<int[]> taskGen = new Task<int[]>(() => Generation(array));
-            Task tt3 = new Task(() => Summ(array));
+            //Task<int[]> taskGen = new Task<int[]>(() => Generation(array));
+            Task task2 = new Task(() => Summ(array, token));
 
-            Task<int[]> task2 = taskGen.ContinueWith(doublearr => doubleArray(doublearr.Result));
-            taskGen.Start();
+            //Task<int[]> task2 = taskGen.ContinueWith(doublearr => doubleArray(doublearr.Result, token));
 
-            task2.Wait();
-            int buff = 0;
-            foreach (var item in task2.Result)
+            //taskGen.Start();
+            task2.Start();
+            string cancelRequest = Console.ReadLine();
+
+            if(cancelRequest == "Y")
             {
-                buff += item;
-            }
-            Console.WriteLine(buff);
+                tokenSource.Cancel();
+            }         
+            
+
+    
+            //int buff = 0;
+
+            //foreach (var item in task2.Result)
+            //{
+            //    buff += item;
+            //}
+            //Console.WriteLine(buff);
 
 
         }
@@ -40,19 +53,36 @@ namespace Group321
             return array;
         }
 
-        static void Summ(int[] array)
+        static void Summ(int[] array, CancellationToken token)
         {
-            int summ = 0;
-            foreach (var item in array)
+            for (int i = 0; i < 10; i++)
             {
-                summ += item;
+                if (token.IsCancellationRequested)
+                {
+                    Console.WriteLine("Operation has canceled");
+                    return;
+                }
+
+                Thread.Sleep(1000);
+                int summ = 0;
+                foreach (var item in array)
+                {
+                    summ += item;
+                }
+                Console.WriteLine();
+                Console.WriteLine("summ" + summ);
             }
-            Console.WriteLine();
-            Console.WriteLine("summ" + summ);
+            
         }
 
-        static int[] doubleArray(int[] array)
+        static int[] doubleArray(int[] array, CancellationToken token)
         {
+            if (token.IsCancellationRequested)
+            {
+                Console.WriteLine("Operation has canceled");
+                return null;
+            }
+            Thread.Sleep(10000);
             for (int i = 0; i < array.Length; i++)
             {
                 array[i] *= 2;
