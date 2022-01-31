@@ -1,5 +1,6 @@
-﻿using Group321.Examples;
+﻿using Group321.InterfacesAgain;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,35 +12,20 @@ namespace Group321
 
         static void Main(string[] args)
         {
-            CancellationTokenSource tokenSource = new CancellationTokenSource();
-            CancellationToken token = tokenSource.Token;
-
-            int[] array = new int[10];
-            //Task<int[]> taskGen = new Task<int[]>(() => Generation(array));
-            Task task2 = new Task(() => Summ(array, token));
-
-            //Task<int[]> task2 = taskGen.ContinueWith(doublearr => doubleArray(doublearr.Result, token));
-
-            //taskGen.Start();
-            task2.Start();
-            string cancelRequest = Console.ReadLine();
-
-            if(cancelRequest == "Y")
-            {
-                tokenSource.Cancel();
-            }         
+            List<IWeapon> weapons = new List<IWeapon>();
+            weapons.Add(new Club());
+            weapons.Add(new ShortSword());
+            Soldier Victor = new Soldier(new Club());
+            Blacksmith Igor = new Blacksmith();
+            Victor.weapon.Hit();
+            var weapon2 = Igor.MakeAxe();
+            Victor.weapon = weapon2;
+            Victor.weapon.Hit();
+            var weapon3 = Igor.MakeSword();
+            Victor.weapon = weapon3;
             
-
-    
-            //int buff = 0;
-
-            //foreach (var item in task2.Result)
-            //{
-            //    buff += item;
-            //}
-            //Console.WriteLine(buff);
-
-
+            Victor.weapon.Hit();
+            Igor.Repair(weapon3);
         }
 
         static int[] Generation(int[] array)
