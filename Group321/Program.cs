@@ -15,6 +15,7 @@ namespace Group321
             List<IWeapon> weapons = new List<IWeapon>();
             weapons.Add(new Club());
             weapons.Add(new ShortSword());
+            weapons.Add(new Bow());
             Soldier Victor = new Soldier(new Club());
             Blacksmith Igor = new Blacksmith();
             Victor.weapon.Hit();
@@ -23,9 +24,12 @@ namespace Group321
             Victor.weapon.Hit();
             var weapon3 = Igor.MakeSword();
             Victor.weapon = weapon3;
-            
+            var weapon4 = Igor.MakeBow();
+            Victor.weapon = weapon4;
             Victor.weapon.Hit();
-            Igor.Repair(weapon3);
+            Victor.weapon.Hit();
+            Victor.weapon.Hit();
+            //Igor.Repair(weapon3);
         }
 
         static int[] Generation(int[] array)
