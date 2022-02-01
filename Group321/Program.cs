@@ -18,18 +18,23 @@ namespace Group321
             weapons.Add(new Bow());
             Soldier Victor = new Soldier(new Club());
             Blacksmith Igor = new Blacksmith();
+            //Victor.weapon.Hit();
+
+            //var weapon2 = Igor.MakeAxe();
+            //Victor.weapon = weapon2;
+            //Victor.weapon.Hit();
+            //var weapon3 = Igor.MakeSword();
+            //Victor.weapon = weapon3;
+            //var weapon4 = Igor.MakeBow();
+            //Victor.weapon = weapon4;
+            //Victor.weapon.Hit();
+            //Igor.Repair(weapon4);
+            var knife = Igor.MakeKnife();
+            Victor.weapon = knife;
             Victor.weapon.Hit();
-            var weapon2 = Igor.MakeAxe();
-            Victor.weapon = weapon2;
-            Victor.weapon.Hit();
-            var weapon3 = Igor.MakeSword();
-            Victor.weapon = weapon3;
-            var weapon4 = Igor.MakeBow();
-            Victor.weapon = weapon4;
-            Victor.weapon.Hit();
-            Victor.weapon.Hit();
-            Victor.weapon.Hit();
-            //Igor.Repair(weapon3);
+
+
+            Igor.Repair(knife);
         }
 
         static int[] Generation(int[] array)

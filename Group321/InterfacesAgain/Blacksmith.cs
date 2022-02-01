@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Group321.InterfacesAgain.Weapons;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -19,6 +20,11 @@ namespace Group321.InterfacesAgain
         public Bow MakeBow()
         {
             return new Bow();
+        }
+
+        public Knife MakeKnife()
+        {
+            return new Knife();
         }
 
         public void Repair(IRepairible item)

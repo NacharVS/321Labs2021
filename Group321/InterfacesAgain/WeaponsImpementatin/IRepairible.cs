@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Group321.InterfacesAgain
 {
-    interface IWeapon
+    interface IRepairible
     {
-        int Damage { get; set; }
-
-        void Hit();
+        int Durability { get; }
+        void Repair();
     }
 }
