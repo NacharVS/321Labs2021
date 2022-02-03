@@ -6,7 +6,8 @@ using System.Text;
 namespace Group321.InterfacesAgain
 {
     class Blacksmith
-    {      
+    {
+        
         public StoneAxe MakeAxe()
         {
             return new StoneAxe();
