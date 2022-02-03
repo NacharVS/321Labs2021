@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group321
 {
-    class Program
+    class Program : Barracks
     {
         delegate void MessageDelegate(string message);
 
@@ -30,7 +30,6 @@ namespace Group321
             //Igor.Repair(weapon4);
             var knife = Igor.MakeKnife();
             Victor.Blow(knife);
-            Victor.Throw(knife);
 
 
             Igor.Repair(knife);

@@ -15,7 +15,7 @@ namespace Group321.InterfacesAgain
 
         public int ThrowDamage => throw new NotImplementedException();
 
-        public void Hit()
+        void IThrowableWeapon.Hit()
         {
             Console.WriteLine($"piu-piu {Damage}");
         }
