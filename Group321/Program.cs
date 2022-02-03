@@ -12,6 +12,9 @@ namespace Group321
 
         static void Main(string[] args)
         {
+
+            //1. 3 юнита. Лучник, Шаман который накладывает бафы.  
+            //2. 3 здания. 1 из зданий производит юнитов. 1 из зданий принимет гарнизон.  
             Soldier Victor = new Soldier();
             Blacksmith Igor = new Blacksmith();
             //Victor.weapon.Hit();
