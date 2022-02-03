@@ -1,14 +1,16 @@
-﻿using Group321.Interfaces.WeaponsImpementatin;
-using Group321.Interface;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Group321.Interfaces.WeaponsImpementatin;
+using Group321.Interface;
 
 namespace Group321.Interfaces.Units
 {
-    class Soldier : IUnit
+    class Archer : IUnit
     {
-        public Soldier(double hp, double damage, double armor, double run)
+        public Archer(double hp, double damage, double armor, double run)
         {
             Hp = hp;
             Damage = damage;
@@ -16,26 +18,25 @@ namespace Group321.Interfaces.Units
             Run = run;
         }
 
-        public Soldier()
+        public Archer()
         {
 
         }
 
         public double Hp { get; set; }
+        public string Name { get; set; } = "Archer";
         public double Damage { get; set; }
         public double Armor { get; set; }
         public double Run { get; set; }
-        public string Name { get; set; } = "Soldier";
-
-        public void Blow(IMleeWeapon weapon)
-        {
-            weapon.Hit();
-        }
 
         public void Throw(IThrowableWeapon weapon)
         {
             weapon.Hit();
         }
 
+        public void Shoot(Bow weapon)
+        {
+            weapon.Hit();
+        }
     }
 }

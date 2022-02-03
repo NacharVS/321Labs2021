@@ -1,9 +1,10 @@
-﻿using Group321.Interfaces. .InterfacesAgain.Weapons;
+﻿using Group321.Interfaces;
+using Group321.Interfaces.WeaponsImpementatin;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Group321.Interfaces
+namespace Group321.Interface
 {
     class Blacksmith
     {
