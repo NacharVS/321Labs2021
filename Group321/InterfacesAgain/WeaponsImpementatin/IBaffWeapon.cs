@@ -6,8 +6,13 @@ namespace Group321.InterfacesAgain.WeaponsImpementatin
 {
     interface IBaffWeapon : IRepairible
     {
-        int baff { get; set; }
+        int duration { get; set; }
+        int BafDef { get; set; }
+        int BafAtt { get; set; }
 
-        void Baff();
+
+        void BafedDef();
+        void BafedAtt();
+        void Salvation();
     }
 }

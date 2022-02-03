@@ -7,9 +7,21 @@ namespace Group321.InterfacesAgain.Units
 {
     class Shaman
     {
-        public void Baff(IBaffWeapon weapon)
+        public int Health = 20;
+
+        public void BaffDef(IBaffWeapon weapon)
         {
-            weapon.Baff();
+            weapon.BafedDef();
+        }
+
+        public void BafAtt(IBaffWeapon weapon)
+        {
+            weapon.BafedAtt();
+        }
+
+        public void Salvation (IBaffWeapon weapon)
+        {
+            weapon.Salvation();
         }
 
     }

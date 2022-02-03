@@ -1,4 +1,5 @@
 ﻿using Group321.InterfacesAgain;
+using Group321.InterfacesAgain.Units;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -15,7 +16,7 @@ namespace Group321
 
             //1. 3 юнита. Лучник, Шаман который накладывает бафы.  
             //2. 3 здания. 1 из зданий производит юнитов. 1 из зданий принимет гарнизон.  
-            Soldier Victor = new Soldier();
+            Shaman Victor = new Shaman();
             Blacksmith Igor = new Blacksmith();
             //Victor.weapon.Hit();
 
@@ -28,11 +29,7 @@ namespace Group321
             //Victor.weapon = weapon4;
             //Victor.weapon.Hit();
             //Igor.Repair(weapon4);
-            var knife = Igor.MakeKnife();
-            Victor.Blow(knife);
 
-
-            Igor.Repair(knife);
         }
 
         static int[] Generation(int[] array)

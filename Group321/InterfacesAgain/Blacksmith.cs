@@ -11,6 +11,10 @@ namespace Group321.InterfacesAgain
         {
             return new StoneAxe();
         }
+        public Staff MakeStaff()
+        {
+            return new Staff();
+        }
 
         public ShortSword MakeSword()
         {
