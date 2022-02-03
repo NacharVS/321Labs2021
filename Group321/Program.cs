@@ -17,20 +17,21 @@ namespace Group321
 
             //1. 3 юнита. Лучник, Шаман который накладывает бафы.  
             //2. 3 здания. 1 из зданий производит юнитов. 1 из зданий принимет гарнизон.  
-            Staff Victor = new Staff();
+            Shaman Victor = new Shaman();
             Blacksmith Igor = new Blacksmith();
+            Archer Anna = new Archer();
             //Victor.weapon.Hit();
-            Victor.ba
+            Victor.SoldierBuff();
             //var weapon2 = Igor.MakeAxe();
             //Victor.weapon = weapon2;
             //Victor.weapon.Hit();
             //var weapon3 = Igor.MakeSword();
             //Victor.weapon = weapon3;
-            //var weapon4 = Igor.MakeBow();
-            //Victor.weapon = weapon4;
-            //Victor.weapon.Hit();
+            var weapon4 = Igor.MakeBow();
+            Anna.weapon = weapon4;
+            Anna.weapon.Hit();
             //Igor.Repair(weapon4);
-            
+
         }
 
         static int[] Generation(int[] array)

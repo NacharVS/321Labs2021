@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Group321.InterfacesAgain.WeaponsImpementatin
 {
-    interface IBaffWeapon : IRepairible
+    interface IBaff : IRepairible
     {
         int duration { get; set; }
         int BafDef { get; set; }
