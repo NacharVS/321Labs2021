@@ -6,5 +6,6 @@ namespace Group321.InterfacesAgain
 {
     class Archer : Units
     {
+
     }
 }

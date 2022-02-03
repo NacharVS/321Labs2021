@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Group321.InterfacesAgain
 {
-    abstract class Units
+    public abstract class Units
     {
         public delegate void ValueChangedDelegate(string message);
         public static double health = 100;
