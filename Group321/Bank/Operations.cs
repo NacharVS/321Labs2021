@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Group321
+namespace Bank
 {
     class Operations
     {

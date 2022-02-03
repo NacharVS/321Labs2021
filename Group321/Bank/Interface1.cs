@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Group321
+namespace Bank
 {
     interface IAccountOperations
     {

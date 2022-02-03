@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Group321
+namespace Bank
 {
     class Program
     {
@@ -8,7 +8,7 @@ namespace Group321
         private static int number;
         private static AccountOperations accountOperations = new AccountOperations();
         IAccountOperations ac = new AccountOperations();
-        static void Main(string[] args)
+        void Main(string[] args)
         {
             accountOperations.StartProgram();
             Console.WriteLine("Кто вы? Введите номер из списка");

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Group321
+namespace Bank
 {
     public class AccountOperations : IAccountOperations
     {

@@ -1,4 +1,4 @@
-﻿namespace Group321
+﻿namespace Bank
 {
     public struct PersonalData
     {

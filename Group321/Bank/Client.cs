@@ -1,38 +1,38 @@
 ﻿using System;
 
-namespace Group321
+namespace Bank
 {
-    class Employee : Account
+    class Client : Account
     {
         public override double ProcentStavkaCredit { get => base.ProcentStavkaCredit; set => base.ProcentStavkaCredit = value; }
         public override double ProcentStavkaVklad { get => base.ProcentStavkaVklad; set => base.ProcentStavkaVklad = value; }
         public override PersonalData PD { get => base.PD; set => base.PD = value; }
 
-        public Employee()
+        public Client()
         {
-            ProcentStavkaCredit = 4;
-            ProcentStavkaVklad = 7;
+            ProcentStavkaCredit = 7;
+            ProcentStavkaVklad = 3;
         }
 
-        public Employee(double balance, PersonalData pd)
+        public Client(double balance, PersonalData pd)
         {
             balanceRubles = balance;
             balanceDollar = Math.Round(balance / 73.08, 2);
-            ProcentStavkaCredit = 4;
-            ProcentStavkaVklad = 7;
+            ProcentStavkaCredit = 7;
+            ProcentStavkaVklad = 3;
             PD = pd;
         }
 
-        public Employee(double dollar, double rubles, PersonalData pd)
+        public Client(double dollar, double rubles, PersonalData pd)
         {
             balanceDollar = dollar;
             balanceRubles = rubles;
-            ProcentStavkaCredit = 4;
-            ProcentStavkaVklad = 7;
+            ProcentStavkaCredit = 7;
+            ProcentStavkaVklad = 3;
             PD = pd;
         }
 
-        public Employee(double balance, PersonalData pd, double credit, double vklad)
+        public Client(double balance, PersonalData pd, double credit, double vklad)
         {
             balanceRubles = balance;
             balanceDollar = Math.Round(balance / 73.08, 2);
@@ -50,12 +50,8 @@ namespace Group321
             Console.WriteLine("5: Снять деньги");
             Console.WriteLine("6: Открыть вклад");
             Console.WriteLine("7: Оплатить кредит");
-            Console.WriteLine("8: Добавить аккаунт");
-            Console.WriteLine("9: Удалить аккаунт");
-            Console.WriteLine("10: Просмотреть все аккаунты");
-            Console.WriteLine("11: Редактировать аккаунт");
-            Console.WriteLine("12: Сменить аккаунт");
-            Console.WriteLine("13: Выйти из приложения");
+            Console.WriteLine("8: Сменить аккаунт");
+            Console.WriteLine("9: Выйти из приложения");
         }
     }
 }
