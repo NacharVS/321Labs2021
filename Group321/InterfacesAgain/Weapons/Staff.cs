@@ -16,6 +16,7 @@ namespace Group321.InterfacesAgain.Weapons
         public int duration { get => 20; set => throw new NotImplementedException(); }
         int IBaffWeapon.BafDef { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         int IBaffWeapon.BafAtt { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        Soldier Solomon = new Soldier();
 
         public void Baff()
         {
@@ -40,6 +41,11 @@ namespace Group321.InterfacesAgain.Weapons
         void IBaffWeapon.BafedDef()
         {
             Console.WriteLine($"Buff on stone skin: + defense {BafDef}% and lasts {duration} second");
+        }
+
+        public void SoldierBuff()
+        {
+            Console.WriteLine($"Buff on Berserk:{Solomon.GetType().Name} + Damage {BafAtt}%, - defense {BafDef}% and lasts {duration} second");
         }
     }
 }
