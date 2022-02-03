@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Group321.InterfacesAgain.Weapons
 {
-    class Knife : IThrowableWeapon
+    class Knife : IThrowableWeapon, IMleeWeapon
     {
         public int ThrowDamage => 15;
 
@@ -15,11 +15,13 @@ namespace Group321.InterfacesAgain.Weapons
 
         public void Hit()
         {
-            var rnd = new Random().Next(10, 20);
-            if (rnd % 2 == 0)
-                Console.WriteLine($"{GetType().Name} kkkkkssssst!111 {Damage} ");
-            else
-                Throw();
+            Throw();
+            
+        }
+
+        void IMleeWeapon.Hit() 
+        {
+            Console.WriteLine($"{GetType().Name} kkkkkssssst!111 {Damage} ");
         }
 
         public void Repair()

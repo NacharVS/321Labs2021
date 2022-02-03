@@ -7,11 +7,15 @@ namespace Group321.InterfacesAgain
 {
     class Soldier 
     {
-        public IWeapon weapon;
-
-        public Soldier(IWeapon weapon)
+        public void Blow(IMleeWeapon weapon)
         {
-            this.weapon = weapon;
+            weapon.Hit();
         }
+
+        public void Throw(IThrowableWeapon weapon)
+        {
+            weapon.Hit();
+        }
+
     }
 }

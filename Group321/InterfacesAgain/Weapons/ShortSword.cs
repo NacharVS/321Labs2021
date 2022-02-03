@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Group321.InterfacesAgain
 {
-    class ShortSword : IWeapon, IRepairible
+    class ShortSword : IMleeWeapon, IRepairible
     {
         public int Damage { get => 8; set => throw new NotImplementedException(); }
         public int Durability { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

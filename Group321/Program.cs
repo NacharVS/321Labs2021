@@ -12,11 +12,7 @@ namespace Group321
 
         static void Main(string[] args)
         {
-            List<IWeapon> weapons = new List<IWeapon>();
-            weapons.Add(new Club());
-            weapons.Add(new ShortSword());
-            weapons.Add(new Bow());
-            Soldier Victor = new Soldier(new Club());
+            Soldier Victor = new Soldier();
             Blacksmith Igor = new Blacksmith();
             //Victor.weapon.Hit();
 
@@ -30,8 +26,8 @@ namespace Group321
             //Victor.weapon.Hit();
             //Igor.Repair(weapon4);
             var knife = Igor.MakeKnife();
-            Victor.weapon = knife;
-            Victor.weapon.Hit();
+            Victor.Blow(knife);
+            Victor.Throw(knife);
 
 
             Igor.Repair(knife);

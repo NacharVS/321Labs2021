@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Group321.InterfacesAgain
 {
-    interface IWeapon
+    interface IMleeWeapon
     {
         int Damage { get; }
 

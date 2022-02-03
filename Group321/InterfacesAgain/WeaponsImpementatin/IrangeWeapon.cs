@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Group321.InterfacesAgain.WeaponsImpementatin
 {
-    interface IrangeWeapon : IRepairible, IWeapon
+    interface IrangeWeapon : IRepairible
     {
         int range { get; }
     }

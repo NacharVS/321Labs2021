@@ -4,8 +4,10 @@ using System.Text;
 
 namespace Group321.InterfacesAgain.WeaponsImpementatin
 {
-    interface IThrowableWeapon : IWeapon, IRepairible
+    interface IThrowableWeapon : IRepairible
     {
-    
+        int Damage { get;}
+
+        void Hit();
     }
 }

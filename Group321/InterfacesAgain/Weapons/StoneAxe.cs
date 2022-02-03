@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Group321.InterfacesAgain
 {
-    class StoneAxe : IWeapon, IRepairible
+    class StoneAxe : IMleeWeapon, IRepairible
     {
         public int Damage { get => 6; set => throw new NotImplementedException(); }
         public int Durability { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
