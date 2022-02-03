@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Group321.InterfacesAgain
 {
-    class Soldier 
+    class Soldier : Units
     {
         public void Blow(IMleeWeapon weapon)
         {
