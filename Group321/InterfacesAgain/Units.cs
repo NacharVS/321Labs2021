@@ -7,43 +7,53 @@ namespace Group321.InterfacesAgain
     abstract class Units
     {
         public delegate void ValueChangedDelegate(string message);
-        private int _health = 100;
-        private int _speed = 20;
+        public static double health = 100;
+        public static double speed = 20;
+        public static double protection = 50;
 
-        public virtual int Health
+        public virtual double Health
         {
-            get => _health;
+            get => health;
             set
             {
-                var diff = _health - value;
-                if (_health > 0)
+                var diff = health - value;
+                if (health > 0)
                 {
-                    if (_health < diff)
+                    if (health < diff)
                     {
-                        _health = 0;
-                        ValueChangedEvent?.Invoke($"Health chahded by {diff} current Health - {_health}");
+                        health = 0;
+                        ValueChangedEvent?.Invoke($"Health chahded by {diff} current Health - {health}");
                         DeathEvent?.Invoke();
                     }
                     else
                     {
-                        _health = value;
-                        ValueChangedEvent?.Invoke($"Health chahded by {diff} current Health - {_health}");
+                        health = value;
+                        ValueChangedEvent?.Invoke($"Health chahded by {diff} current Health - {health}");
                     }
                 }
                 else
                 {
-                    _health = 0;
+                    health = 0;
                     DeathEvent?.Invoke();
                 }
             }
         }
 
-        public int Speed
+        public double Speed
         {
-            get => _speed;
+            get => speed;
             set
             {
-                _speed = value;
+                speed = value;
+            }
+        }
+
+        public double Protection
+        {
+            get => protection;
+            set
+            {
+                protection = value;
             }
         }
         public void InflictDamage(int damage)
