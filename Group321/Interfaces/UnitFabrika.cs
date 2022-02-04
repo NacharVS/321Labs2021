@@ -17,9 +17,14 @@ namespace Group321.Interfaces
             return new Archer();
         }
 
-        public Voodoo makeVoodoo()
+        public Voodoo MakeVoodoo()
         {
             return new Voodoo();
+        }
+
+        public Ogre MakeOgre()
+        {
+            return new Ogre();
         }
     }
 }

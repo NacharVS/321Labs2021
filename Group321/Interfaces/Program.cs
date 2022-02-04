@@ -9,14 +9,31 @@ namespace Group321.Interfaces
     {
         public static void Main()
         {
-            Console.WriteLine("Hello World");
             UnitFabrika unit = new UnitFabrika();
-            Garrison garrison = new Garrison();
             var archer = unit.MakeArcher();
-            var voodoo = unit.makeVoodoo();
-            Blacksmith da = new Blacksmith();
-            archer.Throw(da.MakeKnife());
-            archer.Shoot(da.MakeBow());
+            var archer2 = unit.MakeArcher();
+            var voodoo = unit.MakeVoodoo();
+            var ogre = unit.MakeOgre();
+
+
+            Garrison garrison = new Garrison();
+            garrison.Add(archer);
+            Console.WriteLine(archer.Damage);
+            garrison.Add(archer2);
+            Console.WriteLine(archer2.Damage);
+
+
+            Tower tower = new Tower(garrison);
+            tower.Attack();
+
+            Blacksmith david = new Blacksmith();
+            var knife = david.MakeKnife();
+            var bow = david.MakeBow();
+            var club = new Club();
+
+            archer.Throw(knife);
+            ogre.Hit(club);
+            archer.Shoot(bow);
             voodoo.Berserk(archer);
             voodoo.Berserk(voodoo);
         }

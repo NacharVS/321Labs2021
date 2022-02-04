@@ -8,7 +8,7 @@ namespace Group321.Interfaces
     class Garrison : IGarrison
     {
         List<Archer> unitsList { get; }
-        public double Damage { get; set; } = 0;
+        public double Damage { get; set; }
         public string Name { get; set; }
         public double Armor { get; set; }
 
@@ -22,6 +22,7 @@ namespace Group321.Interfaces
             foreach (var item in unitsList)
             {
                 Damage += item.Damage;
+                Console.WriteLine(item.Damage);
             }
 
             Console.WriteLine($"Гарнизон атаковал с уроном {Damage}");
