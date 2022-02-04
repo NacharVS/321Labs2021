@@ -4,8 +4,10 @@ using System.Text;
 
 namespace TowerDefense.Examples
 {
-    interface ISleep
+    interface IArcherAction
     {
-        void Sleep();
+        int Range { get; }
+
+        void Fire();
     }
 }

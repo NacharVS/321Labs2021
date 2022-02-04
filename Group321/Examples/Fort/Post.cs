@@ -4,8 +4,7 @@ using System.Text;
 
 namespace TowerDefense.Examples
 {
-    interface ISleep
+    class Post
     {
-        void Sleep();
     }
 }

@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Group321.Examples
+namespace TowerDefense.Examples
 {
     interface IAction
     {
-        int Health { get; set; }
+       public int Health { get; set; }
+
+       public int Damage { get; set; }
+
+
         void Move();
         void Action();
+
+        void Characteristic();
     }
 }

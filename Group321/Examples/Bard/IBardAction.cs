@@ -4,8 +4,12 @@ using System.Text;
 
 namespace TowerDefense.Examples
 {
-    interface ISleep
+    interface IBardAction
     {
-        void Sleep();
+        string Music { get; }
+
+        double MusicDuration { get;  }
+
+        void Play();
     }
 }
