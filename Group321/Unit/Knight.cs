@@ -15,8 +15,10 @@ namespace _0302.Unit
         public int speed => 15;
 
         public void Par()
-        {
+        {           
             Console.WriteLine($"{GetType().Name} has established");
         }
+
+        
     }
 }

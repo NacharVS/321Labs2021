@@ -14,17 +14,17 @@ namespace _0302.Unit
         public int defense => 30;
         public int speed => 10;
 
+
         public void Blow(IThrowableWeapon weapon)
         {
             weapon.Hit();
         }
 
         public void Par()
-        {
+        {           
             Console.WriteLine($"{GetType().Name} has established");
         }
 
         
-
     }
 }

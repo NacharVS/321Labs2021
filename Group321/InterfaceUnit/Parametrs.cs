@@ -8,12 +8,13 @@ namespace _0302.InterfaceUnit
 {
     interface Parametrs
     {
-        int healf { get; } 
+        int healf { get; }  
         int berserk { get; }
         int defense { get; }
         int speed { get; }
 
         void Par();
+        
 
         public void Fury()
         {
@@ -42,6 +43,5 @@ namespace _0302.InterfaceUnit
             Console.WriteLine($"Defense: {defense * 2}");
             Console.WriteLine($"Speed: {speed * 2}");
         }
-
     }
 }

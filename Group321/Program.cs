@@ -14,19 +14,25 @@ namespace _0302
             var Lena = uh1.MakeArcher();//здание1 создает лучника
             Lena.Par();
 
-            UnitHouse uh2 = new UnitHouse();
-            var Boris = uh2.MakeShaman();
+            var Koly = uh1.MakeArcher();
+            Koly.Par();
+
+            var Boris = uh1.MakeShaman();
             Boris.Par();
+
+
+            
             //Boris.Fury(Lena);//шаман улучшил способности юнита(ярость) 
             Boris.Salvation(Lena);
             
 
-            WeaponHouse wh = new WeaponHouse();
-            var bow1 = wh.MakeBow();// здание2 создает оружие
+            WeaponHouse wh2 = new WeaponHouse();
+            var bow1 = wh2.MakeBow();// здание2 создает оружие
 
             Lena.Blow(bow1);//лучник атакует оружием
             
             PostHouse ph3 = new PostHouse();
+
 
         }
     }

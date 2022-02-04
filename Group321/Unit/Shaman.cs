@@ -14,6 +14,7 @@ namespace _0302.Unit
         public int defense => 50;
         public int speed => 15;
 
+
         public void Fury(Parametrs p)
         {
             p.Fury();
@@ -26,10 +27,6 @@ namespace _0302.Unit
         {
             p.Salvation();
         }
-
-        
-
-      
 
         public void Par()
         {
