@@ -31,7 +31,7 @@ namespace Практика_интерфейсы.Warriors
         public double Run { get; set; }
 
         //Шаман который накладывает бафы (Берсерк +50% урон,-50% защита)(Каменная кожа +30% защита, -40% здоровье)(Спасение)
-        public void ALLBAFSS()
+        public void ALLBAFSS(IUnits unit)
         {
             Console.WriteLine("У вас все баффы,вы жёсткий!!");
             BERSERK();

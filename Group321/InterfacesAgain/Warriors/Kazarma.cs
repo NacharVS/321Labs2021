@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Практика_интерфейсы.WeaponsImpementatin;
 using Практика_интерфейсы.Weapons;
+using Group321.InterfacesAgain.Warriors;
 
 namespace Практика_интерфейсы.Warriors
 {
@@ -26,6 +27,11 @@ namespace Практика_интерфейсы.Warriors
         {
             Console.WriteLine("Создан новый СОЛДАТ!");
             return new Soldier();
+        }
+        public Anonimus MakeAnonimus()
+        {
+            Console.WriteLine("Создан новый Анонимус!");
+            return new Anonimus();
         }
     }
 }
