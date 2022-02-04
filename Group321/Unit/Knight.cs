@@ -7,7 +7,7 @@ using _0302.InterfaceUnit;
 
 namespace _0302.Unit
 {
-    internal class Knight : Parametrs
+    class Knight : Parametrs
     {
         public int healf => 100;
         public int berserk => 40;
@@ -17,15 +17,6 @@ namespace _0302.Unit
         public void Par()
         {
             Console.WriteLine($"{GetType().Name} has established");
-        }
-
-        public void Fury()
-        {
-            Console.WriteLine("Shaman buffed Knight : Fury ");
-            Console.WriteLine($"Healf: {healf}");
-            Console.WriteLine($"Berserk: {berserk + (berserk / 2)}");
-            Console.WriteLine($"Defense: {defense / 2}");
-            Console.WriteLine($"Speed: {speed}");
         }
     }
 }

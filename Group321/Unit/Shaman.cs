@@ -18,15 +18,18 @@ namespace _0302.Unit
         {
             p.Fury();
         }
-
-        public void Fury()
+        public void StoneSkin(Parametrs p)
         {
-            Console.WriteLine("Shaman buffed Shaman : Fury ");
-            Console.WriteLine($"Healf: {healf}");
-            Console.WriteLine($"Berserk: {berserk + (berserk / 2)}");
-            Console.WriteLine($"Defense: {defense / 2}");
-            Console.WriteLine($"Speed: {speed}");
+            p.StoneSkin();
         }
+        public void Salvation(Parametrs p)
+        {
+            p.Salvation();
+        }
+
+        
+
+      
 
         public void Par()
         {
