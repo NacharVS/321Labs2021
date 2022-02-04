@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Практика_интерфейсы.WeaponsImpementatin;
+using Практика_интерфейсы.Weapons;
 
-namespace Group321.InterfacesAgain
+namespace Практика_интерфейсы.Warriors
 {
-   public  class Quack : IUnits
+    public class Quack : IUnits
     {
         public Quack(string name, double damage, double armor, double hp, double run)
         {
@@ -31,16 +35,16 @@ namespace Group321.InterfacesAgain
         {
             Console.WriteLine("У вас все баффы,вы жёсткий!!");
             BERSERK();
-            STONESKIN();       
+            STONESKIN();
         }
         public void BERSERK()
         {
             Console.WriteLine("Вас баффнул шаман,БЕРСЕРК Даёт вам: + 50% урона, - 50% защита ");
         }
-        
+
         public void BERSERK(IUnits units)
         {
-            units.Damage = ((units.Damage/100) * 50) + units.Damage;
+            units.Damage = ((units.Damage / 100) * 50) + units.Damage;
             units.Armor = (units.Armor * 0.5);
             Console.WriteLine("Вас баффнул шаман,БЕРСЕРК Даёт вам: + 50% урона, - 50% защита ");
         }

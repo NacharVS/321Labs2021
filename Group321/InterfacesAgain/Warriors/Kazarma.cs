@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Практика_интерфейсы.WeaponsImpementatin;
+using Практика_интерфейсы.Weapons;
 
-namespace Group321.InterfacesAgain
+namespace Практика_интерфейсы.Warriors
 {
-     class Kazarma
+    class Kazarma
     {
         public Archer MakeArcher()
         {

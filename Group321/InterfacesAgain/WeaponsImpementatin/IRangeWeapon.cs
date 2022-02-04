@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Практика_интерфейсы.WeaponsImpementatin
 {
-    public interface IMleeWeapon
+    interface IrangeWeapon /*ДиапазонОружия*/ : IRepairible
     {
-        int Damage { get; }
-
-        void Hit();
+        int range { get; }
     }
 }

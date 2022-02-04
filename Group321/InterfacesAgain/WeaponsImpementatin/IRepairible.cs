@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Практика_интерфейсы.WeaponsImpementatin
 {
-    public interface IMleeWeapon
+    public interface IRepairible /*Ремонтопригодный*/
     {
-        int Damage { get; }
-
-        void Hit();
+        int Durability { get; }
+        void Repair();
     }
 }

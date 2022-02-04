@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Практика_интерфейсы.WeaponsImpementatin
 {
-    public interface IMleeWeapon
+    public interface IThrowableWeapon /*Метательное оружие*/ : IRepairible
     {
         int Damage { get; }
 

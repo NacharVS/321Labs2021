@@ -97,7 +97,7 @@ namespace Group321
             lst.Add(new PersonalData("Баннов Филипп Германович", "Казань", new Employee(20000)));
             lst.Add(new PersonalData("Яруллин Талгат Рамильевич", "Казань", new Employee(55000)));
         }
-        static void Main(string[] args)
+         void Main(string[] args)
         {
             StartProgram();
             Operations.Dobavleniye(lst);

@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using Group321.InterfacesAgain.WeaponsImpementatin;
+using System.Threading.Tasks;
+using Практика_интерфейсы.WeaponsImpementatin;
+using Практика_интерфейсы.Weapons;
 
-namespace Group321.InterfacesAgain
+namespace Практика_интерфейсы.Warriors
 {
-     class Archer : IUnits
+    class Soldier : IUnits
     {
-        public Archer()
+        public Soldier()
         {
 
         }
 
-        public Archer(string name, double damage, double armor, double hp, double run)
+        public Soldier(string name, double damage, double armor, double hp, double run)
         {
             Name = name;
             Damage = damage;
@@ -26,7 +29,8 @@ namespace Group321.InterfacesAgain
         public double Armor { get; set; }
         public double Hp { get; set; }
         public double Run { get; set; }
-        public void Shoot(Bow weapon)
+
+        public void Blow(IMleeWeapon weapon)
         {
             weapon.Hit();
         }
@@ -35,5 +39,6 @@ namespace Group321.InterfacesAgain
         {
             weapon.Hit();
         }
+
     }
 }
