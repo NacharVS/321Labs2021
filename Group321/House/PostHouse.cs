@@ -7,11 +7,11 @@ using _0302.InterfaceUnit;
 
 namespace _0302.House
 {
-    class PostHouse : IThrowableWeapon, Parametrs
+    class PostHouse : Parametrs
     {
-        public int Damage => 0;
-
-        public int Durability => throw new NotImplementedException();
+        List<Archer> archlist { get; set; }
+        //public int sumarcher { get; set; }
+        //public int DamageGarnisone { get; set; }
 
         public int healf => throw new NotImplementedException();
 
@@ -21,8 +21,35 @@ namespace _0302.House
 
         public int speed => throw new NotImplementedException();
 
-        public int sumunit => throw new NotImplementedException();
+        public int Damage { get; set; }
 
+        public int Durability => throw new NotImplementedException();
+
+        public PostHouse()
+        {
+            archlist = new List<Archer>();
+        }
+
+        public void Atack()
+        {
+            foreach (var arch in archlist)
+            {
+                Damage += arch.Damage;
+                //Console.WriteLine(arch.DamageGarnisone);
+            }
+            Console.WriteLine($" Урон башни:{ Damage}");
+        }
+
+        public void Par()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Add(Archer ar)
+        {
+            archlist.Add(ar);
+            
+        }
 
         public void Hit()
         {
@@ -33,13 +60,5 @@ namespace _0302.House
         {
             throw new NotImplementedException();
         }
-
-
-        public void Par()
-        {
-            throw new NotImplementedException();
-        }
-
-        
     }
 }

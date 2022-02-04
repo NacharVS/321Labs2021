@@ -32,6 +32,10 @@ namespace _0302
             Lena.Blow(bow1);//лучник атакует оружием
             
             PostHouse ph3 = new PostHouse();
+            ph3.Add(Lena);
+            ph3.Add(Koly);
+            //Console.WriteLine(Koly.DamageGarnisone);
+            ph3.Atack();
 
 
         }

@@ -9,11 +9,19 @@ namespace _0302.Unit
 {
     class Archer : Parametrs
     {
+        
         public int healf => 50;
         public int berserk => 20;
         public int defense => 30;
         public int speed => 10;
 
+        //public int DamageGarnisone => 50;
+
+        public int sumarcher => throw new NotImplementedException();
+
+        public int Damage => 30;
+
+        public int Durability => throw new NotImplementedException();
 
         public void Blow(IThrowableWeapon weapon)
         {
@@ -25,6 +33,29 @@ namespace _0302.Unit
             Console.WriteLine($"{GetType().Name} has established");
         }
 
-        
+        public void Add(Archer ar)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Hit()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Repair()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Atack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Add(Archer ar, IThrowableWeapon weapon)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using System.Text;
 using _0302.InterfaceWeapon;
 using _0302.House;
+using _0302.Unit;
 
 namespace _0302.InterfaceUnit
 {
-    interface Parametrs
+    interface Parametrs : IThrowableWeapon
     {
         int healf { get; }  
         int berserk { get; }
         int defense { get; }
         int speed { get; }
+        //int DamageGarnisone { get; }
+        //public int sumarcher { get; }
 
         void Par();
-        
+        void Atack();
+        public void Add(Archer ar);
 
         public void Fury()
         {
