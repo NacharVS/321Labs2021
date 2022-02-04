@@ -26,7 +26,7 @@ namespace Group321.InterfacesAgain.Weapons
 
         public void Repair()
         {
-
+            Console.WriteLine("Knife repaired");
         }
 
         private void Throw()

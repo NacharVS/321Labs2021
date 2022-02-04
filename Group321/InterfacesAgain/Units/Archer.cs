@@ -5,13 +5,35 @@ using System.Text;
 
 namespace Group321.InterfacesAgain.Units
 {
-    class Archer
+    class Archer : IUnits
     {
-        public int Health = 15;
-        public void Hit(IThrowableWeapon weapon)
+        public Archer()
+        {
+
+        }
+
+        public Archer(string name, double damage, double armor, double hp, double run)
+        {
+            Name = name;
+            Damage = damage;
+            Armor = armor;
+            Hp = hp;
+            Run = run;
+        }
+
+        public string Name { get; set; }
+        public double Damage { get; set; }
+        public double Armor { get; set; }
+        public double Hp { get; set; }
+        public double Run { get; set; }
+        public void Shoot(Bow weapon)
         {
             weapon.Hit();
         }
 
+        public void Throw(IThrowableWeapon weapon)
+        {
+            weapon.Hit();
+        }
     }
 }

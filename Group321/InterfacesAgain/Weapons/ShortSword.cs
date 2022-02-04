@@ -8,7 +8,7 @@ namespace Group321.InterfacesAgain
     class ShortSword : IMleeWeapon, IRepairible
     {
         public int Damage { get => 8; set => throw new NotImplementedException(); }
-        public int Durability { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Durability { get => 18; set => throw new NotImplementedException(); }
 
         public string CopyRight = "Lesha. Popov";
         public void Hit()

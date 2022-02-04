@@ -7,5 +7,7 @@ namespace Group321.InterfacesAgain.WeaponsImpementatin
     interface IrangeWeapon : IRepairible
     {
         int range { get; }
+
+        void Hit();
     }
 }

@@ -8,7 +8,7 @@ namespace Group321.InterfacesAgain
     class Club : IMleeWeapon, IRepairible
     {
         public int Damage { get => 3; set => throw new NotImplementedException(); }
-        public int Durability { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Durability { get => 10; set => throw new NotImplementedException(); }
 
         public int ThrowDamage => throw new NotImplementedException();
 
