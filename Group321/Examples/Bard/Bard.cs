@@ -8,9 +8,24 @@ namespace TowerDefense.Examples
     {
         public string Music => "All Star";
         public double MusicDuration => 2.5;
-        public int Health { get; set; } 
+        public int Health => 100;
 
-        public int Damage { get; set; }
+        public int BuffDamage { get; set; }
+
+        public int BuffHealth { get; set; }
+
+        public int BuffDefence { get; set; }
+
+        public int NewHealth { get; set; }
+
+        public int NewDamage { get; set; }
+
+        public int NewDefence { get; set; }
+
+
+        public int Defence => 10;
+
+        public int Damage => 5;
 
         public void Action()
         {

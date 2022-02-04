@@ -7,9 +7,22 @@ namespace TowerDefense.Examples
     class Archer : IArcherAction, ISleep, IAction
     {
         public int Range => 50;
-        public int Damage { get; set; }
+        public int Damage => 14;
 
-        public int Health { get; set; }
+        public int Defence => 20;
+        public int NewHealth { get; set; }
+
+        public int NewDamage { get; set; }
+
+        public int NewDefence { get; set; }
+
+        public int Health => 100;
+
+        public int BuffDamage { get; set; }
+
+        public int BuffHealth { get; set; }
+
+        public int BuffDefence { get; set; }
 
         public void Action()
         {
@@ -18,12 +31,17 @@ namespace TowerDefense.Examples
 
         public void Characteristic()
         {
-            System.Console.WriteLine($"Health: {Health}, Damage: {Damage} ");
+            System.Console.WriteLine($"Health: {NewHealth}, Damage: {NewDamage} ");
+        }
+
+        public void ArcherBuffed()
+        {
+            System.Console.WriteLine("Archer Buffed");
         }
 
         public void Fire()
         {
-            System.Console.WriteLine($"Fired: {Damage} ");
+            System.Console.WriteLine($"Fired: {NewDamage} ");
         }
 
 

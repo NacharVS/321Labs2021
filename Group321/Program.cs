@@ -10,6 +10,8 @@ namespace Group321
     {
         delegate void MessageDelegate(string message);
 
+
+
         static void Main(string[] args)
         {
 
@@ -18,14 +20,15 @@ namespace Group321
             Archer archer1 = new Archer();
             Shaman shaman1 = new Shaman();
             Archer archer = new Archer();
-            // archer1.Health = (archer.Health / 100) * shaman1.BuffHealth;
-            //  archer1.Damage = (archer.Damage / 100) * shaman1.BuffDamage - archer.Damage;
-
-            archer1.Fire();
             shaman1.BuffDamage = 50;
             shaman1.BuffHealth = 50;
             shaman1.BuffDefence = 30;
+            archer1.NewHealth = archer.Health - ((archer1.Health / 100) * shaman1.BuffHealth);
+            archer1.NewDamage = archer1.Damage + ((archer1.Damage / 100) * shaman1.BuffDamage);
+
+            archer1.Fire();
             shaman1.BerserkBuff();
+            archer1.ArcherBuffed();
             archer1.Characteristic();
         }
     }

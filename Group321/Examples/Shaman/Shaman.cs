@@ -12,11 +12,18 @@ namespace TowerDefense.Examples
 
         public int BuffDefence { get; set; }
         public int Duration => 30;
-        public int Health { get; set; }
+        public int Health => 100;
+
+        public int NewHealth { get; set; }
+
+        public int NewDamage { get; set; }
+
+        public int NewDefence { get; set; }
+
 
         public int Defence => 100;
 
-        public int Damage { get; set; }
+        public int Damage => 10;
 
         public void Action()
         {
@@ -25,7 +32,7 @@ namespace TowerDefense.Examples
 
         public void BerserkBuff()
         {
-            System.Console.WriteLine($"Throw berserk buff:+ {BuffDamage}%, - {BuffHealth}%");
+            System.Console.WriteLine($"Shaman throw berserk buff:+ {BuffDamage}%, - {BuffHealth}%");
         }
         public void Characteristic()
         {
@@ -33,12 +40,12 @@ namespace TowerDefense.Examples
         }
         public void StoneSkin()
         {
-            System.Console.WriteLine($"Throw stone skin buff:+ {BuffHealth}");
+            System.Console.WriteLine($"Shaman throw stone skin buff:+ {BuffHealth}");
         }
 
         public void Salvation()
         {
-            System.Console.WriteLine($"Throw salvation");
+            System.Console.WriteLine($"Shaman throw salvation");
         }
 
 
