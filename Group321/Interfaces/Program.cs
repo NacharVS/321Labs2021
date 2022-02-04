@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Group321.Interfaces.Units;
 using System.Text;
 
-namespace Group321.Interface
+namespace Group321.Interfaces
 {
     class Program
     {
@@ -11,6 +11,7 @@ namespace Group321.Interface
         {
             Console.WriteLine("Hello World");
             UnitFabrika unit = new UnitFabrika();
+            Garrison garrison = new Garrison();
             var archer = unit.MakeArcher();
             var voodoo = unit.makeVoodoo();
             Blacksmith da = new Blacksmith();

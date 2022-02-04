@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using Group321.Interfaces.Units;
 using System.Text;
-using Group321.Interfaces;
 
-namespace Group321.Interface
+namespace Group321.Interfaces
 {
     class UnitFabrika
     {

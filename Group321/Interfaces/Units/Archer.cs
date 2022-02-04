@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Group321.Interfaces.WeaponsImpementatin;
-using Group321.Interface;
+using Group321.Interfaces;
 
 namespace Group321.Interfaces.Units
 {

@@ -1,5 +1,5 @@
 ﻿using Group321.Interfaces.WeaponsImpementatin;
-using Group321.Interface;
+using Group321.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -36,6 +36,5 @@ namespace Group321.Interfaces.Units
         {
             weapon.Hit();
         }
-
     }
 }

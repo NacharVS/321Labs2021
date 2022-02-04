@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using Group321.Interfaces.Units;
 
 namespace Group321.Interfaces
 {
-    public interface IUnit
+    interface IGarrison
     {
         public string Name { get; set; }
-        public double Hp { get; set; }
         public double Damage { get; set; }
         public double Armor { get; set; }
-        public double Run { get; set; }
+
+        public void Attack();
+        public void Add(Archer archer);
+        public void Delete(string name);
     }
 }
