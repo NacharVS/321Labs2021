@@ -19,8 +19,13 @@ namespace Group321
             //2. 3 здания. 1 из зданий производит юнитов. 1 из зданий принимет гарнизон.  
             Shaman Victor = new Shaman();
             Blacksmith Igor = new Blacksmith();
-            Soldier Anna = new Soldier();
+            Archer Amma = new Archer();
+            Soldier Andrew = new Soldier();
+            Victor.resurrection();
             Victor.SoldierBuff();
+            var bow = Igor.MakeBow();
+            Amma.Hit(bow);
+            
             //var weapon2 = Igor.MakeAxe();
             //Victor.weapon = weapon2;
             //Victor.weapon.Hit();

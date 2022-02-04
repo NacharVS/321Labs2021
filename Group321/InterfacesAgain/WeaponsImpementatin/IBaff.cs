@@ -10,7 +10,7 @@ namespace Group321.InterfacesAgain.WeaponsImpementatin
         int BafDef { get; set; }
         int BafAtt { get; set; }
 
-
+        void resurrection();
         void BafedDef();
         void BafedAtt();
         void Salvation();

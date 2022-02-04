@@ -43,6 +43,10 @@ namespace Group321.InterfacesAgain.Units
         {
             Console.WriteLine($"Buff on stone skin: + defense {BafDef}% and lasts {duration} second");
         }
+        public void resurrection()
+        {
+            Console.WriteLine($"Resurrection {Solomon.GetType().Name}");
+        }
 
         public void SoldierBuff()
         {
