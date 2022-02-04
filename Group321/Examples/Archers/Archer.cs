@@ -31,7 +31,7 @@ namespace TowerDefense.Examples
 
         public void Characteristic()
         {
-            System.Console.WriteLine($"Health: {NewHealth}, Damage: {NewDamage} ");
+            System.Console.WriteLine($"Health: {NewHealth}, Damage: {NewDamage}, Defence: {NewDefence} ");
         }
 
         public void ArcherBuffed()

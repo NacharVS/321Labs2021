@@ -24,7 +24,8 @@ namespace Group321
             shaman1.BuffHealth = 50;
             shaman1.BuffDefence = 30;
             archer1.NewHealth = archer.Health - ((archer1.Health / 100) * shaman1.BuffHealth);
-            archer1.NewDamage = archer1.Damage + ((archer1.Damage / 100) * shaman1.BuffDamage);
+            archer1.NewDamage = archer1.Damage * (shaman1.BuffDamage + 100) / 100;
+            archer1.NewDefence = archer1.Defence * (shaman1.BuffDefence + 100) / 100;
 
             archer1.Fire();
             shaman1.BerserkBuff();
