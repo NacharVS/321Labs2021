@@ -22,8 +22,10 @@ namespace Group321
             Garrison garrison = new Garrison();
             garrison.Add(archers);
             garrison.Add(archers2);
+            garrison.Attack();
             Console.WriteLine(archers.Damage);
             Console.WriteLine(archers2.Damage);
+            
 
             Blacksmith Igor = new Blacksmith();
             var knife = Igor.MakeKnife();
