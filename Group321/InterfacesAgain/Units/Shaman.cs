@@ -5,53 +5,45 @@ using System.Text;
 
 namespace Group321.InterfacesAgain.Units
 {
-    class Shaman : IBaff
+    class Shaman : IntUnit
     {
-        public int Health = 20;
-
-        public int BafDef => 50;
-
-        public int BafAtt => 50;
-        public int Durability { get => 20; set => throw new NotImplementedException(); }
-        public int baff { get => 10; set => throw new NotImplementedException(); }
-        public int duration { get => 20; set => throw new NotImplementedException(); }
-        int IBaff.BafDef { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int IBaff.BafAtt { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        Soldier Solomon = new Soldier();
-
-        public void Baff()
+        public Shaman(double hp, double damage, double armor, double movespeed)
         {
-            Console.WriteLine($"{GetType().Name} WFFFFEEEEW! {baff} Health {Solomon.GetType().Name} ");
+            Hp = hp;
+            Damage = damage;
+            Armor = armor;
+            MoveSpeed = movespeed;
         }
 
-        public void Repair()
+        public Shaman()
         {
-            Console.WriteLine("Staff repaired");
+
         }
 
-        public void Salvation()
+        public double Hp { get; set; }
+        public string Name { get; set; } = "Voodoo";
+        public double Damage { get; set; }
+        public double Armor { get; set; }
+        public double MoveSpeed { get; set; }
+
+        public void Berserk(IntUnit unit)
         {
-            Console.WriteLine($"Resurrects a character with full resources and lasts {duration} second");
+            unit.Damage += unit.Damage * 0.05;
+            unit.Armor += unit.Armor * 0.05;
+            Console.WriteLine($"Buff on Berserk: +50% damage -50% armor {unit.Name}");
         }
 
-        void IBaff.BafedAtt()
+        public void KamennayaKoja(IntUnit unit)
         {
-            Console.WriteLine($"Buff on Berserk: + Damage {BafAtt}%, - defense {BafDef}% and lasts {duration} second");
+            unit.Hp += unit.Hp * 0.02;
+            unit.MoveSpeed += unit.MoveSpeed * 0.04;
+            Console.WriteLine($"Buff on stone skin: +20% hp +30% armor +40% Run {unit.Name}");
         }
 
-        void IBaff.BafedDef()
+        public void Spasenie(IntUnit unit)
         {
-            Console.WriteLine($"Buff on stone skin: + defense {BafDef}% and lasts {duration} second");
+            unit.Hp += unit.Hp;
+            Console.WriteLine($"Resurrection: +100% hp {unit.Name}");
         }
-        public void resurrection()
-        {
-            Console.WriteLine($"Resurrection {Solomon.GetType().Name}");
-        }
-
-        public void SoldierBuff()
-        {
-            Console.WriteLine($"Buff on Berserk:{Solomon.GetType().Name} + Damage {BafAtt}%, - defense {BafDef}% and lasts {duration} second");
-        }
-
     }
 }

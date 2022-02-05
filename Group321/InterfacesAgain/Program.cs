@@ -12,17 +12,7 @@ namespace Group321
     {
         delegate void MessageDelegate(string message);
 
-        static void Main(string[] args)
-        {
-            Shaman Victor = new Shaman();
-            Blacksmith Igor = new Blacksmith();
-            Archer Amma = new Archer();
-            Soldier Andrew = new Soldier();
-            Victor.resurrection();
-            Victor.SoldierBuff();
-            var bow = Igor.MakeBow();
-            Amma.Hit(bow);
-        }
+        
 
     }
 }

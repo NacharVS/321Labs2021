@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Group321.InterfacesAgain
 {
-    class Bow : IrangeWeapon, IThrowableWeapon
+    class Bow : IrangeWeapon
     {
         public int range => 8;
 
@@ -15,7 +15,7 @@ namespace Group321.InterfacesAgain
 
         public int ThrowDamage => throw new NotImplementedException();
 
-        void IThrowableWeapon.Hit()
+        public void Hit()
         {
             Console.WriteLine($"piu-piu {Damage}");
         }
