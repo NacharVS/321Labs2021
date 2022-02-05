@@ -21,7 +21,7 @@ namespace Group321.InterfacesAgain.Units
         }
 
         public double Hp { get; set; }
-        public string Name { get; set; } = "Voodoo";
+        public string Name { get; set; } = "ShadowShaman";
         public double Damage { get; set; }
         public double Armor { get; set; }
         public double MoveSpeed { get; set; }
@@ -33,14 +33,14 @@ namespace Group321.InterfacesAgain.Units
             Console.WriteLine($"Buff on Berserk: +50% damage -50% armor {unit.Name}");
         }
 
-        public void KamennayaKoja(IntUnit unit)
+        public void StoneSkin(IntUnit unit)
         {
             unit.Hp += unit.Hp * 0.02;
             unit.MoveSpeed += unit.MoveSpeed * 0.04;
             Console.WriteLine($"Buff on stone skin: +20% hp +30% armor +40% Run {unit.Name}");
         }
 
-        public void Spasenie(IntUnit unit)
+        public void Resurrection(IntUnit unit)
         {
             unit.Hp += unit.Hp;
             Console.WriteLine($"Resurrection: +100% hp {unit.Name}");
