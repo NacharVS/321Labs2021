@@ -7,7 +7,6 @@ namespace Group321.InterfacesAgain
 {
     class Garrison : IntGarrison
     {
-        List<Archer> unitsList { get; }
         public double Damage { get; set; }
         public string Name { get; set; }
         public double Armor { get; set; }
