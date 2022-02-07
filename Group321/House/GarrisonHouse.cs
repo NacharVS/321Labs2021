@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Group321
+namespace GG.House
 {
-    class PersonalDats
+    class GarrisonHouse
     {
     }
 }
