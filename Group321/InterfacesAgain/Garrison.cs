@@ -21,7 +21,7 @@ namespace Group321.InterfacesAgain
             unitslist = new List<Shaman>();
         }
 
-        public void Attack()
+        public void AttackArcher()
         {
             foreach (var item in unitsList)
             {
@@ -29,23 +29,43 @@ namespace Group321.InterfacesAgain
                 Console.WriteLine(item.Damage);
             }
 
-            Console.WriteLine($"Гарнизон атаковал с уроном {Damage}");
+            Console.WriteLine($"Гарнизон лучников атаковал с уроном {Damage}");
+        }
+        public void AttackSoldier()
+        {
+            foreach (var item in unitsList)
+            {
+                Damage += item.Damage;
+                Console.WriteLine(item.Damage);
+            }
+
+            Console.WriteLine($"Гарнизон солдатов атаковал с уроном {Damage}");
+        }
+        public void AttackShaman()
+        {
+            foreach (var item in unitsList)
+            {
+                Damage += item.Damage;
+                Console.WriteLine(item.Damage);
+            }
+
+            Console.WriteLine($"Гарнизон шаманов атаковал с уроном {Damage}");
         }
 
-        public void Add(Archer unit)
+        public void AddArcher(Archer unit)
         {
             unitsList.Add(unit);
         }
-        public void Add(Soldier unit)
+        public void AddSoldier(Soldier unit)
         {
             UnitsList.Add(unit);
         }
-        public void Add(Shaman unit)
+        public void AddShaman(Shaman unit)
         {
             unitslist.Add(unit);
         }
 
-        public void Delete(string name)
+        public void DeleteArcher(string name)
         {
             foreach (var item in unitsList)
             {

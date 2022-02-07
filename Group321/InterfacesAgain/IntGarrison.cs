@@ -11,7 +11,9 @@ namespace Group321.InterfacesAgain
         public double Damage { get; set; }
         public double Armor { get; set; }
 
-        public void Attack();
+        public void AttackArcher();
+        public void AttackSoldier();
+        public void AttackShaman();
         public void AddArcher(Archer archer);
         public void AddSoldier(Soldier soldier);
         public void AddShaman(Shaman shaman);
