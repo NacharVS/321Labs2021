@@ -7,6 +7,7 @@ namespace Group321.Interfaces
     class Tower
     {
         private Garrison garrison;
+
         public Tower(Garrison garrison)
         {
             this.garrison = garrison;

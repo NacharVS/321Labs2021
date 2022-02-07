@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Group321.Interfaces
+namespace Group321.Interfaces.UnitsImterfaces
 {
     public interface IUnit
     {

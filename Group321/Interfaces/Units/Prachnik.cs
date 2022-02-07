@@ -1,37 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Group321.Interfaces.WeaponsImpementatin;
 using Group321.Interfaces.UnitsImterfaces;
 
 namespace Group321.Interfaces.Units
 {
-    class Ogre : IUnit
+    class Prachnik : IPrachnik
     {
-        public Ogre(double hp, double damage, double armor, double run, string name)
+        public Prachnik(double range, string name, double hp, double damage, double armor, double run)
         {
+            Range = range;
+            Name = name;
             Hp = hp;
             Damage = damage;
             Armor = armor;
             Run = run;
-            Name = name;
         }
 
-        public Ogre()
+        public Prachnik()
         {
 
         }
 
+        public double Range { get; set; }
+        public string Name { get; set; }
         public double Hp { get; set; }
         public double Damage { get; set; }
         public double Armor { get; set; }
         public double Run { get; set; }
-        public string Name { get; set; } = "Ogre";
-
-        public void Hit(IMleeWeapon weapon)
-        {
-            weapon.Hit();
-            Console.WriteLine("Вы превратились в лепешку RIP");
-        }
     }
 }

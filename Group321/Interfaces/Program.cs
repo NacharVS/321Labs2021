@@ -18,9 +18,7 @@ namespace Group321.Interfaces
 
             Garrison garrison = new Garrison();
             garrison.Add(archer);
-            Console.WriteLine(archer.Damage);
             garrison.Add(archer2);
-            Console.WriteLine(archer2.Damage);
 
 
             Tower tower = new Tower(garrison);

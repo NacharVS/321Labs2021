@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Group321.Interfaces.Units;
+using Group321.Interfaces.WeaponsImpementatin;
 
-namespace Group321.Interfaces
+namespace Group321.Interfaces.UnitsImterfaces
 {
     interface IGarrison
     {
@@ -11,8 +11,8 @@ namespace Group321.Interfaces
         public double Damage { get; set; }
         public double Armor { get; set; }
 
-        public void Attack();
-        public void Add(Archer archer);
+        public void Attack(IrangeWeapon weapon);
+        public void Add(IRangeUnit unit);
         public void Delete(string name);
     }
 }
