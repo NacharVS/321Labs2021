@@ -8,7 +8,6 @@ namespace Piano.InterfacesGarrison
 {
     interface IHeroes
     {
-        int Range { get; }
         int Defense { get; }
 
         void Action();
