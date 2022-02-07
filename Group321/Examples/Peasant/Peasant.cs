@@ -5,7 +5,7 @@ using TowerDefense.Examples;
 
 namespace TowerDefense.Examples
 {
-    class Post : IArcherAction, IPeasantAction
+    class Peasant : IAction, ISleep, IPeasantAction
     {
         public int Health => 100;
 
@@ -25,21 +25,9 @@ namespace TowerDefense.Examples
 
         public int BuffDefence { get; set; }
 
-        public int Range => 50;
-
-        public void Fire()
-        {
-            System.Console.WriteLine("Archer sit in a post");
-        }
-
-        public void Create()
-        {
-            System.Console.WriteLine($"The peasant became an archer - Health:{NewHealth}, Damage:{NewDamage}, Defence:{NewDefence}, Range:{Range}");
-        }
-
         public void Sleep()
         {
-            System.Console.WriteLine("The peasant sleep at post");
+            System.Console.WriteLine("Sleep at night");
         }
 
         public void JoinTheArmy()
@@ -49,7 +37,7 @@ namespace TowerDefense.Examples
 
         public void Move()
         {
-            System.Console.WriteLine("Go to Hell!");
+            System.Console.WriteLine("Harvest");
         }
 
         public void Characteristic()
@@ -59,7 +47,7 @@ namespace TowerDefense.Examples
 
         public void Action()
         {
-            System.Console.WriteLine("Collect the Equipment");
+            System.Console.WriteLine("Work on thw field");
         }
     }
 }

@@ -26,7 +26,7 @@ namespace TowerDefense.Examples
 
         public void Action()
         {
-            System.Console.WriteLine("Making training");
+            System.Console.WriteLine("The archer making training");
         }
 
         public void Characteristic()
@@ -36,7 +36,7 @@ namespace TowerDefense.Examples
 
         public void ArcherBuffed()
         {
-            System.Console.WriteLine("Archer Buffed");
+            System.Console.WriteLine("The archer Buffed");
         }
 
         public void Fire()
@@ -47,7 +47,7 @@ namespace TowerDefense.Examples
 
         public void Move()
         {
-            System.Console.WriteLine("Going to Tower");
+            System.Console.WriteLine("The archer going to Tower");
         }
 
         public void Sleep()
