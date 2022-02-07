@@ -13,12 +13,9 @@ namespace _0302.InterfaceUnit
         int berserk { get; }
         int defense { get; }
         int speed { get; }
-        //int DamageGarnisone { get; }
-        //public int sumarcher { get; }
-
         void Par();
         void Atack();
-        public void Add(Archer ar);
+        void Add(Archer ar);
 
         public void Fury()
         {

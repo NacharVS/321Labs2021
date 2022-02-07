@@ -5,20 +5,19 @@ using _0302.InterfaceWeapon;
 using _0302.House;
 using _0302.Unit;
 
-namespace _0302
+namespace Group321.Weapon
 {
-    class Bow : IrageWeapon, IThrowableWeapon
+    class Sling : IThrowableWeapon
     {
-        public int range => 10;
+        public int range => 15;
 
-        public int Durability => 30;
+        public int Durability => 10;
 
-        public int Damage => 10;
+        public int Damage => 20;
 
         public void Hit()
         {
-            
-            Console.WriteLine($"piu-piu {Damage}");
+            Console.WriteLine($"pyx-pyx {Damage}");
         }
 
         public void Repair()

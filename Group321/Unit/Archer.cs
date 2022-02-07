@@ -14,11 +14,6 @@ namespace _0302.Unit
         public int berserk => 20;
         public int defense => 30;
         public int speed => 10;
-
-        //public int DamageGarnisone => 50;
-
-        public int sumarcher => throw new NotImplementedException();
-
         public int Damage => 30;
 
         public int Durability => throw new NotImplementedException();
@@ -36,6 +31,11 @@ namespace _0302.Unit
         public void Add(Archer ar)
         {
             throw new NotImplementedException();
+        }       
+        
+        public void Atack()
+        {
+            throw new NotImplementedException();
         }
 
         public void Hit()
@@ -44,16 +44,6 @@ namespace _0302.Unit
         }
 
         public void Repair()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Atack()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Add(Archer ar, IThrowableWeapon weapon)
         {
             throw new NotImplementedException();
         }

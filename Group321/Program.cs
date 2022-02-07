@@ -36,7 +36,7 @@ namespace _0302
             ph3.Add(Koly);
             //Console.WriteLine(Koly.DamageGarnisone);
             ph3.Atack();
-
+            //ph3.Hit();
 
         }
     }

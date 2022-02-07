@@ -9,9 +9,8 @@ namespace _0302.House
 {
     class PostHouse : Parametrs
     {
-        List<Archer> archlist { get; set; }
-        //public int sumarcher { get; set; }
-        //public int DamageGarnisone { get; set; }
+        List<Archer> unitlist { get; set; }
+
 
         public int healf => throw new NotImplementedException();
 
@@ -25,19 +24,22 @@ namespace _0302.House
 
         public int Durability => throw new NotImplementedException();
 
+
+
         public PostHouse()
         {
-            archlist = new List<Archer>();
+            unitlist = new List<Archer>();
         }
 
+        
         public void Atack()
         {
-            foreach (var arch in archlist)
+            foreach (var un in unitlist)
             {
-                Damage += arch.Damage;
+                Damage += un.Damage;
                 //Console.WriteLine(arch.DamageGarnisone);
             }
-            Console.WriteLine($" Урон башни:{ Damage}");
+            Console.WriteLine($"Урон башни:{ Damage}");
         }
 
         public void Par()
@@ -47,13 +49,12 @@ namespace _0302.House
 
         public void Add(Archer ar)
         {
-            archlist.Add(ar);
-            
+            unitlist.Add(ar); 
         }
 
         public void Hit()
         {
-            throw new NotImplementedException();
+            //Console.WriteLine($"Урон башни:{ damage}");
         }
 
         public void Repair()

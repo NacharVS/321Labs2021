@@ -14,13 +14,11 @@ namespace _0302.Unit
         public int defense => 50;
         public int speed => 15;
 
+        public int damage => throw new NotImplementedException();
+
         public int Damage => throw new NotImplementedException();
 
         public int Durability => throw new NotImplementedException();
-
-        //public int DamageGarnisone => throw new NotImplementedException();
-
-        //public int sumarcher => throw new NotImplementedException();
 
         public void Fury(Parametrs p)
         {
@@ -46,11 +44,6 @@ namespace _0302.Unit
         }
 
         public void Add(Archer ar)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Add(Archer ar, IThrowableWeapon weapon)
         {
             throw new NotImplementedException();
         }

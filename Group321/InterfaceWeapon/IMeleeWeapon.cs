@@ -4,9 +4,9 @@ using System.Text;
 
 namespace _0302.InterfaceWeapon
 {
-    interface IThrowableWeapon : IRepairible
+    interface IMeleeWeapon : IRepairible
     {
-        public int Damage { get; }
+        int Damage { get; }
 
         void Hit();
     }

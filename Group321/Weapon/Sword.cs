@@ -7,7 +7,7 @@ using _0302.Unit;
 
 namespace _0302
 {
-    class Sword : IThrowableWeapon
+    class Sword : IMeleeWeapon
     {
         public int Damage => 15;
 
