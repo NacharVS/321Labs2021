@@ -21,5 +21,14 @@ namespace Group321.InterfacesAgain
         {
             return new Shaman();
         }
+
+        public Svinger MakeSvinger()
+        {
+            return new Svinger();
+        }
+        public PhantomAssasin MakePA()
+        {
+            return new PhantomAssasin();
+        }
     }
 }

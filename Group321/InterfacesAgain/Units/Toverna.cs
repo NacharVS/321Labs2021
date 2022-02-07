@@ -23,5 +23,10 @@ namespace Group321.InterfacesAgain.Units
             Console.WriteLine("Создан новый СОЛДАТ!");
             return new Soldier();
         }
+        public Svinger MakeSvinger()
+        {
+            Console.WriteLine("Создан новый СВИНГЕР");
+            return new Svinger();
+        }
     }
 }
