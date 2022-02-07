@@ -45,7 +45,7 @@ namespace Group321.InterfacesAgain
             unitslist.Add(unit);
         }
 
-        public void DeleteArcher(string name)
+        public void Delete(string name)
         {
             foreach (var item in unitsList)
             {

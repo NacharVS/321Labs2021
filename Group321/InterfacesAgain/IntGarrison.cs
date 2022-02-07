@@ -12,7 +12,12 @@ namespace Group321.InterfacesAgain
         public double Armor { get; set; }
 
         public void Attack();
-        public void Add(Archer archer);
-        public void Delete(string name);
+        public void AddArcher(Archer archer);
+        public void AddSoldier(Soldier soldier);
+        public void AddShaman(Shaman shaman);
+
+        public void DeleteArcher(string name);
+        public void DeleteSoldier(string name);
+        public void DeleteShaman(string name);
     }
 }
