@@ -21,7 +21,7 @@ namespace Group321.InterfacesAgain.Units
         }
 
         public double Hp { get; set; }
-        public string Name { get; set; } = "Archer";
+        public string Name { get; set; } = "Lina";
         public double Damage { get; set; }
         public double Armor { get; set; }
         public double MoveSpeed { get; set; }

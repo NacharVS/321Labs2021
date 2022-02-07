@@ -7,6 +7,9 @@ namespace Group321.InterfacesAgain
 {
     class Garrison : IntGarrison
     {
+        List<Archer> unitsList { get; }
+        List<Soldier> UnitsList { get; }
+        List<Shaman> unitslist { get; }
         public double Damage { get; set; }
         public string Name { get; set; }
         public double Armor { get; set; }
@@ -14,6 +17,8 @@ namespace Group321.InterfacesAgain
         public Garrison()
         {
             unitsList = new List<Archer>();
+            UnitsList = new List<Soldier>();
+            unitslist = new List<Shaman>();
         }
 
         public void Attack()
@@ -31,13 +36,37 @@ namespace Group321.InterfacesAgain
         {
             unitsList.Add(unit);
         }
+        public void Add(Soldier unit)
+        {
+            UnitsList.Add(unit);
+        }
+        public void Add(Shaman unit)
+        {
+            unitslist.Add(unit);
+        }
 
-        public void Delete(string name)
+        public void DeleteArcher(string name)
         {
             foreach (var item in unitsList)
             {
                 if (item.Name == name)
                     unitsList.Remove(item);
+            }
+        }
+        public void DeleteSoldier(string name)
+        {
+            foreach (var item in UnitsList)
+            {
+                if (item.Name == name)
+                    UnitsList.Remove(item);
+            }
+        }
+        public void DeleteShaman(string name)
+        {
+            foreach (var item in unitslist)
+            {
+                if (item.Name == name)
+                    unitslist.Remove(item);
             }
         }
     }
