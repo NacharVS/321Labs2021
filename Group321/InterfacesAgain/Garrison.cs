@@ -26,7 +26,6 @@ namespace Group321.InterfacesAgain
             foreach (var item in unitsList)
             {
                 Damage += item.Damage;
-                Console.WriteLine(item.Damage);
             }
 
             Console.WriteLine($"Гарнизон лучников атаковал с уроном {Damage}");
@@ -36,7 +35,6 @@ namespace Group321.InterfacesAgain
             foreach (var item in unitsList)
             {
                 Damage += item.Damage;
-                Console.WriteLine(item.Damage);
             }
 
             Console.WriteLine($"Гарнизон солдатов атаковал с уроном {Damage}");
@@ -46,7 +44,6 @@ namespace Group321.InterfacesAgain
             foreach (var item in unitsList)
             {
                 Damage += item.Damage;
-                Console.WriteLine(item.Damage);
             }
 
             Console.WriteLine($"Гарнизон шаманов атаковал с уроном {Damage}");
