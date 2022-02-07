@@ -25,9 +25,6 @@ namespace Group321
             garrison.AddSoldier(Soldier);
             garrison.AttackArcher();
             garrison.AttackSoldier();
-            Console.WriteLine(archers.Damage);
-            Console.WriteLine(archers2.Damage);
-            Console.WriteLine(Soldier.Damage);
 
 
             Blacksmith Igor = new Blacksmith();
