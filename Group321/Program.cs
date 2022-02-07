@@ -1,4 +1,5 @@
 ﻿using Group321.InterfacesAgain;
+using Piano.InterfacesGarrison;
 using Piano.InterfacesGarrison.Class;
 using System;
 using System.Collections.Generic;
@@ -34,12 +35,11 @@ namespace Group321
             //Victor.Throw(knife);
             //Igor.Repair(knife);
 
-
+            IHeroes heroes = new Unit();
 
             ArcherUnit Ivan1 = new ArcherUnit();
             Pyromancer Ivan2 = new Pyromancer();
             Shaman Ivan3 = new Shaman();
-
 
 
             Ivan3.ConclusionBuffonArcherAtt(Ivan1);
