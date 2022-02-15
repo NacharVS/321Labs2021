@@ -5,4 +5,12 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="ТехЗадание_Гизетдинов_321.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ТехЗадание_Гизетдинов_321.txt" />
+  </ItemGroup>
+
 </Project>

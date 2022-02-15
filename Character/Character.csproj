@@ -98,5 +98,8 @@
   <ItemGroup>
     <Resource Include="Resources\Character.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ТехЗадание_Гизетдинов_321.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
